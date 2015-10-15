@@ -17,7 +17,7 @@
 
 
 		<!-- Code syntax highlighting -->
-		<!--<link rel="stylesheet" href="reveal.js/lib/css/zenburn.css">-->
+		<link rel="stylesheet" href="reveal.js/lib/css/zenburn.css">
 		<style>
 			pre code {
 				display: block;
@@ -62,7 +62,7 @@
                     </p>
 
     <p><a target="_blank" href="https://jax.de/wjax2015/sessions/workshop-einfuehrung-javascript-fuer-java-entwickler">https://jax.de/wjax2015/sessions/workshop-einfuehrung-javascript-fuer-java-entwickler</a></p>
-    <p>Online-Version: <a href="http://bit.ly/1YG2e63">http://bit.ly/1YG2e63</a></p>
+    <p>Online-Version: <a href="http://bit.ly/1RcH4a2">http://bit.ly/1RcH4a2</a></p>
     <p>Code auf Github: <a href="https://github.com/DJCordhose/javascript-einfuehrung/tree/gh-pages">https://github.com/DJCordhose/javascript-einfuehrung/tree/gh-pages</a></p>
 </section>
         <section>
@@ -1033,6 +1033,61 @@ console.log(programmer instanceof Person); // true</code></pre>
                             <a target="_blank" href="http://jsbin.com/jobaci/1/edit?js,console">http://jsbin.com/jobaci/1/edit?js,console</a>
 
                     </ul>
+                </section>
+                <section>
+                    <section>
+                        <h1>Neuerungen und Verbesserungen</h1>
+                    </section>
+                    <section>
+                        <h3>Template Strings</h3>
+   <pre><code class="javascript" contenteditable>const person = 'Oma';
+const language = 'Haskell';
+
+console.log(`${person} programs
+${10 * 1024 * 1024} lines of code
+in ${language}.`);
+// Output:
+// Oma programs
+// 10485760 lines of code
+// in Haskell.
+</code></pre>
+                    </section>
+                    <section>
+                        <h3>Destructuring von Objekten</h3>
+   <pre><code class="javascript" contenteditable>const person = {
+  name: 'Olli',
+  address: {
+    city: 'Hamburg'
+  },
+  email: 'oliver.zeigermann@gmail.com'
+};</code></pre>
+   <pre class="fragment"><code class="javascript" contenteditable>const {name, email: contact} = person;
+console.log(`name=${name}`);
+// name=Olli
+console.log(`contact=${contact}`);
+// contact=oliver.zeigermann@gmail.com
+</code></pre>
+   <pre class="fragment"><code class="javascript" contenteditable>const {address: {city}} = person;
+console.log(`city=${city}`);
+//city=Hamburg
+</code></pre>
+                    </section>
+                    <section>
+                        <h3>Destructuring bei Parametern</h3>
+   <pre><code class="javascript" contenteditable>const person = {
+  name: 'Olli',
+  address: {
+    city: 'Hamburg'
+  },
+  email: 'oliver.zeigermann@gmail.com'
+};</code></pre>
+   <pre class="fragment"><code class="javascript" contenteditable>function print({email: contact}) {
+    console.log(`contact=${contact}`);
+}
+print(person);
+// contact=oliver.zeigermann@gmail.com
+</code></pre>
+                    </section>
                 </section>
 			</div>
 

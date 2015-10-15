@@ -2,6 +2,7 @@
  * ES6 part
  * import
  * extends
+ * template strings
  *
  */
 import {displayInPage} from "./util";
