@@ -1,3 +1,11 @@
 export function displayInPage(text) {
-    return document.body.innerHTML += `${text}<br>`;
+    if (typeof text !== 'string') {
+        text = JSON.stringify(text);
+    }
+
+    if (typeof document !== 'undefined') {
+        return document.body.innerHTML += `${text}<br>`;
+    } else {
+        console.log(text);
+    }
 }

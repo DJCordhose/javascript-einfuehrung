@@ -1,8 +1,10 @@
 export default class Person {
     constructor(name) {
-        this.name = name;
+        this._name = name;
     }
-    getName() {
-        return this.name;
+    get name() {
+        return this._name;
     }
 }
+Person.lieblings
+

@@ -980,10 +980,10 @@ console.log(a);
             <h3>Gesprengte Klippe #2: Klassen</h3>
                 <pre class="fragment"><code class="javascript" contenteditable>class Person {
     constructor(name) {
-        this.name = name;
+        this._name = name;
     }
-    getName() {
-        return this.name;
+    get name() {
+        return this._name;
     }
 }
 class Programmer extends Person {
@@ -992,7 +992,7 @@ class Programmer extends Person {
         this.language = language;
     }
     code() {
-        return this.getName() + " codes in " + this.language;
+        return this.name + " codes in " + this.language;
     }
 }</code></pre>
    <pre><code class="javascript" contenteditable>const programmer = new Programmer('Erna', 'JavaScript');
@@ -1036,7 +1036,7 @@ console.log(programmer instanceof Person); // true</code></pre>
                 </section>
                 <section>
                     <section>
-                        <h1>Neuerungen und Verbesserungen</h1>
+                        <h3>Neuerungen und Verbesserungen</h3>
                     </section>
                     <section>
                         <h3>Template Strings</h3>
@@ -1088,6 +1088,67 @@ print(person);
 // contact=oliver.zeigermann@gmail.com
 </code></pre>
                     </section>
+                    <section>
+                        <h3>Destructuring bei Arrays</h3>
+   <pre><code class="javascript" contenteditable>const [a, b] = [1, 2];
+console.log(`a=${a}`);
+// a=1
+console.log(`b=${b}`);
+// b=2
+</code></pre>
+                    </section>
+                    <section>
+                        <h3>Erweiterte Objekt-Literale</h3>
+   <pre><code class="javascript" contenteditable>const name = 'Oma';
+const person = {
+    // ES5: name: name
+    name,
+    // ES5: toString: function()
+    toString() {
+        return this.name;
+    }
+};
+console.log(person.name); // Oma
+console.log(person.toString()); // Oma
+   </code></pre>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h3>Module, Importe und Exporte</h3>
+                    </section>
+                    <section>
+                        <h3>Export einer einzigen Klasse</h3>
+   <pre><code class="javascript" contenteditable>// Person.js
+class Person {
+  // ...
+}
+export default Person;
+   </code></pre>
+                    </section>
+                    <section>
+                        <h3>Import</h3>
+   <pre><code class="javascript" contenteditable>// Programmer.js
+import Person from './Person';
+
+export default class Programmer extends Person {
+  // ...
+}
+   </code></pre>
+                    </section>
+                    <section>
+                        <h3>Benannte Exporte</h3>
+   <pre><code class="javascript" contenteditable>// util.js
+export function displayInPage(text) {
+    document.body.innerHTML +=
+        `${text}<br>` ;
+}
+   </code></pre>
+   <pre class="fragment"><code class="javascript" contenteditable>import {displayInPage} from "./util";</code></pre>
+   <pre class="fragment"><code class="javascript" contenteditable>import {displayInPage as display} from "./util";</code></pre>
+   <pre class="fragment"><code class="javascript" contenteditable>import * as util from "./util";</code></pre>
+                    </section>
+
                 </section>
 			</div>
 

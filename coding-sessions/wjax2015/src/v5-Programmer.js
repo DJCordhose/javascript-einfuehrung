@@ -6,6 +6,9 @@ export default class Programmer extends Person {
         this.language = language;
     }
     code() {
-        return this.getName() + " codes in " + this.language;
+        return this.name + " codes in " + this.language;
+    }
+    get name() {
+        return `Programmer ${super.name}`;
     }
 }
