@@ -62,7 +62,7 @@
                     </p>
 
     <p><a target="_blank" href="https://jax.de/wjax2015/sessions/live-coding-javascript-sprachgrundlagen-fuer-java-entwickler-remastered-2015">https://jax.de/wjax2015/sessions/live-coding-javascript-sprachgrundlagen-fuer-java-entwickler-remastered-2015</a></p>
-    <p>Online-Version: <a href="http://bit.ly/1RcH4a2">http://bit.ly/1RcH4a2</a></p>
+    <p>Online-Version: <a href="http://bit.ly/1GjhnnF">http://bit.ly/1GjhnnF</a></p>
     <p>Code auf Github: <a href="https://github.com/DJCordhose/javascript-einfuehrung/tree/gh-pages">https://github.com/DJCordhose/javascript-einfuehrung/tree/gh-pages</a></p>
 </section>
         <section>
@@ -83,24 +83,6 @@
             </ul>
         </section>
 
-        <section>
-            <h2>Die Zukunft von JavaScript</h2>
-            <ul>
-                <li class="fragment">JavaScript gewinnt immer mehr an Bedeutung
-                <li class="fragment">Wer für den Browser entwickelt, kommt an JavaScript nicht vorbei
-                <li class="fragment">JavaScript hat allerdings viele Klippen
-                    <ul>
-                        <li class="fragment">keine deklarierte Typen
-                        <li class="fragment">Klassen und Vererbung umständlich
-                        <li class="fragment">keine lexikalischen Scopes
-                        <li class="fragment">Bindung von <em>this</em> kann verwirrend sein
-                        <li class="fragment">Kein Einheitliches Modul-Konzept
-                    </ul>
-                </li>
-                <li class="fragment">Die nächste Version von JavaScript wird diese Klippen entfernen (außer Typen)
-                <li class="fragment">Es gibt Ansätze für deklarierte Typen in JavaScript
-            </ul>
-        </section>
         <section>
             <h3>JavaScript vs ECMAScript 6 vs ES6 vs ECMAScript 2015 vs Projekt Harmony</h3>
             <ul>
@@ -186,8 +168,47 @@ console.log(programmer instanceof Person); // true</code></pre>
             </ul>
         </section>
                     <section>
-                        <h2>Neuerungen und Verbesserungen</h2>
+                        <h2>Weitere Neuerungen und Verbesserungen</h2>
                     </section>
+
+                    <section>
+                        <h3>Collections: Set</h3>
+   <pre><code class="javascript" contenteditable>const programmers = new Set();
+programmers.add(programmer);
+programmers.add(new Programmer('Oma', 88));
+</code></pre>
+
+<pre class="fragment"><code class="javascript" contenteditable>for (const p of programmers) {
+    p.log();
+}</code></pre>
+
+<pre class="fragment"><code class="javascript" contenteditable>const serialized = JSON.stringify([...programmers]);
+const deserialized = new Set(JSON.parse(serialized));</code></pre>
+                    </section>
+                    <section>
+                        <h3>Collections: Map</h3>
+    <pre><code class="javascript" contenteditable>const map = new Map();
+// keys are not restricted to strings
+const KEY1 = {name: 'KEY1'};
+map.set(KEY1, 1);
+</code></pre>
+
+<pre class="fragment"><code class="javascript" contenteditable>console.log(map.get(KEY1)); // 1
+console.log(map.has(KEY1)); // true
+console.log(map.size); // 1
+</code></pre>
+
+<pre class="fragment"><code class="javascript" contenteditable>// maps are iterable objects
+for (let e of map) {
+    console.log(e); // array consisting of key and value
+}
+//[ { name: 'KEY1' }, 1 ]
+</code></pre>
+
+<pre class="fragment"><code class="javascript" contenteditable>map.delete(KEY1);
+console.log(map.has(KEY1)); // false</code></pre>
+                    </section>
+
                     <section>
                         <h3>Template Strings</h3>
    <pre><code class="javascript" contenteditable>const person = 'Oma';
@@ -271,7 +292,7 @@ console.log(array2);
 </code></pre>
                     </section>
                     <section>
-                        <h3>Spread-Operator</h3>
+                        <h3>for..of</h3>
    <pre><code class="javascript" contenteditable>for (const e of array2) {
     console.log(e);
 }
@@ -346,93 +367,6 @@ export function displayInPage(text) {
    <pre class="fragment"><code class="javascript" contenteditable>import {displayInPage as display} from "./util";</code></pre>
    <pre class="fragment"><code class="javascript" contenteditable>import * as util from "./util";</code></pre>
                     </section>
-
-                    <section>
-                        <h2>Promises</h2>
-                    </section>
-                    <section>
-                        <h3>Erzeugen und asynchron reagieren</h3>
-   <pre class="fragment"><code class="javascript" contenteditable>const promise = new Promise(resolve =>
-    setTimeout(
-        () => resolve('Result from promise'),
-        1000)
-);
-</code></pre>
-    <pre><code class="javascript" contenteditable>promise1.then(value => console.log(value));
-// Output after 1 second: Result from promise
-</code></pre>
-                    </section>
-                    <section>
-                        <h3>Verkettete Ausführung</h3>
-   <pre><code class="javascript" contenteditable>const promise = new Promise(resolve =>
-    setTimeout(
-        () => resolve('Result from promise'),
-        1000)
-);
-</code></pre>
-    <pre class="fragment"><code class="javascript" contenteditable>// then returns a new promise
-const promise2 = promise.then(value => `${value} plus stuff`);</code></pre>
-    <pre class="fragment"><code class="javascript" contenteditable>promise2.then(value => console.log(value));
-// Output after 1 second: Result from promise plus stuff
-</code></pre>
-                    </section>
-                    <section>
-                        <h3>Catch-Klausel</h3>
-   <pre><code class="javascript" contenteditable>Promise
-    // creates and directly resolves promise
-    .resolve('Result from promise')
-    .then(x => {
-        // this will be printed
-        console.log(x);
-    })
-    .then(() => {
-        console.log('This will be printed');
-    })
-    // this will NOT be printed as no error occured
-    .catch(e => console.log('error: ', e))
-
-// Output:
-// Result from promise
-// This will be printed</code></pre>
-                    </section>
-                    <section>
-                        <h3>Catch-Klausel im Fehlerfall</h3>
-   <pre><code class="javascript" contenteditable>Promise
-    // creates and directly resolves promise
-    .resolve('Result from promise')
-    .then(x => {
-        // this will be printed
-        console.log(x);
-        throw Error('Something went wrong');
-    })
-    .then(() => {
-        console.log('This will NOT be printed');
-    })
-    // this will be printed
-    .catch(e => console.log('error: ', e))
-
-// Output:
-// Result from promise
-// error:  [Error: Something went wrong]</code></pre>
-                    </section>
-                    <section>
-                        <h3>Catch-Klausel bei Ablehnung</h3>
-   <pre><code class="javascript" contenteditable>Promise
-    // creates and directly rejects promise
-    .reject('Promise rejected')
-    .then(x => {
-        // this will NOT be printed
-        console.log(x);
-    })
-    .then(() => {
-        console.log('This will NOT be printed');
-    })
-    // this will be printed
-    .catch(e => console.log('error: ', e))
-
-// Output:
-// error:  Promise rejected</code></pre>
-                </section>
 
                         <section>
             <h1>Vielen Dank!</h1>
