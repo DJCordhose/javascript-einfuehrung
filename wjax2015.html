@@ -915,7 +915,7 @@ require(['js/modules/accounting'], function (Accounting) {
                 </section>
                 <section id="es6">
                     <section>
-                        <h2>ECMAScript 2015 aka 2015</h2>
+                        <h2>ECMAScript 2015 aka ES6</h2>
                     </section>
         <section>
             <h2>Die Zukunft von JavaScript</h2>
@@ -1036,7 +1036,7 @@ console.log(programmer instanceof Person); // true</code></pre>
                 </section>
                 <section>
                     <section>
-                        <h3>Neuerungen und Verbesserungen</h3>
+                        <h2>Neuerungen und Verbesserungen</h2>
                     </section>
                     <section>
                         <h3>Template Strings</h3>
@@ -1112,10 +1112,63 @@ console.log(person.name); // Oma
 console.log(person.toString()); // Oma
    </code></pre>
                     </section>
+                    <section>
+                        <h3>Spread-Operator</h3>
+   <pre><code class="javascript" contenteditable>const array1 = ['Olli', 'how are you'];
+const array2 = ['Hi', ...array1, '?'];
+console.log(array2);
+// => ["Hi", "Olli", "how are you", "?"]
+</code></pre>
+                    </section>
+                    <section>
+                        <h3>Spread-Operator</h3>
+   <pre><code class="javascript" contenteditable>for (const e of array2) {
+    console.log(e);
+}
+// Hi
+// Olli
+// how are you
+// ?
+</code></pre>
+                    </section>
+
+                </section>
+
+            <section>
+                <section>
+                    <h2>Verbesserungen bei Funktionen</h2>
+                </section>
+            <section>
+                <h3>Arrow Functions</h3>
+<pre><code class="javascript" contenteditable>const displayInPage = (text) => {
+   return document.body.innerHTML +=
+       `${text}<br>`;
+};</code></pre>
+<pre class="fragment"><code class="javascript" contenteditable>const displayInPage = text => document.body.innerHTML += `${text}<br>`;
+</code></pre>
+            </section>
+                <section>
+                    <h3>Default Parameter</h3>
+<pre><code class="javascript" contenteditable>const displayInPage = (text = '\n') =>
+    console.log(text);</code></pre>
+<pre class="fragment"><code class="javascript" contenteditable>displayInPage();
+</code></pre>
                 </section>
                 <section>
+                    <h3>Rest-Parameters</h3>
+<pre><code class="javascript" contenteditable>const displayInPage = (...texts) =>
+    texts.forEach(text => console.log(text));
+</code></pre>
+<pre class="fragment"><code class="javascript" contenteditable>displayInPage('Hi', 'Folks');
+// Hi
+// Folks
+</code></pre>
+                </section>
+            </section>
+
+                <section>
                     <section>
-                        <h3>Module, Importe und Exporte</h3>
+                        <h2>Module, Importe und Exporte</h2>
                     </section>
                     <section>
                         <h3>Export einer einzigen Klasse</h3>
@@ -1150,7 +1203,94 @@ export function displayInPage(text) {
                     </section>
 
                 </section>
-			</div>
+                <section>
+                    <section>
+                        <h2>Promises</h2>
+                    </section>
+                    <section>
+                        <h3>Erzeugen und asynchron reagieren</h3>
+   <pre class="fragment"><code class="javascript" contenteditable>const promise = new Promise(resolve =>
+    setTimeout(
+        () => resolve('Result from promise'),
+        1000)
+);
+</code></pre>
+    <pre><code class="javascript" contenteditable>promise1.then(value => console.log(value));
+// Output after 1 second: Result from promise
+</code></pre>
+                    </section>
+                    <section>
+                        <h3>Verkettete Ausführung</h3>
+   <pre><code class="javascript" contenteditable>const promise = new Promise(resolve =>
+    setTimeout(
+        () => resolve('Result from promise'),
+        1000)
+);
+</code></pre>
+    <pre class="fragment"><code class="javascript" contenteditable>// then returns a new promise
+const promise2 = promise.then(value => `${value} plus stuff`);</code></pre>
+    <pre class="fragment"><code class="javascript" contenteditable>promise2.then(value => console.log(value));
+// Output after 1 second: Result from promise plus stuff
+</code></pre>
+                    </section>
+                    <section>
+                        <h3>Catch-Klausel</h3>
+   <pre><code class="javascript" contenteditable>Promise
+    // creates and directly resolves promise
+    .resolve('Result from promise')
+    .then(x => {
+        // this will be printed
+        console.log(x);
+    })
+    .then(() => {
+        console.log('This will be printed');
+    })
+    // this will NOT be printed as no error occured
+    .catch(e => console.log('error: ', e))
+
+// Output:
+// Result from promise
+// This will be printed</code></pre>
+                    </section>
+                    <section>
+                        <h3>Catch-Klausel im Fehlerfall</h3>
+   <pre><code class="javascript" contenteditable>Promise
+    // creates and directly resolves promise
+    .resolve('Result from promise')
+    .then(x => {
+        // this will be printed
+        console.log(x);
+        throw Error('Something went wrong');
+    })
+    .then(() => {
+        console.log('This will NOT be printed');
+    })
+    // this will be printed
+    .catch(e => console.log('error: ', e))
+
+// Output:
+// Result from promise
+// error:  [Error: Something went wrong]</code></pre>
+                    </section>
+                    <section>
+                        <h3>Catch-Klausel bei Ablehnung</h3>
+   <pre><code class="javascript" contenteditable>Promise
+    // creates and directly rejects promise
+    .reject('Promise rejected')
+    .then(x => {
+        // this will NOT be printed
+        console.log(x);
+    })
+    .then(() => {
+        console.log('This will NOT be printed');
+    })
+    // this will be printed
+    .catch(e => console.log('error: ', e))
+
+// Output:
+// error:  Promise rejected</code></pre>
+                </section>
+            </div>
 
 		</div>
 
