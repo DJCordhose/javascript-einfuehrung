@@ -209,13 +209,7 @@ var s3 = s1 + s2;
 s3 === "Hallo, Olli's Oma";
 
 s3[1] === "a";
-s3.charAt(1) === s3[1];
-
-// kann viel schneller sein als +
-var builder = ["a", "b", "c"];
-var s4 = builder.join("");
-s4 === 'abc';
-</code></pre>
+s3.charAt(1) === s3[1];</code></pre>
                 </section>
 
                 <section>
@@ -248,26 +242,6 @@ for (var i in map) {
                     </ul>
                 </section>
                 </section>
-                <section>
-                        <h2>Übung 1: Basiswissen</h2>
-                        <ul>
-                            <li>Erzeuge ein Array mit Personen-Objekten mit mindestens den Eigenschaften
-                                <ul>
-                                    <li>Name
-                                    <li>Alter
-                                    <li>Geschlecht
-                                </ul>
-                            </li>
-                            <li>Gib alle Personen nacheinander aus
-                                <ul>
-                                    <li>Erzeuge aus den Daten einen string, der dann mit <code>console.log</code> ausgegeben wird
-                                    <li>Benutze dafür beide Varianten der <code>for</code>-Schleife
-                                </ul>
-                            </li>
-
-                        </ul>
-                    </section>
-
 
                 <section>
                     <section>
@@ -400,20 +374,6 @@ var result5 = summe(1,2,3);
 console.log(result5 === 6);</code></pre>
                     </section>
             </section>
-        <section>
-                    <h2>Arrays revisited</h2>
-    <pre><code class="javascript" contenteditable>var array = [1,2,3];
-
-array.forEach(function(e) { console.log(e); });
-
-array.filter(function(e) { return e > 2; });
-
-array.map(function(e) { return e + 100; });
-
-array.reduce(function(reduced, current) {
-    return reduced + current;
-}, 100);</code></pre>
-                </section>
 
                 <section>
                     <section>
@@ -508,40 +468,26 @@ try {
                     </section>
 
                 </section>
-
                 <section>
-                    <section>
-                        <h2>Übung 2: Mehr JavaScript Grundlagen</h2>
-                        <h4>Funktionen und Exceptions kennen lernen</h4>
-                        <p>Schreibe den Code der vorherigen Übung auf die Verwendung von Funktionen und Exceptions um</p>
-                    </section>
-                    <section>
-                        <h4>Schritt 1: Funktionen</h4>
-                        <ol>
-                            <li>Erstelle eine Funktion, die eine Person formatiert auf der Console ausgibt
-                            <li>Benutze <code>forEach</code> auf dem Array der Personen um dieselben Aufgaben wie in Übung 1 zu lösen
-                            <li>Du solltest hier keine for-Schleife mehr haben
+                    <h2>Übung: Basiswissen</h2>
+                    <ul>
+                        <li>Erzeuge ein Array mit Personen-Objekten mit mindestens den Eigenschaften
+                            <ul>
+                                <li>Name
+                                <li>Alter
+                                <li>Geschlecht
+                            </ul>
+                        </li>
+                        <li>Gib alle Personen nacheinander aus
+                            <ul>
+                                <li>Erstelle eine Funktion, die eine Person formatiert auf der Console ausgibt
+                                <li>Benutze dafür beide Varianten der <code>for</code>-Schleife
+                            </ul>
+                        </li>
 
-                        </ol>
-                    </section>
-                    <section>
-                        <h4>Schritt 2: Exceptions</h4>
-                        <ol>
-                            <li>Erweitere das Programm um eine Funktion zum überprüfen von Personen. Kann jemand über 200 Jahre alt sein?
-                            <li>Die Funktion soll im Fehlerfall eine Exception schmeißen
-                            <li>Erweitere dein Array um Methusalem oder eine andere geeignete Person
-                            <li>Rufe deine Check-Funktion nacheinander auf allen Elementen des Arrays auf
-                            <li>Umschließe den Aufruf mit <code>try...catch...finally</code> und gib eine gefangene Exception aus
-                        </ol>
-                    </section>
-                    <section>
-                        <h4>Schritt 3: Map/Reduce</h4>
-                        <ol>
-                            <li>Bilde das Array von Personen mittels <code>map</code> auf ihr Alter ab
-                            <li>Nutze <code>reduce</code>, um daraus das Durchschnittsalter aller Personen zu berechnen
-                        </ol>
-                    </section>
+                    </ul>
                 </section>
+
                         <section>
                 <section id="klassen">
                     <h2>Objekte, die Zweite</h2>
@@ -571,16 +517,6 @@ obj.log.call(this);
                     </ul>
                 </section>
 
-                <section>
-                    <h3>Singleton</h3>
-                    <ul>
-                        <li class="fragment">Wie gesehen, kann man in JavaScript Objekte auch ohne einen Typ erzeugen
-                        <li class="fragment">In klassenbasierten Sprachen muss man auch dafür einen Typ erzeugen und darauf achten, dass man nur eine Instanz erzeugen kann
-                        <li class="fragment">Das Pattern dazu heißt <code>Singleton</code>
-                        <li class="fragment">In JavaScript braucht man dieses Pattern nicht
-                        <li class="fragment">Manchmal möchte man allerdings auch mehrere Objekte mit dergleichen oder ähnlichen Struktur erzeugen
-                    </ul>
-                </section>
 
             </section>
             <section>
@@ -655,19 +591,6 @@ olli instanceof Person;
             <h4 class="fragment">Douglas Crockford schrieb das Buch "JavaScript the good parts"</h4>
             <h4 class="fragment">Die Zukunft von JavaScript gibt ihm allerdings nicht Recht (ECMAScript 2015 hat Klassen)</h4>
         </section>
-                    <section>
-                        <h2>Übung: Klassen</h2>
-                        <ol>
-                            <li>Schreibe eine Klasse für Person
-                                <ul>
-                                    <li>Lasse im Konstruktor die drei bekannten Parameter für <code>name</code>,
-                                        <code>alter</code> und <code>geschlecht</code> zu
-                                    <li>Mache aus allen Funktionen, die auf Personen arbeiten, Methoden
-                                </ul>
-                            </li>
-                            <li>Erzeuge ein Objekt vom Typ Person und rufe Methoden darauf auf
-                        </ol>
-                    </section>
                 <section>
                     <section>
                         <h3>Vererbung</h3>
@@ -711,40 +634,22 @@ olli instanceof Object;</code></pre>
 
                 </section>
 
-
                 <section>
-                                <section>
-                <h2>Vererbungshierarchien - revisited</h2>
-                <ul>
-                    <li class="fragment">Das verwirrendste Thema in JavaScript
-                    <li class="fragment">Alternative zu Klassen-Hierarchien sind Mixins
-                    <li class="fragment">Viele Bibliotheken nehmen sich dieses Themas an
-                    <li class="fragment">Bei Mixins werden alle Properties eines Prototypen in einen anderen hineinkopiert
-                </ul>
-            </section>
-        <section>
-            <h3>Beispiel</h3>
-                <pre><code class="javascript" contenteditable>function Programmer(name, language) {
-    Person.call(this, name);
-    this.language = language;
-}
-_.extend(Programmer.prototype, Person.prototype);
-// instead of
-//Programmer.prototype = Object.create(Person.prototype);
-
-Programmer.prototype.code = function() {
-    return this.getName() + " codes in " + this.language;
-};
-var programmer = new Programmer('Erna', 'JavaScript');
-console.log(programmer.getName()); // Erna
-console.log(programmer.code()); // Erna codes in JavaScript
-console.log(programmer instanceof Programmer); // true
-// true for Object.create, false for _.extend
-console.log(programmer instanceof Person);</code></pre>
-        </section>
+                <section>
+                    <h2>Übung: Klassen</h2>
+                    <ol>
+                        <li>Schreibe eine Klasse für Person
+                            <ul>
+                                <li>Lasse im Konstruktor die drei bekannten Parameter für <code>name</code>,
+                                    <code>alter</code> und <code>geschlecht</code> zu
+                                <li>Mache aus allen Funktionen, die auf Personen arbeiten, Methoden
+                            </ul>
+                        </li>
+                        <li>Erzeuge ein Objekt vom Typ Person und rufe Methoden darauf auf
+                    </ol>
                 </section>
                     <section>
-                        <h3>Übung: Vererbung</h3>
+                        <h3>Optionale Zusatz-Übung: Vererbung</h3>
                         <ol>
                             <li>Schreibe die Klasse Customer
                                 <ul>
@@ -759,6 +664,7 @@ console.log(programmer instanceof Person);</code></pre>
                             <li>Erzeuge mindestens ein Objekt vom Typ Customer und rufe Methoden darauf auf
                         </ol>
                     </section>
+                </section>
                 <section id="module">
                     <section>
                         <h2>Module</h2>
@@ -817,68 +723,6 @@ olli.name === 'Olli';
 // TypeError: undefined is not a function
 new humanresources.InternalStuff();</code></pre>
                 </section>
-
-                    <section>
-        <h3>Es gibt zwei grundsätzlich unterschiedliche Modul-Systeme als Defacto-Standard</h3>
-        <ul>
-            <li class="fragment">AMD
-                <ul>
-                    <li class="fragment">Module werden nicht blockierend und potentiell asynchron geladen
-                    <li class="fragment">Module werden über bower oder manuell installiert
-                    <li class="fragment">Verwendung auf Client-Seite
-                    <li class="fragment">Default-Implementierung: RequireJS
-                    <!--<li class="fragment">Für blockierendes Laden auf Server-Seite: r.js-->
-                </ul>
-            </li>
-            <li class="fragment">CommonJS
-                <ul>
-                    <li class="fragment">Module werden blockierend und synchron geladen
-                    <li class="fragment">Module werden über npm installiert
-                    <li class="fragment">Verwendung auf Server-Seite
-                    <!--<li class="fragment">Für nicht blockierendes Laden auf Client-Seite: Browserify-->
-                </ul>
-            </li>
-            <li class="fragment">Beide Modul-Systeme können über r.js / Browserify auch auf Server / Client benutzt werden
-        </ul>
-    </section>
-                    <section>
-        <h3>Definieren eines commonJS Moduls bei node</h3>
-<pre><code class="javascript" contenteditable>// in der Datei "eater.js"
-var eatThis = function (name) {
-    console.log(name);
-};
-exports.eatThis = eatThis;</code></pre>
-    </section>
-                    <section>
-                        <h3>Benutzen eines commonJS Moduls bei node</h3>
-<pre><code class="javascript" contenteditable>var eaterModule = require("eater");
-
-eaterModule.eatThis(name);
-</code></pre>
-                    </section>
-                                    <section>
-                        <h4>Definieren eines AMD Moduls mit requireJS</h4>
-<pre><code class="javascript" contenteditable>// Ein Modul pro Datei:
-// js/modules/accounting.js
-define(function () {
-    return {
-        getIdNumberForName: function(name) {
-            // ...
-        }
-    };
-});
-</code></pre>
-                    </section>
-                    <section>
-                        <h4>Benutzen eines AMD Moduls mit requireJS</h4>
-<pre><code class="javascript" contenteditable>
-require(['js/modules/accounting'], function (Accounting) {
-    var name = // ...
-    var id = Accounting.getIdNumberForName(name);
-    // ...
-});
-</code></pre>
-                    </section>
 
                 </section>
                 <section>
@@ -1007,7 +851,7 @@ console.log(programmer instanceof Person); // true</code></pre>
                         <li>Nutze <em>const</em> und <em>let</em> anstatt von <em>var</em>
                         <li>Clone dafür das Repository und folge den Anweisungen im Readme für die Installation: <a href="https://github.com/rauschma/webpack-es6-demo" target="_blank">https://github.com/rauschma/webpack-es6-demo</a></li>
                         <li>Entwickle deine Klassen in <em>es6</em> und passe dort <em>main.js</em> an
-                        <li>Als Alternative kannst du diese Übung auch mit <em>node 4</em> machen
+                        <li>Als Alternative kannst du diese Übung auch mit <em>node</em> oder <em>babel-node</em>machen
                         <li>Solltest du mit beiden Ansätzen Probleme habe, kannst du auch den Babel-Übersetzer in JsBin nutzen, der in jedem Browser funktioniert:
                             <a target="_blank" href="http://jsbin.com/jobaci/1/edit?js,console">http://jsbin.com/jobaci/1/edit?js,console</a>
 
