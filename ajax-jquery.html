@@ -106,9 +106,10 @@ JQuery
                         <li><a href="#funktionen">Funktionen</a>
                         <li><a href="#klassen">Objekte und Klassen</a>
                         <li><a href="#module">Module und Closures</a>
-                        <li><a href="#tests">Tests mit Jasmine</a>
+                        <!--<li><a href="#tests">Tests mit Jasmine</a>-->
                         <li><a href="#json">JSON und Ajax</a>
                         <li><a href="#jquery">jQuery</a>
+                        <li><a href="#advanved">Fortgeschrittene Themen</a>
                     </ul>
                 </section>
 
@@ -264,27 +265,6 @@ for (var i in map) {
                         <li><a href="https://developer.mozilla.org/en-US/docs/JavaScript/Guide/Statements">Referenz</a></li>
                     </ul>
                 </section>
-                </section>
-                                    <section>
-                <h3>hasOwnProperty (Iterieren über Map / Objekt)</h3>
-<pre><code class="javascript" contenteditable>function MyType() {
-    this.item1 = 'key1';
-    this.item2 = 'key2';
-}
-MyType.prototype.method1 = function () { }
-
-var map = new MyType();
-for (var key in map) {
-    if (map.hasOwnProperty(key)) {
-        console.log("Own property: " + key + ": " + map[key]);
-    } else {
-        console.log("Inherited property: " + key + ": " + map[key]);
-    }
-}
-// => Own property: item1: key1
-// => Own property: item2: key2
-// => Inherited property: method1: function () {}
-</code></pre>
                 </section>
                                         <section>
                         <h2>Übung 1: Basiswissen</h2>
@@ -748,6 +728,27 @@ olli instanceof Object;</code></pre>
                     </section>
 
                 </section>
+                <section>
+                <h3>hasOwnProperty (Iterieren über Map / Objekt)</h3>
+<pre><code class="javascript" contenteditable>function MyType() {
+    this.item1 = 'key1';
+    this.item2 = 'key2';
+}
+MyType.prototype.method1 = function () { }
+
+var map = new MyType();
+for (var key in map) {
+    if (map.hasOwnProperty(key)) {
+        console.log("Own property: " + key + ": " + map[key]);
+    } else {
+        console.log("Inherited property: " + key + ": " + map[key]);
+    }
+}
+// => Own property: item1: key1
+// => Own property: item2: key2
+// => Inherited property: method1: function () {}
+</code></pre>
+                </section>
 
 
                 <section>
@@ -780,6 +781,19 @@ console.log(programmer instanceof Programmer); // true
 // true for Object.create, false for _.extend
 console.log(programmer instanceof Person);</code></pre>
         </section>
+        <section>
+            <h2>Underscore</h2>
+            <ul>
+                <li class="fragment"><em>_.extend</em> eine von vielen Hilfsfunktionen der Bibliothek <em>Underscore</em>
+                <li class="fragment"><a target="_blank" href="http://underscorejs.org/">http://underscorejs.org/</a>
+                <li class="fragment">Versucht Unzulänglichkeiten der Sprache als Bibliothek auszugleichen
+                <li class="fragment">Ein Klassiker unter den JavaScript-Bibliotheken
+                <li class="fragment">wird typischerweise als <em>_</em> importiert (daher der Name)
+                <li class="fragment"><a target="_blank" href="https://lodash.com/">https://lodash.com/</a> ist die moderne Variante
+                <li class="fragment">Neues JavaScript-Versionen enthalten bereits eine ganze Reihe der Funktionen dieser Bibliotheken
+            </ul>
+        </section>
+
                 </section>
                     <section>
                         <h3>Übung: Vererbung</h3>
@@ -930,78 +944,78 @@ require(['js/modules/accounting'], function (Accounting) {
                         <li>Schreibe den aufrufenden Code so um, dass er mit den neuen Modulen arbeitet
                     </ol>
                 </section>
-            <section id="tests">
-                <section>
-					<h2>Testen mit Jasmine</h2>
-				</section>
+            <!--<section id="tests">-->
+                <!--<section>-->
+					<!--<h2>Testen mit Jasmine</h2>-->
+				<!--</section>-->
 
-                <section>
-                    <h3>Grundlagen Jasmine</h3>
-                    <ul>
-                        <li class="fragment">weit verbreitetes JavaScript Unit-Testframework
-                        <li class="fragment">Stil BDD orientiert, etwas anders als JUnit
-                        <li class="fragment">Ausführung im Browser
-                        <li class="fragment"><code>describe</code>: eine komplette Test-Suite
-                        <li class="fragment"><code>it</code>: ein einzelner Testfall
-                        <li class="fragment"><code>expect</code>: erwartetes Ergebnis ausdrücken
-                        <li class="fragment"><code>beforeEach / afterEach</code>: Vorbereitung / Aufräumarbeiten
-                        <li class="fragment"><a href="http://jasmine.github.io/2.0/introduction.html" target="_blank">Hauptseite Jasmine</a></li>
-                    </ul>
-                </section>
-                <section>
-                    <h3>Test-Suite</h3>
-                        <pre><code class="javascript" contenteditable>describe("Calculator", function () {
-    var data;
-    beforeEach(function () {
-        data = calculateMortgage(200000, 10, 7.5, 30);
-    });
-    afterEach(function() {
-    });
+                <!--<section>-->
+                    <!--<h3>Grundlagen Jasmine</h3>-->
+                    <!--<ul>-->
+                        <!--<li class="fragment">weit verbreitetes JavaScript Unit-Testframework-->
+                        <!--<li class="fragment">Stil BDD orientiert, etwas anders als JUnit-->
+                        <!--<li class="fragment">Ausführung im Browser-->
+                        <!--<li class="fragment"><code>describe</code>: eine komplette Test-Suite-->
+                        <!--<li class="fragment"><code>it</code>: ein einzelner Testfall-->
+                        <!--<li class="fragment"><code>expect</code>: erwartetes Ergebnis ausdrücken-->
+                        <!--<li class="fragment"><code>beforeEach / afterEach</code>: Vorbereitung / Aufräumarbeiten-->
+                        <!--<li class="fragment"><a href="http://jasmine.github.io/2.0/introduction.html" target="_blank">Hauptseite Jasmine</a></li>-->
+                    <!--</ul>-->
+                <!--</section>-->
+                <!--<section>-->
+                    <!--<h3>Test-Suite</h3>-->
+                        <!--<pre><code class="javascript" contenteditable>describe("Calculator", function () {-->
+    <!--var data;-->
+    <!--beforeEach(function () {-->
+        <!--data = calculateMortgage(200000, 10, 7.5, 30);-->
+    <!--});-->
+    <!--afterEach(function() {-->
+    <!--});-->
 
-    it("principle", function () {
-        expect(data.principle).toEqual(199990.00);
-    });
-    it("invalid", function () {
-        expect(function () {
-            calculateMortgage(1, 10, 7.5, 30);
-        }).toThrowError("You do not need any money");
-    });
-});</code></pre>
-                </section>
+    <!--it("principle", function () {-->
+        <!--expect(data.principle).toEqual(199990.00);-->
+    <!--});-->
+    <!--it("invalid", function () {-->
+        <!--expect(function () {-->
+            <!--calculateMortgage(1, 10, 7.5, 30);-->
+        <!--}).toThrowError("You do not need any money");-->
+    <!--});-->
+<!--});</code></pre>-->
+                <!--</section>-->
 
-                    <section>
-                        <h2>Beispiel-Test-Lauf</h2>
-                        <a target="_blank" href="code/jasmine-example/SpecRunner.html">Tests laufen lassen</a>
-                    </section>
-                <section>
-                    <h3>Spies (am Beispiel von Ext Js)</h3>
-                        <pre><code class="javascript" contenteditable>it('that click calls calculate method', function() {
-    spyOn(formCtrl, 'calculateMortgage');
-    var btn = formCtrl.getCalculateButton();
-    btn.fireEvent('click');
+                    <!--<section>-->
+                        <!--<h2>Beispiel-Test-Lauf</h2>-->
+                        <!--<a target="_blank" href="code/jasmine-example/SpecRunner.html">Tests laufen lassen</a>-->
+                    <!--</section>-->
+                <!--<section>-->
+                    <!--<h3>Spies (am Beispiel von Ext Js)</h3>-->
+                        <!--<pre><code class="javascript" contenteditable>it('that click calls calculate method', function() {-->
+    <!--spyOn(formCtrl, 'calculateMortgage');-->
+    <!--var btn = formCtrl.getCalculateButton();-->
+    <!--btn.fireEvent('click');-->
 
-    expect(formCtrl.calculateMortgage).toHaveBeenCalled();
-});
+    <!--expect(formCtrl.calculateMortgage).toHaveBeenCalled();-->
+<!--});-->
 
-it('that fired event is received', function() {
-    spyOn(formCtrl, 'openMortgageEditor');
+<!--it('that fired event is received', function() {-->
+    <!--spyOn(formCtrl, 'openMortgageEditor');-->
 
-    // main controller fires event that should be called by form controller
-    mainCtrl.fireEvent('edit', mortgage);
+    <!--// main controller fires event that should be called by form controller-->
+    <!--mainCtrl.fireEvent('edit', mortgage);-->
 
-    expect(formCtrl.openMortgageEditor).toHaveBeenCalledWith(mortgage);
-});</code></pre>
-                </section>
+    <!--expect(formCtrl.openMortgageEditor).toHaveBeenCalledWith(mortgage);-->
+<!--});</code></pre>-->
+                <!--</section>-->
 
-                </section>
-                <section>
-                    <h2>Übung: Teste deine eigenen Klassen</h2>
-                    <ul>
-                        <li>Nutze als Grundlage <a target="_blank" href="code/jasmine-Person/SpecRunner.html">code/jasmine-Person/</a>
-                        <li>Verschiebe deine Klassen/Module in den JavaScript-Bereich
-                        <li>Schreibe mit Jasmine sinnvolle Spezifikationen
-                    </ul>
-                </section>
+                <!--</section>-->
+                <!--<section>-->
+                    <!--<h2>Übung: Teste deine eigenen Klassen</h2>-->
+                    <!--<ul>-->
+                        <!--<li>Nutze als Grundlage <a target="_blank" href="code/jasmine-Person/SpecRunner.html">code/jasmine-Person/</a>-->
+                        <!--<li>Verschiebe deine Klassen/Module in den JavaScript-Bereich-->
+                        <!--<li>Schreibe mit Jasmine sinnvolle Spezifikationen-->
+                    <!--</ul>-->
+                <!--</section>-->
 <section id="json">
                 <section>
 					<h2>JSON/REST/AJAX</h2>
@@ -1288,6 +1302,307 @@ log.dump().show();</code></pre>
             </section>
 
         </section>
+
+                <section id="advanved">
+                    <h2>Fortgeschrittene Themen</h2>
+                    </section>
+                <section>
+                    <section>
+                        <h2>this</h2>
+                        <p class="fragment"><code>this</code> wird in JavaScript dynamisch bei einem Aufruf einer Funktion gebunden und kann in der Funktion benutzt werden.</p>
+                        <p class="fragment">Entscheidend für die Bindung von <code>this</code> ist Kontext des Aufrufs.</p>
+                    </section>
+                    <section>
+                        <h3>Regeln für das Binden von this</h3>
+                        <ol>
+                            <li class="fragment"><em>Im globalen Scope</em>: <code>this</code> ist das globale Objekt (im Browser ist dies <code>Window</code>)
+                            <li class="fragment"><em>Konstruktoraufruf mit <code>new</code></em>: <code>this</code> ist das neu erzeugte Objekt
+                            <li class="fragment"><em>Direkter Methodenaufruf</em>: <code>this</code> ist das Objekt über das sie aufgerufen wurde
+                            oder <code>undefined</code> (bzw. das globale Objekt wenn nicht im <code>strict mode</code>), wenn keins angegeben ist
+                            <li class="fragment"><em>Methodenaufruf über <code>call/apply</code></em>: <code>this</code> ist der erste Parameter von <code>call</code> oder <code>apply</code>
+                            <li class="fragment"><em>Binden von this über <code>bind</code></em>: <code>this</code> wird als erster Parameter von <code>bind</code> vor dem Aufruf gebunden
+                        </ol>
+                    </section>
+                    <section>
+                        <h3>Beispiel globaler Scope</h3>
+                        <pre><code class="javascript" contenteditable>
+var person = 'Olli';
+this.person === 'Olli';
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h3>Beispiel Konstruktoraufruf mit <code>new</code></h3>
+                        <pre><code class="javascript" contenteditable>
+var global;
+function Person(name) {
+    this.name = name;
+    global = this;
+    // return this; // implicite
+}
+
+var olli = new Person('Olli');
+olli === global;
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h3>Direkter Methodenaufruf</h3>
+<pre><code class="javascript" contenteditable>var olli = {
+    personName: 'Olli',
+    getName : function() {
+        console.log(this);
+        return this.personName;
+    }
+};
+
+console.log(olli.getName());
+// Olli
+var globalGetName = olli.getName;
+console.log(globalGetName());
+// undefined</code></pre>
+                    </section>
+
+                <section>
+                    <h3>Methodenaufruf über <code>call/apply</code></h3>
+                        <pre><code class="javascript" contenteditable>
+var olli = {
+    firstName: 'Olli',
+    fullName : function(title, lastName) {
+        return title + " " + this.firstName + " " + lastName ;
+    }
+};
+
+var func = olli.fullName;
+var fullName1 = func.call(olli, "König", "Zeigermann");
+fullName1 === "König Olli Zeigermann";
+var fullName2 = func.apply(olli, ["König", "Zeigermann"]);
+fullName2 === "König Olli Zeigermann";
+                        </code></pre>
+                </section>
+
+                <section>
+                    <h3>Binden von this über <code>bind</code></h3>
+                        <pre><code class="javascript" contenteditable>var oma = {
+    name: "Oma"
+};
+function fullName(title, lastName) {
+    return title + " " + this.name + " " + lastName;
+}
+
+var bound1 = fullName.bind(oma); // this an oma binden
+var fullName1 = bound1("Frau", "Torbogen");
+console.log(fullName1);
+// => Frau Oma Torbogen</code></pre>
+                </section>
+            </section>
+                <section>
+                    <section>
+                        <h2>Übung: Callbacks</h2>
+                        <ol>
+                            <li>Füge dem Typ <code>Person</code> eine Methode hinzu, mit der man einen Callback
+                                registrieren kann
+                                <ul>
+                                    <li>Diese Callback-Funktion soll immer aufgerufen werden, wenn jemand den Namen
+                                        einer Person abfragt
+                                </ul>
+                            </li>
+                            <li>Registriere eine einfache Funktion und überprüfe, dass dein Code funktioniert
+                        </ol>
+                    </section>
+                    <section>
+                        <h2>Optionale Zusatzübung: Callbacks mit Scope</h2>
+                        <ol>
+                            <li>Erzeuge ein neues Objekt (Typ egal) und registriere eine Methode dieses Objekts als
+                                Callback
+                                <ul>
+                                    <li>Was musst du beachten?
+                                    <li>Welche Möglichkeiten gibt es, eine solche Methode sicher als Callback einsetzen
+                                        zu können?
+                                </ul>
+                            <li>Wieso gibt es solche Probleme nicht in Java?
+                        </ol>
+                    </section>
+                </section>
+                <section>
+                    <h3>Es gibt noch mehr #1: Reguläre Ausdrücke</h3>
+                    <ul>
+                        <li class="fragment">Nativ in JavaScript eingebaut</li>
+                        <pre class="fragment"><code class="javascript" contenteditable>// returns matched string, matched index, string to be matched
+console.log(/ab+c/.exec('abc'));
+// => [ 'abc', index: 0, input: 'abc' ]</code></pre>
+
+<pre class="fragment"><code class="javascript" contenteditable>// no match
+console.log(/ab+c/.exec('ac'));
+// => null</code></pre>
+                    </ul>
+                </section>
+                <section>
+                    <section>
+                        <h3>Es gibt noch mehr #2: Object.create</h3>
+                        <ul>
+                            <li class="fragment">Erzeugt ein neues Objekt mit einem bestimmten Prototypen und einem Satz
+                                von Properties
+                            </li>
+                            <li class="fragment">In ECMAScript 5 eingeführt (geht nicht in IE8)</li>
+                            <li class="fragment">Kommt mit einer völlig neuen Idee von Properties, z.B.
+                                <ul>
+                                    <li class="fragment">Unveränderlichkeit</li>
+                                    <li class="fragment">getter / setter</li>
+                                </ul>
+                            </li>
+                            <li class="fragment"><code>Object.defineProperties</code> nimmt dieselbe
+                                Property-Konfiguration
+                            </li>
+                            <li class="fragment">Hat sich nie auf breiter Ebene durchgesetzt, außer für Vererbung</li>
+                            <li class="fragment"><a
+                                    href="https://developer.mozilla.org/en-US/docs/JavaScript/Reference/Global_Objects/Object/defineProperties"
+                                    target="_blank">Referenz auf MDN</a>
+                        </ul>
+                    </section>
+                    <section>
+                        <h4>Beispiel Object.create</h4>
+    <pre><code class="javascript" contenteditable>var o = Object.create({}, { p: { value: 42} })
+
+// not writable
+o.p = 43;
+// => TypeError: Cannot assign to read only property 'p'
+
+// not enumerable
+console.log(Object.keys(o));
+// => []
+
+// not configurable
+delete o.p;
+// => TypeError: Cannot delete property 'p'
+</code></pre>
+                    </section>
+                    <section>
+                        <h4>Erzeugen eines "normalen" Properties</h4>
+    <pre><code class="javascript" contenteditable>var o2 = Object.create({}, { p: {
+    value: 42,
+    writable: true,
+    enumerable: true,
+    configurable: true
+}
+});
+
+// writable
+o2.p = 43;
+
+// enumerable
+console.log(Object.keys(o2));
+// => [ 'p' ]
+
+// configurable
+delete o2.p;
+</code></pre>
+                    </section>
+                    <section>
+                        <h4>getter / setter</h4>
+    <pre><code class="javascript" contenteditable>var o3 = Object.create({}, { p: {
+    get: function () {
+        console.log("Getting p for " + JSON.stringify(this));
+        return this._p;
+    },
+    set: function (value) {
+        console.log("Setting p to " + value + " for " + JSON.stringify(this));
+        this._p = value;
+    }
+}
+});
+
+o3.p = 10;
+// => Setting p to 10 for {}
+console.log(o3.p);
+// => Getting p for {"_p":10}
+// => 10
+</code></pre>
+                    </section>
+                    <section>
+                        <h3>Weitere statische Methoden auf Object</h3>
+                        <ul>
+                            <li class="fragment"><code>Object.keys(obj)</code> gibt ein Array aller aufzählbaren, eigenen Properties
+                            <li class="fragment"><code>Object.freeze(obj)</code> macht ein Objekt unveränderlich (shallow)
+                            <li class="fragment"><code>Object.seal(obj)</code> wie <code>freeze</code>, allerdings können bestehende Properties verändert werden
+                        </ul>
+                    </section>
+                    <section>
+                        <h4>Object.freeze</h4>
+    <pre><code class="javascript" contenteditable>var obj = {
+    a: 10
+};
+
+Object.freeze(obj);
+
+console.log(Object.isFrozen(obj));
+// => true
+
+obj.a = 20;
+// => TypeError: Cannot assign to read only property
+
+obj.b = 10;
+// => TypeError: Can't add property b, object is not extensible
+</code></pre>
+                    </section>
+                    <section>
+                        <h4>Object.seal</h4>
+    <pre><code class="javascript" contenteditable>var obj2 = {
+    a: 10
+};
+
+Object.seal(obj2);
+
+console.log(Object.isSealed(obj2));
+// => true
+
+// cool
+obj2.a = 20;
+
+obj2.b = 10;
+// => TypeError: Can't add property b, object is not extensible
+</code></pre>
+                    </section>
+                </section>
+            <section>
+                <section>
+                    <h2>Es gibt noch mehr #3: Trickkiste</h2>
+                </section>
+                <section>
+                    <h3>Aus <code>arguments</code> ein Objekt machen</h3>
+    <pre><code class="javascript" contenteditable>var args = Array.prototype.slice.call(arguments);</code></pre>
+                </section>
+                <section>
+                    <h3><code>this</code> in einer Closure halten und deterministisch machen</h3>
+                    <pre><code class="javascript" contenteditable>$("#log").click(function(event) {
+    // manchmal sieht man hier auch self oder _this
+    var that = this;
+    setTimeout(function() {
+        $(that).show();
+    }, 1000);
+});
+</code></pre>
+                </section>
+                <section>
+                    <h3>Konstruktor-Aufruf ohne <code>new</code> verhindern</h3>
+                    <pre><code class="javascript" contenteditable>function MyType() {
+    if (!(this instanceof MyType)) {
+        throw new Error("Call constructor using new");
+    }
+}
+function SubType() {
+    if (!(this instanceof SubType)) {
+        throw new Error("Call constructor using new");
+    }
+    MyType.call(this);
+}
+SubType.prototype = new MyType();
+
+var t1 = new MyType(); // cool
+var t2 = MyType(); // not cool
+var s1 = new SubType(); // cool
+var s2 = SubType(); // not cool</code></pre>
+                </section>
+            </section>
+
 			</div>
 
 		</div>
