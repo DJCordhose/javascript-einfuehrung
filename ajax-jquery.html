@@ -20,14 +20,14 @@
 
 
 		<!-- Code syntax highlighting -->
-		<!--<link rel="stylesheet" href="reveal.js/lib/css/zenburn.css">-->
+		<link rel="stylesheet" href="reveal.js/lib/css/zenburn.css">
 		<style>
-			pre code {
-				display: block;
-				padding: 0.5em;
-				background: #FFFFFF !important;
-				color: #000000 !important;
-			}
+			/*pre code {*/
+				/*display: block;*/
+				/*padding: 0.5em;*/
+				/*background: #FFFFFF !important;*/
+				/*color: #000000 !important;*/
+			/*}*/
 			.right-img {
 				margin-left: 10px !important;
 				float: right;
@@ -417,6 +417,11 @@ console.log(result2 === null);</code></pre>
 var result5 = summe(1,2,3);
 console.log(result5 === 6);</code></pre>
                     </section>
+                <section>
+                    <h3>Aus <code>arguments</code> ein Objekt machen</h3>
+    <pre><code class="javascript" contenteditable>var args = Array.prototype.slice.call(arguments);</code></pre>
+                </section>
+
             </section>
         <section>
                     <h2>Arrays revisited</h2>
@@ -525,6 +530,18 @@ try {
     </code></pre>
                     </section>
 
+                <section>
+                    <h3>Reguläre Ausdrücke</h3>
+                    <ul>
+                        <li class="fragment">Nativ in JavaScript eingebaut</li>
+                        <pre class="fragment"><code class="javascript" contenteditable>// returns matched string, matched index, string to be matched
+console.log(/ab+c/.exec('abc'));
+// => [ 'abc', index: 0, input: 'abc' ]</code></pre>
+
+<pre class="fragment"><code class="javascript" contenteditable>// no match
+console.log(/ab+c/.exec('ac'));
+// => null</code></pre>
+                    </ul>
                 </section>
 
                 <section>
@@ -1217,7 +1234,7 @@ console.log(s);
                     <h3>Manipulation</h3>
                     <ul>
                         <li class="fragment">Operieren auf der Ausgabe der Selektoren
-                        <li class="fragment">anzeigen <code>show()</code> / verbergen <code>hide()</code>
+                        <li class="fragment">anzeigen <code>show()</code> / verbergen <code>hide()</code> / umschalten <code>toggle()</code>
                         <li class="fragment">Wert des ersten Elements holen <code>val()</code> - für Inputs in Form
                         <li class="fragment">Wert des ersten Elements setzen <code>val(value)</code> - für Outputs in Form
                         <li class="fragment">Z.B.
@@ -1232,10 +1249,27 @@ console.log(s);
                         <li class="fragment"><code>on(eventName, handler)</code> Listener registrieren
                         <li class="fragment">Events z.B. <code>click</code> oder <code>submit</code>
                         <li class="fragment">Z.B.
-                    <pre class="fragment"><code class="javascript" contenteditable>var log = $("#log");
-log.on('click', function(event) { // ... });</code></pre>
+                    <pre><code class="javascript" contenteditable>var log = $("#log");
+log.on('click', function(event) {
+  // this is bound to the DOM element that caused the click
+  // ...
+});</code></pre>
+                        <li class="fragment">Listener für komplettes Laden der Seite
+                    <pre><code class="javascript" contenteditable>$(document).ready(function () { // ... });</code></pre>
+
                     </ul>
                 </section>
+                    </section>
+                <section>
+                    <h2>Übung: Manipulation und Listener</h2>
+                    <ul>
+                        <li>Ein Text soll durch einen Click ein bzw. ausgeblendet werden
+                        <li>Nutze diese
+                            <a target="_blank" href="code/show-hide-jquery-basis.html">HTML-Seite als Grundlage</a>
+                        <li>Führe die dort beschriebenen Anweisungen aus
+                    </ul>
+                </section>
+                <section>
                     <section>
                         <h2>Remoting</h2>
                         <p class="fragment">Rückgabe beliebig, JSON, Text, HTML, als String</p>
@@ -1248,12 +1282,14 @@ log.on('click', function(event) { // ... });</code></pre>
 });</code></pre>
                         <p class="fragment"><a href="http://api.jquery.com/jQuery.get/" target="_blank">Referenz</a></p>
                     </section>
+                </section>
                     <section>
                         <h2>Übung: AJAX-Call mit jQuery</h2>
                         <p>Baue deinen reinen JavaScript-AJAX-Call auf jQuery um</p>
                         <pre><code class="html" contenteditable>https://mortgage-demo.appspot.com/mortgage_calculator/rs/200000/10/7.5/30</code></pre>
                     </section>
 
+                <section>
                 <section>
                     <h3>Tiefere Einsichten in jQuery</h3>
                     <ul>
@@ -1300,12 +1336,7 @@ log.dump().show();</code></pre>
                 <p class="fragment"><a href="http://learn.jquery.com/plugins/basic-plugin-creation/">Tutorial jQuery-Plugins</a></p>
 
             </section>
-
-        </section>
-
-                <section id="advanved">
-                    <h2>Fortgeschrittene Themen</h2>
-                    </section>
+                </section>
                 <section>
                     <section>
                         <h2>this</h2>
@@ -1393,51 +1424,34 @@ var fullName1 = bound1("Frau", "Torbogen");
 console.log(fullName1);
 // => Frau Oma Torbogen</code></pre>
                 </section>
-            </section>
-                <section>
-                    <section>
-                        <h2>Übung: Callbacks</h2>
-                        <ol>
-                            <li>Füge dem Typ <code>Person</code> eine Methode hinzu, mit der man einen Callback
-                                registrieren kann
-                                <ul>
-                                    <li>Diese Callback-Funktion soll immer aufgerufen werden, wenn jemand den Namen
-                                        einer Person abfragt
-                                </ul>
-                            </li>
-                            <li>Registriere eine einfache Funktion und überprüfe, dass dein Code funktioniert
-                        </ol>
-                    </section>
-                    <section>
-                        <h2>Optionale Zusatzübung: Callbacks mit Scope</h2>
-                        <ol>
-                            <li>Erzeuge ein neues Objekt (Typ egal) und registriere eine Methode dieses Objekts als
-                                Callback
-                                <ul>
-                                    <li>Was musst du beachten?
-                                    <li>Welche Möglichkeiten gibt es, eine solche Methode sicher als Callback einsetzen
-                                        zu können?
-                                </ul>
-                            <li>Wieso gibt es solche Probleme nicht in Java?
-                        </ol>
-                    </section>
+            <section>
+                    <h3><code>this</code> in einer Closure halten und deterministisch machen</h3>
+                    <pre><code class="javascript" contenteditable>$("#log").click(function(event) {
+    // manchmal sieht man hier auch self oder _this
+    var that = this;
+    setTimeout(function() {
+        $(that).show();
+    }, 1000);
+});
+</code></pre>
+                </section>
                 </section>
                 <section>
-                    <h3>Es gibt noch mehr #1: Reguläre Ausdrücke</h3>
+                    <h2>Übung: Callbacks und this</h2>
                     <ul>
-                        <li class="fragment">Nativ in JavaScript eingebaut</li>
-                        <pre class="fragment"><code class="javascript" contenteditable>// returns matched string, matched index, string to be matched
-console.log(/ab+c/.exec('abc'));
-// => [ 'abc', index: 0, input: 'abc' ]</code></pre>
-
-<pre class="fragment"><code class="javascript" contenteditable>// no match
-console.log(/ab+c/.exec('ac'));
-// => null</code></pre>
+                        <li>Lasse einen Knopf verschwinden und nach einer Sekunde wieder erscheinen
+                        <li>Nutze dafür <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/setTimeout">setTimeout</a>
+                        <li>Starte mit dieser
+                            <a target="_blank" href="code/callback-query-basis.html">HTML-Seite</a>
                     </ul>
                 </section>
-                <section>
+
+                <section id="advanved">
                     <section>
-                        <h3>Es gibt noch mehr #2: Object.create</h3>
+                        <h2>Fortgeschrittene Themen</h2>
+                    </section>
+                    <section>
+                        <h3>Object.create</h3>
                         <ul>
                             <li class="fragment">Erzeugt ein neues Objekt mit einem bestimmten Prototypen und einem Satz
                                 von Properties
@@ -1562,46 +1576,6 @@ obj2.b = 10;
 </code></pre>
                     </section>
                 </section>
-            <section>
-                <section>
-                    <h2>Es gibt noch mehr #3: Trickkiste</h2>
-                </section>
-                <section>
-                    <h3>Aus <code>arguments</code> ein Objekt machen</h3>
-    <pre><code class="javascript" contenteditable>var args = Array.prototype.slice.call(arguments);</code></pre>
-                </section>
-                <section>
-                    <h3><code>this</code> in einer Closure halten und deterministisch machen</h3>
-                    <pre><code class="javascript" contenteditable>$("#log").click(function(event) {
-    // manchmal sieht man hier auch self oder _this
-    var that = this;
-    setTimeout(function() {
-        $(that).show();
-    }, 1000);
-});
-</code></pre>
-                </section>
-                <section>
-                    <h3>Konstruktor-Aufruf ohne <code>new</code> verhindern</h3>
-                    <pre><code class="javascript" contenteditable>function MyType() {
-    if (!(this instanceof MyType)) {
-        throw new Error("Call constructor using new");
-    }
-}
-function SubType() {
-    if (!(this instanceof SubType)) {
-        throw new Error("Call constructor using new");
-    }
-    MyType.call(this);
-}
-SubType.prototype = new MyType();
-
-var t1 = new MyType(); // cool
-var t2 = MyType(); // not cool
-var s1 = new SubType(); // cool
-var s2 = SubType(); // not cool</code></pre>
-                </section>
-            </section>
 
 			</div>
 

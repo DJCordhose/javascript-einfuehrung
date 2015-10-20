@@ -19,12 +19,12 @@
 		<!-- Code syntax highlighting -->
 		<link rel="stylesheet" href="reveal.js/lib/css/zenburn.css">
 		<style>
-			pre code {
-				display: block;
-				padding: 0.5em;
-				background: #FFFFFF !important;
-				color: #000000 !important;
-			}
+			/*pre code {*/
+				/*display: block;*/
+				/*padding: 0.5em;*/
+				/*background: #FFFFFF !important;*/
+				/*color: #000000 !important;*/
+			/*}*/
 			.right-img {
 				margin-left: 10px !important;
 				float: right;
@@ -248,28 +248,7 @@ for (var i in map) {
                     </ul>
                 </section>
                 </section>
-                                    <section>
-                <h3>hasOwnProperty (Iterieren über Map / Objekt)</h3>
-<pre><code class="javascript" contenteditable>function MyType() {
-    this.item1 = 'key1';
-    this.item2 = 'key2';
-}
-MyType.prototype.method1 = function () { }
-
-var map = new MyType();
-for (var key in map) {
-    if (map.hasOwnProperty(key)) {
-        console.log("Own property: " + key + ": " + map[key]);
-    } else {
-        console.log("Inherited property: " + key + ": " + map[key]);
-    }
-}
-// => Own property: item1: key1
-// => Own property: item2: key2
-// => Inherited property: method1: function () {}
-</code></pre>
-                </section>
-                                        <section>
+                <section>
                         <h2>Übung 1: Basiswissen</h2>
                         <ul>
                             <li>Erzeuge ein Array mit Personen-Objekten mit mindestens den Eigenschaften
@@ -290,7 +269,7 @@ for (var key in map) {
                     </section>
 
 
-                                    <section>
+                <section>
                     <section>
                         <h2>Strikter Modus in ECMAScript 5</h2>
                         <ul>
