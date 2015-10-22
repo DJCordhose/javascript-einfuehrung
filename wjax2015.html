@@ -158,8 +158,6 @@ console.log(map.feld1); // Huhu
 console.log(map["zweites$Feld"]); // Auch sowas geht!
 
 map.hund = "Ganz neu geht auch";
-map.f = function() { return "Aha!" };
-
 delete map.hund; // löschen
 console.log(map.hund); // undefined
 </code></pre>
@@ -387,9 +385,11 @@ obj.log(); // 10
                     <ul>
                     <li class="fragment">call und apply sind Methoden auf Funktionen
                     <li class="fragment">Erlauben das freie Binden an einen anderen Kontext
-    <li class="fragment"><pre><code class="javascript" contenteditable>var field = "Reingelegt";
-obj.log.call(this);
-// => ???
+    <li class="fragment"><pre><code class="javascript" contenteditable>var obj2 = {
+    field: 20
+};
+obj.log.call(obj2);
+// => 20
 </code></pre>
                     </ul>
                 </section>
@@ -596,7 +596,7 @@ console.log(programmer instanceof Person); // true</code></pre>
                         <li>Nutze <em>const</em> und <em>let</em> anstatt von <em>var</em>
                         <li>Clone dafür das Repository und folge den Anweisungen im Readme für die Installation: <a href="https://github.com/rauschma/webpack-es6-demo" target="_blank">https://github.com/rauschma/webpack-es6-demo</a></li>
                         <li>Entwickle deine Klassen in <em>es6</em> und passe dort <em>main.js</em> an
-                        <li>Als Alternative kannst du diese Übung auch mit <em>node</em> oder <em>babel-node</em>machen
+                        <li>Als Alternative kannst du diese Übung auch mit <em>node</em> oder <em>babel-node</em> machen
                         <li>Solltest du mit beiden Ansätzen Probleme habe, kannst du auch den Babel-Übersetzer in JsBin nutzen, der in jedem Browser funktioniert:
                             <a target="_blank" href="http://jsbin.com/jobaci/1/edit?js,console">http://jsbin.com/jobaci/1/edit?js,console</a>
 
