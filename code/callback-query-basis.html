@@ -8,14 +8,68 @@
 <body>
 <form>
     <input id="callback" type="button" value="Click mich">
+
     <p></p>
 </form>
 <script>
-    $(document).ready(function () {
-        $('#callback').click(function () {
-            $('p').html("Geklicked");
+
+    try {
+        try {
+            var sehrGrossSollAmEndeAufNull = [];
+
+            function olli() {
+//            throw false;
+                throw new Error('hat nicht geklappt');
+//            jfhjsdhfjdshfsd;
+            }
+
+            olli();
+        } finally {
+            sehrGrossSollAmEndeAufNull = null;
+            console.log('Immer');
+        }
+        console.log('Nicht Immer');
+
+        console.log('Hie geht es weiter');
+
+
+        function Person(name) {
+            this.name = name;
+        }
+
+        Person.prototype.setName = function (name) {
+            this.name = name;
+        };
+        Person.prototype.resetName = function () {
+            console.log('Name resettet');
+            this.name = 'Opa';
+            console.log(this);
+        };
+
+        var oma = new Person('Oma');
+
+        $(document).ready(function () {
+
+//        var result = oma.resetName.call(oma);
+//        var result = oma.resetName();
+            $('#callback').click(function () {
+                console.log(this);
+                oma.resetName();
+            });
         });
-    });
+    } catch (meinFehler) {
+        try {
+            if (meinFehler instanceof ReferenceError) {
+                console.log('ReferenceError gefunden');
+                console.log(meinFehler);
+            }
+        } catch (fehler) {
+
+        }
+
+    }
+
+
 </script>
 </body>
 </html>

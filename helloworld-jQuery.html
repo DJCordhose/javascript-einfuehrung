@@ -4,11 +4,79 @@
     <title>Hello World jQuery!</title>
 </head>
 <body>
-<div id="log"></div>
+<table>
+    <thead>
+    <tr>
+        <th>Betrag</th>
+        <th>Buchungsdatum</th>
+        <th>Verwendungszweck</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>1.2</td>
+        <td>10.10.2015</td>
+        <td>VWZ1 <span>Aber, hallo</span></td>
+    </tr>
+    <tr>
+        <td>2.2</td>
+        <td>11.10.2015</td>
+        <td>VWZ2</td>
+    </tr>
+    </tbody>
+</table>
 <script src="lib/jquery-2.1.1.js"></script>
 <script>
     $(document).ready(function () {
-        $("#log").html("<h1>Hello World</h1>");
+        var buchungsDatumSpalte;
+        var betragSpalte;
+        var verwendungszweckSpalte;
+        var umsaetze = [];
+
+        $('th').each(function (index, element) {
+            var text = $(element).text();
+            switch (text) {
+                case 'Buchungsdatum':
+                    buchungsDatumSpalte = index;
+                    break;
+                case 'Betrag':
+                    betragSpalte = index;
+                    break;
+                case 'Verwendungszweck':
+                    verwendungszweckSpalte = index;
+                    break;
+            }
+        });
+        $('tbody tr').each(function (index, element) {
+            var tds = $('td', element);
+            var children = $(tds[verwendungszweckSpalte]).children();
+            console.log(children);
+            var umsatz = {
+                buchungsDatum: $(tds[buchungsDatumSpalte]).text(),
+                betrag: $(tds[betragSpalte]).text(),
+                verwendungszweck: $(tds[verwendungszweckSpalte]).text()
+            };
+            var match = /^(\d{1,2})\.(\d{1,2})\.(\d{4}|\d{2})$/.exec(umsatz.buchungsDatum);
+            if (match !== null) {
+                var hbci = match[3] + match[2] + match[1];
+                umsaetze.push(umsatz);
+            }
+        });
+        var result = JSON.stringify(umsaetze);
+        console.log(result);
+
+//        var umsatz1 = {
+//            buchungsdatum: '10.10.2015',
+//            betrag: 1.2,
+//            verwendungszweck: 'VWZ1'
+//        };
+//        var umsatz2 = {
+//            buchungsdatum: '11.10.2015',
+//            betrag: 2.2,
+//            verwendungszweck: 'VWZ2'
+//        };
+//        var umsaetze = [umsatz1, umsatz2];
+
     });
 </script>
 </body>
