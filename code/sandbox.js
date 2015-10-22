@@ -1,29 +1,17 @@
 'use strict';
 
-//var callBackModule = {};
-(function () {
-    var f3 = function () {
-        console.log('Ich mach auch was tolles, kann aber von außerhalb der Library aufgerufen werden');
-    };
-
-    var f2 = function (handler) {
-        f3();
-        handler();
-    };
-
-    // export
-    window.callBackModule = {
-        callbackHandler: f2
-    };
-    //return {
-    //    callbackHandler: f2
-    //};
-
-}());
-
-var callback = function () {
-    console.log('Huhu');
+var obj = {
+    field: 10,
+    log: function(p1, p2) {
+        console.log(this.field);
+        console.log(p1);
+        console.log(p2);
+    }
 };
 
-callBackModule.callbackHandler(callback);
-console.log(typeof f3);
+//obj.log('p1', 'p2'); // 10
+
+var obj2 = { field: 20};
+
+obj.log.apply(obj2, ['p1', 'p2']);
+obj.log.call(obj2, 'p1', 'p2');
