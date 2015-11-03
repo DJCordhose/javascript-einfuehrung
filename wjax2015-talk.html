@@ -210,44 +210,6 @@ export function displayInPage(text) {
                     </section>
 
                     <section>
-                        <h3>Collections: Set</h3>
-   <pre><code class="javascript" contenteditable>const programmers = new Set();
-programmers.add(programmer);
-programmers.add(new Programmer('Oma', 88));
-</code></pre>
-
-<pre class="fragment"><code class="javascript" contenteditable>for (const p of programmers) {
-    p.log();
-}</code></pre>
-
-<pre class="fragment"><code class="javascript" contenteditable>const serialized = JSON.stringify([...programmers]);
-const deserialized = new Set(JSON.parse(serialized));</code></pre>
-                    </section>
-                    <section>
-                        <h3>Collections: Map</h3>
-    <pre><code class="javascript" contenteditable>const map = new Map();
-// keys are not restricted to strings
-const KEY1 = {name: 'KEY1'};
-map.set(KEY1, 1);
-</code></pre>
-
-<pre class="fragment"><code class="javascript" contenteditable>console.log(map.get(KEY1)); // 1
-console.log(map.has(KEY1)); // true
-console.log(map.size); // 1
-</code></pre>
-
-<pre class="fragment"><code class="javascript" contenteditable>// maps are iterable objects
-for (let e of map) {
-    console.log(e); // array consisting of key and value
-}
-//[ { name: 'KEY1' }, 1 ]
-</code></pre>
-
-<pre class="fragment"><code class="javascript" contenteditable>map.delete(KEY1);
-console.log(map.has(KEY1)); // false</code></pre>
-                    </section>
-
-                    <section>
                         <h3>Template Strings</h3>
    <pre><code class="javascript" contenteditable>const person = 'Oma';
 const language = 'Haskell';
@@ -370,6 +332,47 @@ console.log(array2);
 // Folks
 </code></pre>
                 </section>
+                <section>
+                    <h2>Collections</h2>
+                </section>
+                    <section>
+                        <h3>Set</h3>
+   <pre><code class="javascript" contenteditable>const programmers = new Set();
+programmers.add(programmer);
+programmers.add(new Programmer('Oma', 88));
+</code></pre>
+
+<pre class="fragment"><code class="javascript" contenteditable>for (const p of programmers) {
+    p.log();
+}</code></pre>
+
+<pre class="fragment"><code class="javascript" contenteditable>const serialized = JSON.stringify([...programmers]);
+const deserialized = new Set(JSON.parse(serialized));</code></pre>
+                    </section>
+                    <section>
+                        <h3>Map</h3>
+    <pre><code class="javascript" contenteditable>const map = new Map();
+// keys are not restricted to strings
+const KEY1 = {name: 'KEY1'};
+map.set(KEY1, 1);
+</code></pre>
+
+<pre class="fragment"><code class="javascript" contenteditable>console.log(map.get(KEY1)); // 1
+console.log(map.has(KEY1)); // true
+console.log(map.size); // 1
+</code></pre>
+
+<pre class="fragment"><code class="javascript" contenteditable>// maps are iterable objects
+for (let e of map) {
+    console.log(e); // array consisting of key and value
+}
+//[ { name: 'KEY1' }, 1 ]
+</code></pre>
+
+<pre class="fragment"><code class="javascript" contenteditable>map.delete(KEY1);
+console.log(map.has(KEY1)); // false</code></pre>
+                    </section>
+
 
                     <section>
                         <h2>Promises</h2>
