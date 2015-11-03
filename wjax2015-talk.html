@@ -12,8 +12,8 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 
 		<link rel="stylesheet" href="reveal.js/css/reveal.css">
-		<link rel="stylesheet" href="reveal.js/css/theme/simple.css" id="theme">
-		<!--<link rel="stylesheet" href="reveal.js/css/theme/night.css" id="theme">-->
+		<!--<link rel="stylesheet" href="reveal.js/css/theme/simple.css" id="theme">-->
+		<link rel="stylesheet" href="reveal.js/css/theme/night.css" id="theme">
 
 
 		<!-- Code syntax highlighting -->
@@ -82,7 +82,6 @@
                     Java-Entwickler</a>
             </ul>
         </section>
-
         <section>
             <h3>JavaScript vs ECMAScript 6 vs ES6 vs ECMAScript 2015 vs Projekt Harmony</h3>
             <ul>
@@ -95,20 +94,24 @@
                 <li class="fragment">An der Spec für ES7 wird bereits gearbeitet
             </ul>
         </section>
-    <section>
-        <h3>Neue Spracheigenschaften</h3>
-            <h4 class="fragment"><em>keine</em> statischen Typen</h4>
-
+        <section>
+            <h2>Die Zukunft von JavaScript</h2>
             <ul>
-            <li class="fragment">Module
-            <li class="fragment">Klassen
-            <li class="fragment">Destructuring (Pattern Matching)
-            <li class="fragment">let, const
-            <li class="fragment">Fat arrow <b>=></b> für besseres Binding von <b>this</b>
-            <li class="fragment">vararg, optional, spread operator
-            <li class="fragment">Collection Types (Map, Set, WeakMap, WeakSet)
-        </ul>
-    </section>
+                <li class="fragment">JavaScript gewinnt immer mehr an Bedeutung
+                <li class="fragment">Wer für den Browser entwickelt, kommt an JavaScript nicht vorbei
+                <li class="fragment">ES5 hat allerdings viele Klippen
+                    <ul>
+                        <li class="fragment">keine deklarierte Typen
+                        <li class="fragment">Klassen und Vererbung umständlich
+                        <li class="fragment">keine lexikalischen Scopes
+                        <li class="fragment">Bindung von <em>this</em> kann verwirrend sein
+                        <li class="fragment">Kein Einheitliches Modul-Konzept
+                    </ul>
+                </li>
+                <li class="fragment">ES 2015 wird diese Klippen entfernen (außer Typen)
+            </ul>
+        </section>
+
         <section>
             <h3>Gesprengte Klippe #1: Lexikalisches Scoping</h3>
             <pre><code class="javascript" contenteditable>{
@@ -167,6 +170,41 @@ console.log(programmer instanceof Person); // true</code></pre>
                 <li class="fragment">Wie viel läuft wo?: <a target="_blank" href="http://kangax.github.io/es5-compat-table/es6">http://kangax.github.io/es5-compat-table/es6</a></li>
             </ul>
         </section>
+                    <section>
+                        <h2>Module, Importe und Exporte</h2>
+                    </section>
+                    <section>
+                        <h3>Export einer einzigen Klasse</h3>
+   <pre><code class="javascript" contenteditable>// Person.js
+class Person {
+  // ...
+}
+export default Person;
+   </code></pre>
+                    </section>
+                    <section>
+                        <h3>Import</h3>
+   <pre><code class="javascript" contenteditable>// Programmer.js
+import Person from './Person';
+
+export default class Programmer extends Person {
+  // ...
+}
+   </code></pre>
+                    </section>
+                    <section>
+                        <h3>Benannte Exporte</h3>
+   <pre><code class="javascript" contenteditable>// util.js
+export function displayInPage(text) {
+    document.body.innerHTML +=
+        `${text}<br>` ;
+}
+   </code></pre>
+   <pre class="fragment"><code class="javascript" contenteditable>import {displayInPage} from "./util";</code></pre>
+   <pre class="fragment"><code class="javascript" contenteditable>import {displayInPage as display} from "./util";</code></pre>
+   <pre class="fragment"><code class="javascript" contenteditable>import * as util from "./util";</code></pre>
+                    </section>
+
                     <section>
                         <h2>Weitere Neuerungen und Verbesserungen</h2>
                     </section>
@@ -334,44 +372,14 @@ console.log(array2);
                 </section>
 
                     <section>
-                        <h2>Module, Importe und Exporte</h2>
-                    </section>
-                    <section>
-                        <h3>Export einer einzigen Klasse</h3>
-   <pre><code class="javascript" contenteditable>// Person.js
-class Person {
-  // ...
-}
-export default Person;
-   </code></pre>
-                    </section>
-                    <section>
-                        <h3>Import</h3>
-   <pre><code class="javascript" contenteditable>// Programmer.js
-import Person from './Person';
-
-export default class Programmer extends Person {
-  // ...
-}
-   </code></pre>
-                    </section>
-                    <section>
-                        <h3>Benannte Exporte</h3>
-   <pre><code class="javascript" contenteditable>// util.js
-export function displayInPage(text) {
-    document.body.innerHTML +=
-        `${text}<br>` ;
-}
-   </code></pre>
-   <pre class="fragment"><code class="javascript" contenteditable>import {displayInPage} from "./util";</code></pre>
-   <pre class="fragment"><code class="javascript" contenteditable>import {displayInPage as display} from "./util";</code></pre>
-   <pre class="fragment"><code class="javascript" contenteditable>import * as util from "./util";</code></pre>
-                    </section>
-
-                    <section>
                         <h2>Promises</h2>
                     </section>
                     <section>
+                        <h3>Ein Promise ist ein Versprechen auf einen Wert</h3>
+                        <h4 class="fragment">Wird evtl. erst in der Zukunft eingelöst</h4>
+                    </section>
+
+                <section>
                         <h3>Erzeugen und asynchron reagieren</h3>
    <pre class="fragment"><code class="javascript" contenteditable>const promise = new Promise(resolve =>
     setTimeout(
@@ -397,6 +405,11 @@ const promise2 = promise.then(value => `${value} plus stuff`);</code></pre>
 // Output after 1 second: Result from promise plus stuff
 </code></pre>
                     </section>
+            <section>
+                <h3>Fehler führen zum Abbruch der Chain</h3>
+                <h4 class="fragment">Allerdings muss man etwas tun, um das mitzubekommen</h4>
+            </section>
+
                     <section>
                         <h3>Catch-Klausel</h3>
    <pre><code class="javascript" contenteditable>Promise
@@ -455,8 +468,31 @@ const promise2 = promise.then(value => `${value} plus stuff`);</code></pre>
 // error:  Promise rejected</code></pre>
                 </section>
 
+                <section>
+                        <h3>Anwendungsbeispiel: fetch</h3>
+<pre><code class="javascript" contenteditable>const url = `${BACKEND_URL}${path}`;
 
-                        <section>
+return fetch(url)
+    .then(response => response.json())
+    .then(json => /* ... */)
+    .catch(ex => console.error('request failed', ex));
+</code></pre>
+                </section>
+        <section>
+            <h3>Es gibt nocht mehr</h3>
+            <ul>
+                <li class="fragment">Symbol
+                <li class="fragment">Iterator
+                <li class="fragment">Generator
+                <li class="fragment">WeakSet, WeakMap
+                <li class="fragment">Computed Properties
+                <li class="fragment">Proxies
+                <li class="fragment">Tail Call Optimization
+            </ul>
+        </section>
+
+
+            <section>
             <h1>Vielen Dank!</h1>
 
             <h3>Fragen / Diskussion</h3>
