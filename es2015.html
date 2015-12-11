@@ -1,0 +1,619 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>ECMAScript 2015 aka ES6</title>
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="reveal.js/css/reveal.css">
+		<!--<link rel="stylesheet" href="reveal.js/css/theme/simple.css" id="theme">-->
+		<link rel="stylesheet" href="reveal.js/css/theme/night.css" id="theme">
+
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="reveal.js/lib/css/zenburn.css">
+		<style>
+			/*pre code {*/
+				/*display: block;*/
+				/*padding: 0.5em;*/
+				/*background: #FFFFFF !important;*/
+				/*color: #000000 !important;*/
+			/*}*/
+			.right-img {
+				margin-left: 10px !important;
+				float: right;
+				height: 500px;
+			}
+		</style>
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal.js/css/print/pdf.css' : 'reveal.js/css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="reveal.js/lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+
+				<section>
+    <h2>ECMAScript 2015 aka ES6</h2>
+
+                    <p>
+                        <small><a href="http://zeigermann.eu">Oliver Zeigermann</a> / <a href="http://twitter.com/djcordhose">@DJCordhose</a>
+                        </small>
+                    </p>
+</section>
+                                <section id="history">
+                    <section>
+                        <h1>Geschichte</h1>
+                    </section>
+                    <section>
+                        <h2>Anfänge</h2>
+                    <ul>
+                        <li class="fragment"><b>Mai 1995</b>: Brendan Eich, damals Netscape Entwickler, heute Mozilla, stellt Mocha vor
+                            <ul>
+                                <li class="fragment"><b>September 1995</b>: Der neue Name ist LiveScript
+                                <li class="fragment"><b>Dezember 1995</b>: Sun gibt eine Lizenz auf den Namen Java, Umbenennung auf JavaScript aus <em>Marketinggründen</em>
+                            </ul>
+
+                        <li class="fragment"><b>1996 - 1997</b>: ECMA beginnt mit der Standardisierung für die Umsetzung anderer Browserhersteller
+                        <ul>
+                            <li class="fragment">Daraus wird ECMAScript 1 als offizieller Standard
+                            <li class="fragment">JavaScript ist eine (sic!) Implementierung
+                        </ul>
+                     </ul>
+
+                    </section>
+                    <section>
+                        <h2>Mittelteil</h2>
+                        <ul>
+                            <li class="fragment"><b>1998</b>: ECMAScript 2
+                            <li class="fragment"><b>1999</b>: ECMAScript 3
+                            <li class="fragment"><b>2000-2009</b>: ECMAScript 4: auf und ab
+                                <ul>
+                                    <li class="fragment">Sehr fortschrittlicher Ansatz
+                                    <li class="fragment">u.a. Klassen und deklarierte Typen
+                                    <li class="fragment">ActionScript 3 als Implementierung
+                                </ul>
+                            <li class="fragment"><b>2005</b>: Ajax und damit SPAs kommen auf
+                                <ul>
+                                    <li class="fragment">Renaissance der Sprache JavaScript
+                                    <li class="fragment">Bibliotheken: jQuery, Dojo u.a.
+                                </ul>
+                            <li class="fragment"><b>2007</b>: Als Gegenbewegung zu ECMAScript 4 bringen Microsoft und Yahoo ECMAScript 3.1 auf den Weg
+                        </ul>
+
+                    </section>
+                    <section>
+                        <h2>Status Quo</h2>
+                        <ul>
+                            <li class="fragment"><b>2009</b>: ECMAScript 3.1 wird in ECMAScript 5 umbenannt und man spielt wieder miteinander
+                                <ul>
+                                    <li class="fragment">ECMAScript 4 und ActionScript 3 enden als Sackgassen
+                                    <li class="fragment">Alle Browser ab IE9, Firefox 3 unterstützen ECMAScript 5
+                                    <li class="fragment">ECMAScript 5 hat einen nicht rückwärts kompatiblen <code>strict mode</code>
+                                </ul>
+                            <li class="fragment"><b>2011</b>: ECMAScript 5.1 ohne neue Features, lediglich Klärungen in der Spezifikation
+                        </ul>
+
+                    </section>
+                </section>
+
+
+                <section id="es6">
+        <section>
+            <h2>Die Zukunft von JavaScript</h2>
+            <ul>
+                <li class="fragment">JavaScript gewinnt immer mehr an Bedeutung
+                <li class="fragment">Wer für den Browser entwickelt, kommt an JavaScript nicht vorbei
+                <li class="fragment">JavaScript hat allerdings viele Klippen
+                    <ul>
+                        <li class="fragment">keine deklarierte Typen
+                        <li class="fragment">Klassen und Vererbung umständlich
+                        <li class="fragment">keine lexikalischen Scopes
+                        <li class="fragment">Bindung von <em>this</em> kann verwirrend sein
+                        <li class="fragment">Kein Einheitliches Modul-Konzept
+                    </ul>
+                </li>
+                <li class="fragment">Die nächste Version von JavaScript wird diese Klippen entfernen (außer Typen)
+                <li class="fragment">Es gibt Ansätze für deklarierte Typen in JavaScript
+            </ul>
+        </section>
+        <section>
+            <h3>JavaScript vs ECMAScript 6 vs ES6 vs ECMAScript 2015 vs Projekt Harmony</h3>
+            <ul>
+                <li class="fragment">ECMAScript ist der Standard und JavaScript ist die Implementierung
+                <li class="fragment">Ab IE9 sind wir bei ECMAScript 5 (2009)
+                <li class="fragment">ECMAScript 2015 ist der offizielle, neue Name für ECMAScript 6
+                <li class="fragment">ES6 ist der kurze Name für ECMAScript 6
+                <li class="fragment">ES 2015 ist die Abkürzung für ECMAScript 2015
+                <li class="fragment">Projekt Harmony ist ECMAScript >=6
+                <li class="fragment">An der Spec für ES7 wird bereits gearbeitet
+            </ul>
+        </section>
+    <section>
+        <h3>Neue Spracheigenschaften</h3>
+            <h4 class="fragment"><em>keine</em> statischen Typen</h4>
+
+            <ul>
+            <li class="fragment">Module
+            <li class="fragment">Klassen
+            <li class="fragment">Destructuring (Pattern Matching)
+            <li class="fragment">let, const
+            <li class="fragment">Fat arrow <b>=></b> für besseres Binding von <b>this</b>
+            <li class="fragment">vararg, optional, spread operator
+            <li class="fragment">Collection Types (Map, Set, WeakMap, WeakSet)
+        </ul>
+    </section>
+        <section>
+            <h3>Gesprengte Klippe #1: Lexikalisches Scoping</h3>
+            <pre><code class="javascript" contenteditable>{
+  // no hoisting
+  console.log(a);
+  // => ReferenceError: a is not defined
+  let a = 10;
+  // or
+  const a = 10;
+  a = 20;
+  // => TypeError: Assignment to constant variable.
+}
+console.log(a);
+// => ReferenceError: a is not defined</code></pre>
+        </section>
+        <section>
+            <h3>Gesprengte Klippe #2: Klassen</h3>
+                <pre class="fragment"><code class="javascript" contenteditable>class Person {
+    constructor(name) {
+        this._name = name;
+    }
+    get name() {
+        return this._name;
+    }
+}
+class Programmer extends Person {
+    constructor(name, language) {
+        super(name);
+        this.language = language;
+    }
+    code() {
+        return this.name + " codes in " + this.language;
+    }
+}</code></pre>
+   <pre><code class="javascript" contenteditable>const programmer = new Programmer('Erna', 'JavaScript');
+console.log(programmer.code());
+console.log(programmer instanceof Programmer); // true
+console.log(programmer instanceof Person); // true</code></pre>
+         </section>
+        <section>
+            <h3>Wo läuft ES6 schon jetzt?</h3>
+            <ul>
+                <li class="fragment">Chrome
+                <li class="fragment">Firefox
+                <li class="fragment">Microsoft Edge
+                <li class="fragment">node.js
+                <a target="_blank" href="https://nodejs.org/en/docs/es6/">https://nodejs.org/en/docs/es6/</a>
+                <li class="fragment">Transpiler
+                    <ul>
+                        <li class="fragment"><a target="_blank" href="https://babeljs.io/">https://babeljs.io/</a>, ehemals 6to5
+                        <li class="fragment"><a target="_blank" href="https://github.com/google/traceur-compiler">https://github.com/google/traceur-compiler</a>
+                        <li class="fragment"><a target="_blank" href="http://www.typescriptlang.org/">http://www.typescriptlang.org/</a> (plus statische Typen)
+                        <li class="fragment">Liste weiterer Transpiler <a target="_blank" href="https://github.com/addyosmani/es6-tools">https://github.com/addyosmani/es6-tools</a>
+                    </ul>
+                </li>
+                <li class="fragment">Wie viel läuft wo?: <a target="_blank" href="http://kangax.github.io/es5-compat-table/es6">http://kangax.github.io/es5-compat-table/es6</a></li>
+            </ul>
+        </section>
+    </section>
+    <section>
+      <section>
+          <h2>Übung: ES6-Klassen</h2>
+          <h3>Schreibe deine Klassen auf die neue Klassensyntax von ES6 um</h3>
+      </section>
+      <section>
+          <h3>Schritt #1: Tool-Chain starten</h3>
+          <p>Nutze das workspace-Verzeichnis in diesem Repository</p>
+          <p>Hier ist eine Tool-Chain mit Webpack und Babel vorbereitet</p>
+          <ul>
+              <li><code>cd workspace</code>
+              <li><code>npm install</code>
+              <li><code>npm run webpack</code>
+              <li><code>dist/index.html</code> im Browser öffnen
+              <li>Wenn auf der Seite 'Hello, World' steht, ist alles gut
+              <li>Als Alternative kannst du diese Übung auch mit <em>node</em> oder <em>babel-node</em> machen
+          </ul>
+      </section>
+      <section>
+          <h3>Schritt #2: ES6-Klassen</h3>
+          <ul>
+              <li>Entwickle deine Klassen in <em>ES6</em> und passe dort <em>main.js</em> an
+              <li>Setze Vererbung mit <em>extends</em> um
+              <li>Nutze <em>const</em> und <em>let</em> anstatt von <em>var</em>
+          </ul>
+      </section>
+    </section>
+                <section>
+                    <section>
+                        <h2>Module, Importe und Exporte</h2>
+                    </section>
+                    <section>
+                        <h3>Export einer einzigen Klasse</h3>
+   <pre><code class="javascript" contenteditable>// Person.js
+class Person {
+  // ...
+}
+export default Person;
+   </code></pre>
+                    </section>
+                    <section>
+                        <h3>Import</h3>
+   <pre><code class="javascript" contenteditable>// Programmer.js
+import Person from './Person';
+
+export default class Programmer extends Person {
+  // ...
+}
+   </code></pre>
+                    </section>
+                    <section>
+                        <h3>Benannte Exporte</h3>
+   <pre><code class="javascript" contenteditable>// util.js
+export function displayInPage(text) {
+    document.body.innerHTML +=
+        `${text}<br>` ;
+}
+   </code></pre>
+   <pre class="fragment"><code class="javascript" contenteditable>import {displayInPage} from "./util";</code></pre>
+   <pre class="fragment"><code class="javascript" contenteditable>import {displayInPage as display} from "./util";</code></pre>
+   <pre class="fragment"><code class="javascript" contenteditable>import * as util from "./util";</code></pre>
+                    </section>
+
+                </section>
+
+                <section>
+                    <section>
+                        <h2>Neuerungen und Verbesserungen</h2>
+                    </section>
+                    <section>
+                        <h3>Template Strings</h3>
+   <pre><code class="javascript" contenteditable>const person = 'Oma';
+const language = 'Haskell';
+
+console.log(`${person} programs
+${10 * 1024 * 1024} lines of code
+in ${language}.`);
+// Output:
+// Oma programs
+// 10485760 lines of code
+// in Haskell.
+</code></pre>
+                    </section>
+                    <section>
+                        <h3>Destructuring von Objekten</h3>
+   <pre><code class="javascript" contenteditable>const person = {
+  name: 'Olli',
+  address: {
+    city: 'Hamburg'
+  },
+  email: 'oliver.zeigermann@gmail.com'
+};</code></pre>
+   <pre class="fragment"><code class="javascript" contenteditable>const {name, email: contact} = person;
+console.log(`name=${name}`);
+// name=Olli
+console.log(`contact=${contact}`);
+// contact=oliver.zeigermann@gmail.com
+</code></pre>
+   <pre class="fragment"><code class="javascript" contenteditable>const {address: {city}} = person;
+console.log(`city=${city}`);
+//city=Hamburg
+</code></pre>
+                    </section>
+                    <section>
+                        <h3>Destructuring bei Parametern</h3>
+   <pre><code class="javascript" contenteditable>const person = {
+  name: 'Olli',
+  address: {
+    city: 'Hamburg'
+  },
+  email: 'oliver.zeigermann@gmail.com'
+};</code></pre>
+   <pre class="fragment"><code class="javascript" contenteditable>function print({email: contact}) {
+    console.log(`contact=${contact}`);
+}
+print(person);
+// contact=oliver.zeigermann@gmail.com
+</code></pre>
+                    </section>
+                    <section>
+                        <h3>Destructuring bei Arrays</h3>
+   <pre><code class="javascript" contenteditable>const [a, b] = [1, 2];
+console.log(`a=${a}`);
+// a=1
+console.log(`b=${b}`);
+// b=2
+</code></pre>
+                    </section>
+                    <section>
+                        <h3>Erweiterte Objekt-Literale</h3>
+   <pre><code class="javascript" contenteditable>const name = 'Oma';
+const person = {
+    // ES5: name: name
+    name,
+    // ES5: toString: function()
+    toString() {
+        return this.name;
+    }
+};
+console.log(person.name); // Oma
+console.log(person.toString()); // Oma
+   </code></pre>
+                    </section>
+                    <section>
+                        <h3>Spread-Operator</h3>
+   <pre><code class="javascript" contenteditable>const array1 = ['Olli', 'how are you'];
+const array2 = ['Hi', ...array1, '?'];
+console.log(array2);
+// => ["Hi", "Olli", "how are you", "?"]
+</code></pre>
+                    </section>
+                    <section>
+                        <h3>for..of</h3>
+   <pre><code class="javascript" contenteditable>for (const e of array2) {
+    console.log(e);
+}
+// Hi
+// Olli
+// how are you
+// ?
+</code></pre>
+                    </section>
+
+                </section>
+
+            <section>
+                <section>
+                    <h2>Verbesserungen bei Funktionen</h2>
+                </section>
+            <section>
+                <h3>Arrow Functions</h3>
+<pre><code class="javascript" contenteditable>const displayInPage = (text) => {
+   return document.body.innerHTML +=
+       `${text}<br>`;
+};</code></pre>
+<pre class="fragment"><code class="javascript" contenteditable>const displayInPage = text => document.body.innerHTML += `${text}<br>`;
+</code></pre>
+            </section>
+                <section>
+                    <h3>Default Parameter</h3>
+<pre><code class="javascript" contenteditable>const displayInPage = (text = '\n') =>
+    console.log(text);</code></pre>
+<pre class="fragment"><code class="javascript" contenteditable>displayInPage();
+</code></pre>
+                </section>
+                <section>
+                    <h3>Rest-Parameters</h3>
+<pre><code class="javascript" contenteditable>const displayInPage = (...texts) =>
+    texts.forEach(text => console.log(text));
+</code></pre>
+<pre class="fragment"><code class="javascript" contenteditable>displayInPage('Hi', 'Folks');
+// Hi
+// Folks
+</code></pre>
+                </section>
+            </section>
+                <section>
+                    <section>
+                        <h2>Collections</h2>
+                    </section>
+                    <section>
+                        <h3>Set</h3>
+   <pre><code class="javascript" contenteditable>const programmers = new Set();
+programmers.add(programmer);
+programmers.add(new Programmer('Oma', 88));
+</code></pre>
+
+<pre class="fragment"><code class="javascript" contenteditable>for (const p of programmers) {
+    p.log();
+}</code></pre>
+
+<pre class="fragment"><code class="javascript" contenteditable>const serialized = JSON.stringify([...programmers]);
+const deserialized = new Set(JSON.parse(serialized));</code></pre>
+                    </section>
+                    <section>
+                        <h3>Map</h3>
+    <pre><code class="javascript" contenteditable>const map = new Map();
+// keys are not restricted to strings
+const KEY1 = {name: 'KEY1'};
+map.set(KEY1, 1);
+</code></pre>
+
+<pre class="fragment"><code class="javascript" contenteditable>console.log(map.get(KEY1)); // 1
+console.log(map.has(KEY1)); // true
+console.log(map.size); // 1
+</code></pre>
+
+<pre class="fragment"><code class="javascript" contenteditable>// maps are iterable objects
+for (let e of map) {
+    console.log(e); // array consisting of key and value
+}
+//[ { name: 'KEY1' }, 1 ]
+</code></pre>
+
+<pre class="fragment"><code class="javascript" contenteditable>map.delete(KEY1);
+console.log(map.has(KEY1)); // false</code></pre>
+                    </section>
+                </section>
+
+
+                <section>
+                    <section>
+                        <h2>Promises</h2>
+                    </section>
+                    <section>
+                        <h3>Ein Promise ist ein Versprechen auf einen Wert</h3>
+                        <h4 class="fragment">Wird evtl. erst in der Zukunft eingelöst</h4>
+                    </section>
+
+                <section>
+                        <h3>Erzeugen und asynchron reagieren</h3>
+   <pre class="fragment"><code class="javascript" contenteditable>const promise = new Promise(resolve =>
+    setTimeout(
+        () => resolve('Result from promise'),
+        1000)
+);
+</code></pre>
+    <pre><code class="javascript" contenteditable>promise1.then(value => console.log(value));
+// Output after 1 second: Result from promise
+</code></pre>
+                    </section>
+                    <section>
+                        <h3>Verkettete Ausführung</h3>
+   <pre><code class="javascript" contenteditable>const promise = new Promise(resolve =>
+    setTimeout(
+        () => resolve('Result from promise'),
+        1000)
+);
+</code></pre>
+    <pre class="fragment"><code class="javascript" contenteditable>// then returns a new promise
+const promise2 = promise.then(value => `${value} plus stuff`);</code></pre>
+    <pre class="fragment"><code class="javascript" contenteditable>promise2.then(value => console.log(value));
+// Output after 1 second: Result from promise plus stuff
+</code></pre>
+                    </section>
+            <section>
+                <h3>Fehler führen zum Abbruch der Chain</h3>
+                <h4 class="fragment">Allerdings muss man etwas tun, um das mitzubekommen</h4>
+            </section>
+
+                    <section>
+                        <h3>Catch-Klausel</h3>
+   <pre><code class="javascript" contenteditable>Promise
+    // creates and directly resolves promise
+    .resolve('Result from promise')
+    .then(x => {
+        // this will be printed
+        console.log(x);
+    })
+    .then(() => {
+        console.log('This will be printed');
+    })
+    // this will NOT be printed as no error occured
+    .catch(e => console.log('error: ', e))
+
+// Output:
+// Result from promise
+// This will be printed</code></pre>
+                    </section>
+                    <section>
+                        <h3>Catch-Klausel im Fehlerfall</h3>
+   <pre><code class="javascript" contenteditable>Promise
+    // creates and directly resolves promise
+    .resolve('Result from promise')
+    .then(x => {
+        // this will be printed
+        console.log(x);
+        throw Error('Something went wrong');
+    })
+    .then(() => {
+        console.log('This will NOT be printed');
+    })
+    // this will be printed
+    .catch(e => console.log('error: ', e))
+
+// Output:
+// Result from promise
+// error:  [Error: Something went wrong]</code></pre>
+                    </section>
+                    <section>
+                        <h3>Catch-Klausel bei Ablehnung</h3>
+   <pre><code class="javascript" contenteditable>Promise
+    // creates and directly rejects promise
+    .reject('Promise rejected')
+    .then(x => {
+        // this will NOT be printed
+        console.log(x);
+    })
+    .then(() => {
+        console.log('This will NOT be printed');
+    })
+    // this will be printed
+    .catch(e => console.log('error: ', e))
+
+// Output:
+// error:  Promise rejected</code></pre>
+                </section>
+
+                <section>
+                        <h3>Anwendungsbeispiel: fetch</h3>
+<pre><code class="javascript" contenteditable>const url = `${BACKEND_URL}${path}`;
+
+return fetch(url)
+    .then(response => response.json())
+    .then(json => /* ... */)
+    .catch(ex => console.error('request failed', ex));
+</code></pre>
+                </section>
+                </section>
+        <section>
+            <h3>Es gibt nocht mehr</h3>
+            <ul>
+                <li class="fragment">Symbol
+                <li class="fragment">Iterator
+                <li class="fragment">Generator
+                <li class="fragment">WeakSet, WeakMap
+                <li class="fragment">Computed Properties
+                <li class="fragment">Proxies
+                <li class="fragment">Tail Call Optimization
+            </ul>
+        </section>
+            </div>
+
+		</div>
+
+		<script src="reveal.js/lib/js/head.min.js"></script>
+		<script src="reveal.js/js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'reveal.js/plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
+					{ src: 'reveal.js/plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
