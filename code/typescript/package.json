@@ -1,0 +1,15 @@
+{
+  "name": "workspace",
+  "version": "0.0.1",
+  "scripts": {
+    "webpack": "webpack --watch",
+    "clean": "rm -rf dist/ public/dist/"
+  },
+  "devDependencies": {
+    "ts-loader": "^0.7.2",
+    "typescript": "^1.7.3",
+    "webpack": "^1.12.6"
+  },
+  "dependencies": {
+  }
+}

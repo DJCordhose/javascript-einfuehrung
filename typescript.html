@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>TypeScript</title>
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="reveal.js/css/reveal.css">
+		<!--<link rel="stylesheet" href="reveal.js/css/theme/simple.css" id="theme">-->
+		<link rel="stylesheet" href="reveal.js/css/theme/night.css" id="theme">
+
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="reveal.js/lib/css/zenburn.css">
+		<style>
+			/*pre code {*/
+				/*display: block;*/
+				/*padding: 0.5em;*/
+				/*background: #FFFFFF !important;*/
+				/*color: #000000 !important;*/
+			/*}*/
+			.right-img {
+				margin-left: 10px !important;
+				float: right;
+				height: 500px;
+			}
+		</style>
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal.js/css/print/pdf.css' : 'reveal.js/css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="reveal.js/lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+
+				<section>
+    <h1>TypeScript</h1>
+
+                    <p>
+                        <small><a href="http://zeigermann.eu">Oliver Zeigermann</a> / <a href="http://twitter.com/djcordhose">@DJCordhose</a>
+                        </small>
+                    </p>
+</section>
+    
+    <section id="types">
+      <section>
+        <h2>Typen und Interfaces</h2>
+      <!--http://www.typescriptlang.org/Handbook#type-compatibility-->
+      </section>
+      <section>
+        <h3>Type Assertions aka Casts</h3>
+      </section>
+      <section>
+        <h3>Generics</h3>
+        <!--https://github.com/Microsoft/TypeScript/wiki/What's-new-in-TypeScript#stricter-generics-->
+      </section>
+      <section>
+        <h3>Externe Deklarationen</h3>
+      </section>
+    </section>
+    
+    <section id="class-extensions">
+      <section>
+        <h2>Erweiterungen von ES 2015 Klassen</h2>
+      </section>
+      <section>
+        <h3>Zugriffsmodifier</h3>
+      </section>
+      <section>
+        <h3>Shortcut Konstruktoren</h3>
+      </section>
+      <section>
+        <h3>Überladen von Methoden</h3>
+      </section>
+      <section>
+        <h3>Abstrakte Klassen</h3>
+        <!-- Abstract classes
+        http://blogs.msdn.com/b/typescript/archive/2015/09/16/announcing-typescript-1-6.aspx
+        
+        https://github.com/Microsoft/TypeScript/wiki/What's-new-in-TypeScript#abstract-classes-and-methods
+        -->
+      </section>
+    </section>
+
+    <section id="extensions">
+      <section>
+        <h2>Nützliche Erweiterungen von ES 2015</h2>
+      </section>
+      <section>
+        <h3>Enums</h3>
+      <!--https://github.com/Microsoft/TypeScript/wiki/What's-new-in-TypeScript#const-enum-completely-inlined-enums-->
+      </section>
+      <section>
+        <h3>Async Await</h3>
+<!--http://blogs.msdn.com/b/typescript/archive/2015/11/03/what-about-async-await.aspx-->
+      </section>
+      <section>
+        <h3>Getypte Generatoren</h3>
+      <!--https://github.com/Microsoft/TypeScript/wiki/What's-new-in-TypeScript#es6-generators-->
+      </section>
+      <section>
+        <h3>Dekoratoren aka Annotations</h3>
+      <!--https://github.com/Microsoft/TypeScript/wiki/What's-new-in-TypeScript#decorators-->
+      </section>
+      <section>
+        <h3>Projekt-Konfiguration über tsconfig.json</h3>
+      <!--https://github.com/Microsoft/TypeScript/wiki/What's-new-in-TypeScript#project-support-through-tsconfigjson-->
+      <!--https://github.com/Microsoft/TypeScript/wiki/tsconfig.json-->
+      </section>
+      
+    </section>
+
+
+    <section id="advanced">
+      <section>
+        <h2>Details des Typensystems</h2>
+      </section>
+      
+      <section>
+        <h3>Tuple Types</h3>
+        <!--https://github.com/Microsoft/TypeScript/wiki/What's-new-in-TypeScript#tuple-types-->
+      </section>
+      <section>
+        <h3>Type Aliases</h3>
+        <!-- Generic type aliases
+        
+        https://github.com/Microsoft/TypeScript/wiki/What's-new-in-TypeScript#type-aliases
+        
+        http://blogs.msdn.com/b/typescript/archive/2015/09/16/announcing-typescript-1-6.aspx
+        
+        https://github.com/Microsoft/TypeScript/wiki/What's-new-in-TypeScript#generic-type-aliases
+        -->
+      </section>
+      <section>
+        <h3>Typen-Inferenz</h3>
+        <!-- 
+          http://www.typescriptlang.org/Handbook#type-inference
+          
+          User defined type guards
+        https://github.com/Microsoft/TypeScript/wiki/What's-new-in-TypeScript#type-guards
+        
+        http://blogs.msdn.com/b/typescript/archive/2015/09/16/announcing-typescript-1-6.aspx
+        
+        https://github.com/Microsoft/TypeScript/wiki/What's-new-in-TypeScript#improved-checking-for-destructuring-object-literal
+        -->
+      </section>
+      <section>
+        <h3>Union Types</h3>
+      <!--https://github.com/Microsoft/TypeScript/wiki/What's-new-in-TypeScript#union-types-->
+      </section>
+      <section>
+        <h3>Intersection Types</h3>
+        <!-- Intersection types
+        http://blogs.msdn.com/b/typescript/archive/2015/09/16/announcing-typescript-1-6.aspx
+        
+        https://github.com/Microsoft/TypeScript/wiki/What's-new-in-TypeScript#intersection-types
+        -->
+      </section>
+      <section>
+        <h3>this-Typing</h3>
+      <!--https://github.com/Microsoft/TypeScript/wiki/What's-new-in-TypeScript#this-typing-->
+      </section>
+      
+      <section>
+        <h3>Lokale Typen</h3>
+        <!--https://github.com/Microsoft/TypeScript/wiki/What's-new-in-TypeScript#local-type-declarations-->
+      </section>
+    </section>
+
+            </div>
+
+		</div>
+
+		<script src="reveal.js/lib/js/head.min.js"></script>
+		<script src="reveal.js/js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'reveal.js/plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
+					{ src: 'reveal.js/plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>

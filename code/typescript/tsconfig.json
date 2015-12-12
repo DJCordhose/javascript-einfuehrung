@@ -1,0 +1,23 @@
+{
+    "version": "1.7.3",
+    "compilerOptions": {
+        "target": "es5",
+        "module": "commonjs",
+        "isolatedModules": false,
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true,
+        "declaration": false,
+        "noImplicitAny": false,
+        "removeComments": true,
+        "noLib": false,
+        "preserveConstEnums": true,
+        "suppressImplicitAnyIndexErrors": true,
+        "sourceMap": true
+    },
+        "files": [
+          "./main.ts"
+        ],
+  "exclude": [
+    "node_modules"
+  ]
+}
