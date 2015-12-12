@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="400c8356-55f4-47e4-9197-a440448d06f4" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/typescript/main.ts" afterPath="$PROJECT_DIR$/code/typescript/main.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/typescript/sandbox.ts" afterPath="$PROJECT_DIR$/code/typescript/sandbox.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/komplett.html" afterPath="$PROJECT_DIR$/komplett.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/typescript/type-guard.ts" afterPath="$PROJECT_DIR$/code/typescript/type-guard.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/typescript.html" afterPath="$PROJECT_DIR$/typescript.html" />
     </list>
     <ignored path="javascript-einfuehrung.iws" />
     <ignored path=".idea/workspace.xml" />

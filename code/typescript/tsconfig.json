@@ -12,7 +12,9 @@
         "noLib": false,
         "preserveConstEnums": true,
         "suppressImplicitAnyIndexErrors": true,
-        "sourceMap": true
+        "sourceMap": true,
+        "outDir": "./public/dist"
+
     },
         "files": [
           "./main.ts"
