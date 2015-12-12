@@ -1,3 +1,6 @@
+// https://github.com/Microsoft/TypeScript/wiki/What's-new-in-TypeScript#type-guards
+
+
 function doStuff(x: string | number) {
   if (typeof x === 'string') {
     return x.length;
@@ -13,3 +16,4 @@ console.log(res2);
 // does not even compile
 // doStuff(true);
 // const res3: string = doStuff('Olli');
+

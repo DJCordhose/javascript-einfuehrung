@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="400c8356-55f4-47e4-9197-a440448d06f4" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/es2015.html" afterPath="$PROJECT_DIR$/es2015.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/typescript/main.ts" afterPath="$PROJECT_DIR$/code/typescript/main.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/typescript/sandbox.ts" afterPath="$PROJECT_DIR$/code/typescript/sandbox.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/komplett.html" afterPath="$PROJECT_DIR$/komplett.html" />
     </list>
     <ignored path="javascript-einfuehrung.iws" />
@@ -39,7 +40,7 @@
         <entry file="file://$PROJECT_DIR$/code/typescript/sandbox.ts">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="20" column="17" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="17" />
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -49,7 +50,7 @@
         <entry file="file://$PROJECT_DIR$/code/typescript/main.ts">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="25" selection-start-line="0" selection-start-column="25" selection-end-line="0" selection-end-column="25" />
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -695,7 +696,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="773" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25767368" sideWeight="0.495" order="0" side_tool="false" content_ui="tabs" />
@@ -1064,7 +1065,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="81" column="24" selection-start-line="81" selection-start-column="24" selection-end-line="81" selection-end-column="24" />
           <folding>
-            <marker date="1449922314000" expanded="true" signature="3505:3526" placeholder="..." />
+            <marker date="1449924912000" expanded="true" signature="3505:3526" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -1096,7 +1097,7 @@
     <entry file="file://$PROJECT_DIR$/code/typescript/sandbox.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="20" column="17" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="17" />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1176,7 +1177,7 @@
     <entry file="file://$PROJECT_DIR$/code/typescript/main.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="25" selection-start-line="0" selection-start-column="25" selection-end-line="0" selection-end-column="25" />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
