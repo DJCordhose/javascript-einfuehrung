@@ -2,37 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="400c8356-55f4-47e4-9197-a440448d06f4" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Flow_Talk_Typed_JavaScript.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/code/typescript/1-javascript.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/code/typescript/2-javascript-types.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/code/typescript/3-javascript-type-check.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/code/typescript/4-typescript-declared-type.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/code/typescript/5-typescript-interfaces.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/code/typescript/5a-typescript-generic-interfaces.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/code/typescript/5b-typescript-type-query.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/code/typescript/5c-typescript-interfaces-merging.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/code/typescript/5d-typescript-structural-compatibility.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/code/typescript/5e-typescript-overloading.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/code/typescript/6-typescript-class.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/code/typescript/7-typescript-type-inference.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/code/typescript/8-typescript-casts.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/code/typescript/9-typescript-eater.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/code/typescript/9-typescript-modules.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/code/typescript/Person.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/code/typescript/jquery-sandbox.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/code/typescript/main.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/code/typescript/package.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/code/typescript/public/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/code/typescript/sandbox.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/code/typescript/tsconfig.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/code/typescript/tsd.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/code/typescript/typings/node/node.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/code/typescript/typings/tsd.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/code/typescript/webpack.config.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/es2015.html" afterPath="$PROJECT_DIR$/es2015.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/komplett.html" afterPath="$PROJECT_DIR$/komplett.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/workspace/public/index.html" afterPath="$PROJECT_DIR$/workspace/public/index.html" />
     </list>
     <ignored path="javascript-einfuehrung.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -77,7 +49,7 @@
         <entry file="file://$PROJECT_DIR$/code/typescript/main.ts">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="29" selection-start-line="0" selection-start-column="29" selection-end-line="0" selection-end-column="29" />
+              <caret line="0" column="25" selection-start-line="0" selection-start-column="25" selection-end-line="0" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -723,14 +695,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="773" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25767368" sideWeight="0.495" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="TypeScript Compiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32892805" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5154185" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.5154185" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5521292" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32452276" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -1092,7 +1064,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="81" column="24" selection-start-line="81" selection-start-column="24" selection-end-line="81" selection-end-column="24" />
           <folding>
-            <marker date="1449910740000" expanded="true" signature="3505:3526" placeholder="..." />
+            <marker date="1449922314000" expanded="true" signature="3505:3526" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -1204,7 +1176,7 @@
     <entry file="file://$PROJECT_DIR$/code/typescript/main.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="29" selection-start-line="0" selection-start-column="29" selection-end-line="0" selection-end-column="29" />
+          <caret line="0" column="25" selection-start-line="0" selection-start-column="25" selection-end-line="0" selection-end-column="25" />
           <folding />
         </state>
       </provider>

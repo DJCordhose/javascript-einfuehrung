@@ -250,7 +250,7 @@ console.log(programmer instanceof Person); // true</code></pre>
           </ul>
       </section>
     </section>
-                <section>
+                <section id="modules">
                     <section>
                         <h2>Module, Importe und Exporte</h2>
                     </section>
@@ -288,7 +288,7 @@ export function displayInPage(text) {
 
                 </section>
 
-                <section>
+                <section id="enhancements">
                     <section>
                         <h2>Neuerungen und Verbesserungen</h2>
                     </section>
@@ -385,44 +385,6 @@ console.log(array2);
 // ?
 </code></pre>
                     </section>
-
-                </section>
-
-            <section>
-                <section>
-                    <h2>Verbesserungen bei Funktionen</h2>
-                </section>
-            <section>
-                <h3>Arrow Functions</h3>
-<pre><code class="javascript" contenteditable>const displayInPage = (text) => {
-   return document.body.innerHTML +=
-       `${text}<br>`;
-};</code></pre>
-<pre class="fragment"><code class="javascript" contenteditable>const displayInPage = text => document.body.innerHTML += `${text}<br>`;
-</code></pre>
-            </section>
-                <section>
-                    <h3>Default Parameter</h3>
-<pre><code class="javascript" contenteditable>const displayInPage = (text = '\n') =>
-    console.log(text);</code></pre>
-<pre class="fragment"><code class="javascript" contenteditable>displayInPage();
-</code></pre>
-                </section>
-                <section>
-                    <h3>Rest-Parameters</h3>
-<pre><code class="javascript" contenteditable>const displayInPage = (...texts) =>
-    texts.forEach(text => console.log(text));
-</code></pre>
-<pre class="fragment"><code class="javascript" contenteditable>displayInPage('Hi', 'Folks');
-// Hi
-// Folks
-</code></pre>
-                </section>
-            </section>
-                <section>
-                    <section>
-                        <h2>Collections</h2>
-                    </section>
                     <section>
                         <h3>Set</h3>
    <pre><code class="javascript" contenteditable>const programmers = new Set();
@@ -460,10 +422,47 @@ for (let e of map) {
 <pre class="fragment"><code class="javascript" contenteditable>map.delete(KEY1);
 console.log(map.has(KEY1)); // false</code></pre>
                     </section>
+
+                    <section>
+                        <h3>WeakSet und WeakMap</h3>
+                        <h1 style="color: red">TODO</h1>
+                  </section>
+
+
                 </section>
 
-
+            <section id="functions">
                 <section>
+                    <h2>Verbesserungen bei Funktionen</h2>
+                </section>
+            <section>
+                <h3>Arrow Functions</h3>
+<pre><code class="javascript" contenteditable>const displayInPage = (text) => {
+   return document.body.innerHTML +=
+       `${text}<br>`;
+};</code></pre>
+<pre class="fragment"><code class="javascript" contenteditable>const displayInPage = text => document.body.innerHTML += `${text}<br>`;
+</code></pre>
+            </section>
+                <section>
+                    <h3>Default Parameter</h3>
+<pre><code class="javascript" contenteditable>const displayInPage = (text = '\n') =>
+    console.log(text);</code></pre>
+<pre class="fragment"><code class="javascript" contenteditable>displayInPage();
+</code></pre>
+                </section>
+                <section>
+                    <h3>Rest-Parameters</h3>
+<pre><code class="javascript" contenteditable>const displayInPage = (...texts) =>
+    texts.forEach(text => console.log(text));
+</code></pre>
+<pre class="fragment"><code class="javascript" contenteditable>displayInPage('Hi', 'Folks');
+// Hi
+// Folks
+</code></pre>
+                </section>
+            </section>
+                <section id="promises">
                     <section>
                         <h2>Promises</h2>
                     </section>
@@ -572,18 +571,35 @@ return fetch(url)
 </code></pre>
                 </section>
                 </section>
-        <section>
-            <h3>Es gibt nocht mehr</h3>
-            <ul>
-                <li class="fragment">Symbol
+                <section>
+                    <h2>Übung: Daten vom Server laden mit fetch und Promises</h2>
+                    <ul>
+                        <li>Lade Daten vom Server und verarbeite sie asynchron mit Promises
+                        <li>Mach dazu mit fetch einen GET-Request auf
+                          <pre><code class="html" contenteditable>https://mortgage-demo.appspot.com/mortgage_calculator/rs/200000/10/7.5/30</code></pre>
+                        <li>Wandle das Ergebnis von JSON und resolve das Promise mit dem Feld "monthly"
+                        <li>Nutzen das Promise und gib das Endergebnis aus
+                    </ul>
+                </section>
+                
+                <section id="iterators">
+                    <section>
+                        <h2>Symbole, Iteratoren, Generatoren</h2>
+                    </section>
+                <!--<li class="fragment">Symbol
                 <li class="fragment">Iterator
                 <li class="fragment">Generator
-                <li class="fragment">WeakSet, WeakMap
-                <li class="fragment">Computed Properties
-                <li class="fragment">Proxies
-                <li class="fragment">Tail Call Optimization
-            </ul>
-        </section>
+                <li class="fragment">Computed Properties-->
+                  
+                  <section>
+                    <h2>Übung: Mache deine Liste von Personen iterierbar</h2>
+                    <ul>
+                        <li>TODO
+                    </ul>
+                </section>
+
+                </section>
+
             </div>
 
 		</div>
