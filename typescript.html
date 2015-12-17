@@ -79,19 +79,6 @@ Es gibt eine ganze Reihe von Stellen, an denen zwar der TypeScript-Compiler kein
         <h3>Lokale Variabken, Parameter und Felder in Klassen</h3>
       </section>
       <section>
-        <h3>Typen-Inferenz</h3>
-        <!-- 
-          http://www.typescriptlang.org/Handbook#type-inference
-          
-        https://github.com/Microsoft/TypeScript/wiki/What's-new-in-TypeScript#type-guards
-        
-          User defined type guards
-        http://blogs.msdn.com/b/typescript/archive/2015/09/16/announcing-typescript-1-6.aspx
-        
-        https://github.com/Microsoft/TypeScript/wiki/What's-new-in-TypeScript#improved-checking-for-destructuring-object-literal
-        -->
-      </section>
-      <section>
         <h3>Type Assertions aka Casts</h3>
       </section>
       <section>
@@ -170,7 +157,13 @@ Es gibt eine ganze Reihe von Stellen, an denen zwar der TypeScript-Compiler kein
       </section>
       <section>
         <h3>Enums</h3>
-      <!--https://github.com/Microsoft/TypeScript/wiki/What's-new-in-TypeScript#const-enum-completely-inlined-enums-->
+           <pre><code class="javascript" contenteditable>enum Langauge {Cobol=1, Haskell, JavaScript };
+console.log(Langauge.JavaScript);
+// 3
+
+const haskellAsName: string = Langauge[2];
+console.log(haskellAsName);
+// Haskell</code></pre>
       </section>
       <section>
         <h3>Async Await</h3>
@@ -199,23 +192,56 @@ Es gibt eine ganze Reihe von Stellen, an denen zwar der TypeScript-Compiler kein
       </section>
       
       <section>
-        <h3>Tuple Types</h3>
-        <!--https://github.com/Microsoft/TypeScript/wiki/What's-new-in-TypeScript#tuple-types-->
+        <h3>Union Types</h3>
+      <!--https://github.com/Microsoft/TypeScript/wiki/What's-new-in-TypeScript#union-types-->
+<pre><code class="javascript" contenteditable>let stuff: string | number;
+</code></pre>
+<pre class="fragment"><code class="javascript" contenteditable>stuff = 10; // cool  
+</code></pre>
+<pre class="fragment"><code class="javascript" contenteditable>stuff = "yo"; // cool
+</code></pre>
+<pre class="fragment"><code class="javascript" contenteditable>// Error: boolean not assignable
+stuff = true;  
+</code></pre>
+
       </section>
       <section>
-        <h3>Type Aliases</h3>
-        <!-- Generic type aliases
+        <h3>Typen-Inferenz</h3>
         
-        https://github.com/Microsoft/TypeScript/wiki/What's-new-in-TypeScript#type-aliases
+        <!-- 
+          http://www.typescriptlang.org/Handbook#type-inference
+          
+        https://github.com/Microsoft/TypeScript/wiki/What's-new-in-TypeScript#type-guards
         
+          User defined type guards
         http://blogs.msdn.com/b/typescript/archive/2015/09/16/announcing-typescript-1-6.aspx
         
-        https://github.com/Microsoft/TypeScript/wiki/What's-new-in-TypeScript#generic-type-aliases
+        https://github.com/Microsoft/TypeScript/wiki/What's-new-in-TypeScript#improved-checking-for-destructuring-object-literal
         -->
       </section>
       <section>
-        <h3>Union Types</h3>
-      <!--https://github.com/Microsoft/TypeScript/wiki/What's-new-in-TypeScript#union-types-->
+        <h3>Code-Beispiel: Type-Guards</h3>
+<pre><code class="javascript" contenteditable>function doStuff(x: string | number) {
+  if (typeof x === 'string') {
+    // no need to cast, x is of type string here
+    return x.length;
+  } else {
+    // x must be of type number,no need to cast 
+    return x - 1;
+  }
+}
+</code></pre>
+
+<pre class="fragment"><code class="javascript" contenteditable>const res1: number = doStuff(10);
+console.log(res1);
+const res2: number = doStuff('Olli');
+console.log(res2);
+</code></pre>
+<pre class="fragment"><code class="javascript" contenteditable>// Error: parameter does not match
+// doStuff(true);
+
+// Error: return type does not match
+// const res3: string = doStuff('Olli');</code></pre>
       </section>
       <section>
         <h3>Intersection Types</h3>
@@ -224,15 +250,57 @@ Es gibt eine ganze Reihe von Stellen, an denen zwar der TypeScript-Compiler kein
         
         https://github.com/Microsoft/TypeScript/wiki/What's-new-in-TypeScript#intersection-types
         -->
+<pre><code class="javascript" contenteditable>interface HasAge {
+  age: number;
+}
+
+interface HasName {
+  name: string;
+}
+
+function doMoreStuff(x: HasAge & HasName) {
+  return `${x.name} is ${x.age}`;
+}
+
+const res: string = doMoreStuff({name: 'Olli', age: 45});
+console.log(res);
+// Olli is 45
+
+// Error: does not fullfill HasName
+// doMoreStuff({age: 45});
+
+// Error: does not fullfill HasAge
+// doMoreStuff({name: 'Olli'});
+</code></pre>
       </section>
+            <section>
+        <h3>Tuple Types</h3>
+        <!--https://github.com/Microsoft/TypeScript/wiki/What's-new-in-TypeScript#tuple-types-->
+<pre><code class="javascript" contenteditable>function doMoreStuff(x: HasAge & HasName): [string, string, number] {
+  return [`${x.name} is ${x.age}`, x.name, x.age];
+}
+
+const res = doMoreStuff({name: 'Olli', age: 45});
+const str: string = res[1];
+const num: number = res[2];
+
+// Error: string not assingable to number
+// const num2: number = res[1];
+</code></pre>
+      </section>
+
       <section>
-        <h3>this-Typing</h3>
+        <h3>Es gibt noch mehr</h3>
       <!--https://github.com/Microsoft/TypeScript/wiki/What's-new-in-TypeScript#this-typing-->
-      </section>
-      
-      <section>
-        <h3>Lokale Typen</h3>
         <!--https://github.com/Microsoft/TypeScript/wiki/What's-new-in-TypeScript#local-type-declarations-->
+        <!-- Generic type aliases
+        
+        https://github.com/Microsoft/TypeScript/wiki/What's-new-in-TypeScript#type-aliases
+        
+        http://blogs.msdn.com/b/typescript/archive/2015/09/16/announcing-typescript-1-6.aspx
+        
+        https://github.com/Microsoft/TypeScript/wiki/What's-new-in-TypeScript#generic-type-aliases
+        -->
       </section>
     </section>
 
