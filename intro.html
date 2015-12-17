@@ -100,7 +100,18 @@
                     <a href="helloworld.html" target="_blank">Run</a>
                     </section>
                     <section>
-                        <h2>Hello World: Markup</h2>
+                      <h2>HTML und JavaScript im Browser</h2>
+                      <ul>
+                        <li class="fragment">Mit HTML Markup kannst du den Aufbau einer Webseite beschreiben
+                        <li class="fragment">Elemente werden mit Start- und End-Tags umschlossen
+                        <li class="fragment">Start- und End-Tags sind manchmal optional, wenn sie erschlossen werden können
+                        <li class="fragment">Im HTML kann es einen oder mehrere <em>script</em>-Elemente an beliebigen Positionen geben
+                        <li class="fragment">Diese können direkt oder als Link JavaScript enthalten
+                        <li class="fragment">Sie werden in der Reihenfolge wie sie definiert sind geladen und ausgeführt
+                      </ul>
+                    </section>
+                    <section>
+                        <h2>Hello World: Markup und DOM</h2>
                         <pre><code class="xml" contenteditable>
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
@@ -117,6 +128,19 @@
 &lt;/html&gt;
                         </code></pre>
                         <a href="helloworld2.html" target="_blank">Run</a>
+                    </section>
+                    <section>
+                      <h2>HTML Markup und das DOM</h2>
+                      <ul>
+                        <li class="fragment">HTML Markup wird vom Browser geparst und in das DOM gewandelt
+                        <li class="fragment">Das DOM (Document Object Model) ist eine Baumrepräsentation der dargestellten Objekte
+                        <li class="fragment">Wenn sich das DOM ändert, ändert sich auch die Darstellung
+                        <li class="fragment">Listener auf Änderungen oder Benutzerinteraktionen sind ebenso möglich 
+                        <li class="fragment">Das DOM kann den Zustand der Anwendung halten (Eingabe in einem Input-Element)
+                        <li class="fragment">Das DOM kann auch über eine API abgefragt (<code>getElementById</code>) 
+                        oder verändert (<code>innerHTML = ...</code>) werden
+                        <li class="fragment">Man kann eine komplette Seite nur über die API erstellen
+                      </ul>
                     </section>
                     <section>
                         <h3>Hello World: API</h3>
@@ -1131,7 +1155,7 @@ it('that fired event is received', function() {
                         <li>Schreibe mit Jasmine sinnvolle Spezifikationen
                     </ul>
                 </section>
-                <section>
+                <section id="this">
                     <section>
                         <h2>this</h2>
                         <p class="fragment"><code>this</code> wird in JavaScript dynamisch bei einem Aufruf einer Funktion gebunden und kann in der Funktion benutzt werden.</p>

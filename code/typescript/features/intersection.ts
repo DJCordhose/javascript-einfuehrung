@@ -14,3 +14,11 @@ function doMoreStuff(x: HasAge & HasName) {
 
 const res: string = doMoreStuff({name: 'Olli', age: 45});
 console.log(res);
+// Olli is 45
+
+// Error: does not fullfill HasName
+// doMoreStuff({age: 45});
+
+// Error: does not fullfill HasAge
+// doMoreStuff({name: 'Olli'});
+

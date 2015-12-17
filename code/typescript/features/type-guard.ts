@@ -16,18 +16,7 @@ const res1: number = doStuff(10);
 console.log(res1);
 const res2: number = doStuff('Olli');
 console.log(res2);
-// does not even compile
+// Error: parameter does not match
 // doStuff(true);
+// Error: return type does not match
 // const res3: string = doStuff('Olli');
-
-interface Person {
-  name: string;
-} 
-
-enum Langauge {Cobol, Haskell, JavaScript };
-
-interface Programmer {
-  language: Langauge;
-}
-
-console.log(Langauge.JavaScript);

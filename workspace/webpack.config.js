@@ -1,6 +1,6 @@
 module.exports = {
-    // entry: "./src/es6/main.js",
-    entry: "./src/typescript/main.ts",
+    entry: "./src/es6/main.js",
+    // entry: "./src/typescript/main.ts",
     output: {
         path: __dirname,
         filename: "public/dist/bundle.js"
