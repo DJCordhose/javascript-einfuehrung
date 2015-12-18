@@ -337,16 +337,6 @@ sayer.what;
     
     <section id="extensions">
       <section>
-        <h2>Nützliche Erweiterungen von ES 2015</h2>
-      </section>
-      <section>
-        <h3>Generics</h3>
-        <!--https://github.com/Microsoft/TypeScript/wiki/What's-new-in-TypeScript#stricter-generics-->
-      </section>
-      <section>
-        <h3>Externe Deklarationen</h3>
-      </section>
-      <section>
         <h3>Enums</h3>
             <p><a target="_blank" href="http://www.typescriptlang.org/Handbook#basic-types-enum">
     Aufzählungsyp auf Basis von Number
@@ -362,10 +352,35 @@ console.log(haskellAsName);
 // Haskell</code></pre>
       </section>
       <section>
-        <h3>Dekoratoren aka Annotations</h3>
-      <!--https://github.com/Microsoft/TypeScript/wiki/What's-new-in-TypeScript#decorators-->
+        <h3>Generics</h3>
+            <p><a target="_blank" href="http://www.typescriptlang.org/Handbook#generics">
+    Generics, fast wie in Java
+    </a>
+    </p>
+
+           <pre><code class="typescript" contenteditable>// main use case generic collections
+const map: Map&lt;HasName, Number> = new Map();
+const KEY1:HasName = {name: 'KEY1'};
+map.set(KEY1, 42);
+
+console.log(map.get(KEY1)); // 42
+console.log(map.has(KEY1)); // true
+console.log(map.size); // 1
+
+map.forEach((value: Number, index: HasName) => 
+  console.log(`value=${value}, index=${index.name}`)); 
+// value=42, index=KEY1
+</code></pre>
+           <pre class="fragment"><code class="typescript" contenteditable>// extends constraints (no super)
+function identity&lt;T extends HasName>(arg: T): T {
+    return arg;
+}
+
+// return type is inferred to HasName
+const olli = identity({name: 'Olli'});
+console.log(olli.name);
+</code></pre>
       </section>
-      
     </section>
       <section>
           <h2>Übung: Erweiterungen</h2>
@@ -373,8 +388,7 @@ console.log(haskellAsName);
               <li>Füge passende Zugriffsmodifier ein
               <li>Nutze Shortcut-Constructoren 
               <li>Mach die Personen-Klasse abstrakt
-              <li>überlade mindesten eine Methode
-              <li>überlege dir mindestens eine sinnvolle Anwendung für eine andere Erweiterung
+              <li>überlege dir mindestens eine sinnvolle Anwendung für Enums oder Generics
           </ul>
       </section>
 
@@ -502,15 +516,23 @@ const num: number = res[2];
               User defined type guards</a>: Typeninferenz kann durch beliebigen Code bestimmt werden
               <li class="fragment"><a target="_blank" href="http://www.typescriptlang.org/Handbook#functions-overloads">
               Overload</a>: Überladen von Methoden und Funktionen
+              <li class="fragment"><a target="_blank" href="https://github.com/Microsoft/TypeScript/wiki/What's-new-in-TypeScript#decorators">
+              Decorators</a>: Funktionen die so etwas tun wie Annotation
+              <li class="fragment"><a target="_blank" href="http://www.typescriptlang.org/Handbook#writing-dts-files">
+              Externe Deklarationen</a>: (Zusätzliche) Typinformationen zu JavaScript-Modulen
               <li class="fragment"><a target="_blank" href="http://blogs.msdn.com/b/typescript/archive/2015/11/03/what-about-async-await.aspx">
               Async Await</a>: C#-Pattern als Alternative zu Promises 
-                    <section>
-      </section>
- 
           </ul>
 
       </section>
     </section>
+<section>
+  <h2>Zunkunft</h2>
+  <p><a target="_blank" href="https://github.com/Microsoft/TypeScript/wiki/Roadmap">
+              Roadmap</a>
+
+</section>
+
 
       <section>
           <h2>Übung: Abschluss-Diskussion</h2>
