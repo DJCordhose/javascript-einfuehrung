@@ -76,15 +76,147 @@ Es gibt eine ganze Reihe von Stellen, an denen zwar der TypeScript-Compiler kein
       <!--http://www.typescriptlang.org/Handbook#type-compatibility-->
       </section>
       <section>
-        <h3>Lokale Variabken, Parameter und Felder in Klassen</h3>
+        <h3>Lokale Variablen, Parameter und Felder in Klassen</h3>
+           <pre class="fragment"><code class="typescript" contenteditable>let obj: string;
+obj = 'yo';
+// Error: ype 'number' is not assignable to type 'string'.
+obj = 10;
+</code></pre>
+           <pre class="fragment"><code class="typescript" contenteditable>function sayIt(what: string): string {
+  return `Saying: ${what}`;
+}
+
+const said: string = sayIt(obj);
+</code></pre>
+           <pre class="fragment"><code class="typescript" contenteditable>class Sayer {
+  what: string;
+  constructor(what) {
+    this.what = what;
+  }
+  sayIt(): string {
+    return `Saying: ${this.what}`;
+  }
+}
+</code></pre>
       </section>
       <section>
-        <h3>Type Assertions aka Casts</h3>
+        <h3>Interfaces</h3>
+           <pre><code class="typescript" contenteditable>interface SayerInterface {
+  sayIt: () => string;
+}
+let sayer: SayerInterface = new Sayer(obj);
+console.log(sayer.sayIt());
+</code></pre>
+           <pre class="fragment"><code class="typescript" contenteditable>// Function Type Interface
+interface SayerFunctionInterface {
+  (string): string;
+}
+
+const func: SayerFunctionInterface = sayIt;
+</code></pre>
+      </section>
+            <section>
+        <h3>Strukturelle Kompatibilität</h3>
+           <pre><code class="typescript" contenteditable>// class implicitly defines interface
+sayer = {
+  what: 'something',
+  sayIt() {
+    return 'whatever'
+  }
+}
+</code></pre>
+           <pre class="fragment"><code class="typescript" contenteditable>// only structure matters
+interface AnotherSayer {
+  what: string;
+  that: string;
+  sayIt: () => string;
+  sayThat: () => string;
+}
+
+let anotherSayer: AnotherSayer;
+sayer = anotherSayer;
+</code></pre>
+      </section>
+
+      <section>
+        <h3>Typen-Inferenz</h3>
+  <p><a target="_blank" href="http://www.typescriptlang.org/Handbook#type-inference">
+    Type-Informationen sind optional, fehlende Typen werden erschlossen
+    </a>
+    </p>
+          <ul>
+              <li class="fragment"><a target="_blank" href="">
+    Best Common Type
+    </a>: Wird bei der Initialisierung bestimmt
+<pre><code>const array = [1, 2, 3, "yo"];
+// Error: array is (number | string)[]
+array[4] = true;
+</code></pre>
+              <li class="fragment"><a target="_blank" href="http://www.typescriptlang.org/Handbook#basic-types-any">
+    any
+    </a>: Typeninferenz abschalten
+<pre><code>let array2: any[] = [1, 2, 3, "yo"];
+// cool, array2 can containing anything
+array2[4] = true;
+
+let array3: any = [1, 2, 3, "yo"];
+// cool, array3 can be anything
+array3 = true;
+</code></pre>
+              <li class="fragment"><a target="_blank" href="http://www.typescriptlang.org/Handbook#basic-types-void">
+    void
+    </a>: keine Zuweisung möglich
+<pre><code>// Error: can not contain anything 
+let array4: void = [];
+</code></pre>
+          </ul>
+
+      </section>
+      <section>
+        <h3>Casts</h3>
+           <p><a target="_blank" href="https://github.com/Microsoft/TypeScript/wiki/What's-new-in-TypeScript#new-tsx-file-extension-and-as-operator">
+    Typ-Wandlung auf spezielleren Typ sind möglich mit explizitem Cast (Down-Cast)
+    </a>
+    </p>
+
+           <pre><code class="javascript" contenteditable>let obj: Object;
+
+// Error, Array is more special than Object
+const array5: any[] = obj; 
+</code></pre>
+           <pre class="fragment"><code class="typescript" contenteditable>// Down-Casts
+             
+const array6: any[] = obj as any[]; 
+const array7: any[] = &lt;any[]&gt;obj; 
+</code></pre>
+           <pre class="fragment"><code class="typescript" contenteditable>let num: number;
+ 
+// Error, no down-cast possible
+const array8: any[] = &lt;any[]>num; 
+</code></pre>
       </section>
       <section>
         <h3>Projekt-Konfiguration über tsconfig.json</h3>
-      <!--https://github.com/Microsoft/TypeScript/wiki/What's-new-in-TypeScript#project-support-through-tsconfigjson-->
-      <!--https://github.com/Microsoft/TypeScript/wiki/tsconfig.json-->
+           <p><a target="_blank" href="https://github.com/Microsoft/TypeScript/wiki/tsconfig.json">
+    Projekt-Verzeichins enthält Konfiguration und wird automatisch von tsc genutzt
+    </a>
+    </p>
+
+           <pre><code class="javascript" contenteditable>{
+    "compilerOptions": {
+        "module": "commonjs",
+        "target": "es5",
+        "noImplicitAny": true,
+        "outDir": "built",
+        "rootDir": ".",
+        "sourceMap": true
+    },
+    "exclude": [
+        "node_modules"
+    ]
+}        
+</code></pre>
+        
       </section>
     </section>
     <section>
@@ -157,17 +289,18 @@ Es gibt eine ganze Reihe von Stellen, an denen zwar der TypeScript-Compiler kein
       </section>
       <section>
         <h3>Enums</h3>
-           <pre><code class="javascript" contenteditable>enum Langauge {Cobol=1, Haskell, JavaScript };
+            <p><a target="_blank" href="http://www.typescriptlang.org/Handbook#basic-types-enum">
+    Aufzählungsyp auf Basis von Number
+    </a>
+    </p>
+
+           <pre><code class="typescript" contenteditable>enum Langauge {Cobol=1, Haskell, JavaScript };
 console.log(Langauge.JavaScript);
 // 3
 
 const haskellAsName: string = Langauge[2];
 console.log(haskellAsName);
 // Haskell</code></pre>
-      </section>
-      <section>
-        <h3>Async Await</h3>
-<!--http://blogs.msdn.com/b/typescript/archive/2015/11/03/what-about-async-await.aspx-->
       </section>
       <section>
         <h3>Dekoratoren aka Annotations</h3>
@@ -193,35 +326,30 @@ console.log(haskellAsName);
       
       <section>
         <h3>Union Types</h3>
-      <!--https://github.com/Microsoft/TypeScript/wiki/What's-new-in-TypeScript#union-types-->
-<pre><code class="javascript" contenteditable>let stuff: string | number;
+          <p><a target="_blank" href="https://github.com/Microsoft/TypeScript/wiki/What's-new-in-TypeScript#union-types">
+    Etwas kann von einem oder von einem anderen Typen sein
+    </a>
+    </p>
+
+<pre><code class="typescript" contenteditable>let stuff: string | number;
 </code></pre>
-<pre class="fragment"><code class="javascript" contenteditable>stuff = 10; // cool  
+<pre class="fragment"><code class="typescript" contenteditable>stuff = 10; // cool  
 </code></pre>
-<pre class="fragment"><code class="javascript" contenteditable>stuff = "yo"; // cool
+<pre class="fragment"><code class="typescript" contenteditable>stuff = "yo"; // cool
 </code></pre>
-<pre class="fragment"><code class="javascript" contenteditable>// Error: boolean not assignable
+<pre class="fragment"><code class="typescript" contenteditable>// Error: boolean not assignable
 stuff = true;  
 </code></pre>
 
       </section>
       <section>
-        <h3>Typen-Inferenz</h3>
-        
-        <!-- 
-          http://www.typescriptlang.org/Handbook#type-inference
-          
-        https://github.com/Microsoft/TypeScript/wiki/What's-new-in-TypeScript#type-guards
-        
-          User defined type guards
-        http://blogs.msdn.com/b/typescript/archive/2015/09/16/announcing-typescript-1-6.aspx
-        
-        https://github.com/Microsoft/TypeScript/wiki/What's-new-in-TypeScript#improved-checking-for-destructuring-object-literal
-        -->
-      </section>
-      <section>
-        <h3>Code-Beispiel: Type-Guards</h3>
-<pre><code class="javascript" contenteditable>function doStuff(x: string | number) {
+        <h3>Type-Guards</h3>
+  <p><a target="_blank" href="https://github.com/Microsoft/TypeScript/wiki/What's-new-in-TypeScript#type-guards">
+    typeof oder instanceof bestimmen Typeninferenz
+    </a>
+    </p>
+
+<pre><code class="typescript" contenteditable>function doStuff(x: string | number) {
   if (typeof x === 'string') {
     // no need to cast, x is of type string here
     return x.length;
@@ -232,12 +360,12 @@ stuff = true;
 }
 </code></pre>
 
-<pre class="fragment"><code class="javascript" contenteditable>const res1: number = doStuff(10);
+<pre class="fragment"><code class="typescript" contenteditable>const res1: number = doStuff(10);
 console.log(res1);
 const res2: number = doStuff('Olli');
 console.log(res2);
 </code></pre>
-<pre class="fragment"><code class="javascript" contenteditable>// Error: parameter does not match
+<pre class="fragment"><code class="typescript" contenteditable>// Error: parameter does not match
 // doStuff(true);
 
 // Error: return type does not match
@@ -245,12 +373,12 @@ console.log(res2);
       </section>
       <section>
         <h3>Intersection Types</h3>
-        <!-- Intersection types
-        http://blogs.msdn.com/b/typescript/archive/2015/09/16/announcing-typescript-1-6.aspx
-        
-        https://github.com/Microsoft/TypeScript/wiki/What's-new-in-TypeScript#intersection-types
-        -->
-<pre><code class="javascript" contenteditable>interface HasAge {
+            <p><a target="_blank" href="https://github.com/Microsoft/TypeScript/wiki/What's-new-in-TypeScript#intersection-types">
+    Etwas muss von mehreren Typen gleichzeitig sein
+    </a>
+    </p>
+
+<pre><code class="typescript" contenteditable>interface HasAge {
   age: number;
 }
 
@@ -275,8 +403,12 @@ console.log(res);
       </section>
             <section>
         <h3>Tuple Types</h3>
-        <!--https://github.com/Microsoft/TypeScript/wiki/What's-new-in-TypeScript#tuple-types-->
-<pre><code class="javascript" contenteditable>function doMoreStuff(x: HasAge & HasName): [string, string, number] {
+    <p><a target="_blank" href="https://github.com/Microsoft/TypeScript/wiki/What's-new-in-TypeScript#tuple-types">
+    Jedes Element eines Arrays kann einen eigenen Typ bekommen
+    </a>
+    </p>
+
+<pre><code class="typescript" contenteditable>function doMoreStuff(x: HasAge & HasName): [string, string, number] {
   return [`${x.name} is ${x.age}`, x.name, x.age];
 }
 
@@ -291,23 +423,38 @@ const num: number = res[2];
 
       <section>
         <h3>Es gibt noch mehr</h3>
-      <!--https://github.com/Microsoft/TypeScript/wiki/What's-new-in-TypeScript#this-typing-->
-        <!--https://github.com/Microsoft/TypeScript/wiki/What's-new-in-TypeScript#local-type-declarations-->
-        <!-- Generic type aliases
-        
-        https://github.com/Microsoft/TypeScript/wiki/What's-new-in-TypeScript#type-aliases
-        
-        http://blogs.msdn.com/b/typescript/archive/2015/09/16/announcing-typescript-1-6.aspx
-        
-        https://github.com/Microsoft/TypeScript/wiki/What's-new-in-TypeScript#generic-type-aliases
-        -->
+          <ul>
+              <li class="fragment"><a target="_blank" href="https://github.com/Microsoft/TypeScript/wiki/What's-new-in-TypeScript#type-aliases">
+              Type Aliases</a>: alternative Namen für Typen
+              <ul>
+                <li class="fragment"><code>type Callback = () => void;</code>
+                <li class="fragment"><a target="_blank" href="https://github.com/Microsoft/TypeScript/wiki/What's-new-in-TypeScript#generic-type-aliases">
+              Auch möglich mit Generics</a>
+                <li class="fragment"><code>type Callback&lt;T> = (T) => void;</code>
+              </ul>
+              </li>
+              <!--<li class="fragment"><a target="_blank" href="https://github.com/Microsoft/TypeScript/wiki/What's-new-in-TypeScript#this-typing">
+              This Typing</a>-->
+              <li class="fragment"><a target="_blank" href="https://github.com/Microsoft/TypeScript/wiki/What's-new-in-TypeScript#local-type-declarations">
+              Local type declarations</a>: Klassen, Interfaces, Enums und Type Aliases können lokal definiert und nur dort sichtbar sein 
+              <li class="fragment"><a target="_blank" href="https://github.com/Microsoft/TypeScript/wiki/What's-new-in-TypeScript#class-expressions">
+              Class and Extend expressions</a>: Klassen und Extends-Klauseln können durch eine Expression bestimmt werden (kann schon ES6) 
+              <li class="fragment"><a target="_blank" href="http://blogs.msdn.com/b/typescript/archive/2015/09/16/announcing-typescript-1-6.aspx">
+              User defined type guards</a>: Typeninferenz kann durch beliebigen Code bestimmt werden
+              <li class="fragment"><a target="_blank" href="http://blogs.msdn.com/b/typescript/archive/2015/11/03/what-about-async-await.aspx">
+              Async Await</a>: C#-Pattern als Alternative zu Promises 
+                    <section>
+      </section>
+ 
+          </ul>
+
       </section>
     </section>
 
       <section>
           <h2>Übung: Abschluss-Diskussion</h2>
           <ul>
-              <li>Hast du eines der fortgeschrittenen Typenkonzepte jemals in Java vermisst?
+              <li class="fragment">Hast du eines der (fortgeschrittenen) Typenkonzepte von TypeScript bisher in Java vermisst?
               <li class="fragment">Gibt es in Java evtl. andere Mechanismen um dasselbe zu erreichen?
               <li class="fragment">Findest du Java-Generics besser als TypeScript-Generics?
               <li class="fragment">Wie findest du das optionale Typing? Wie gehst du damit um? (überall Typen vs. nur manchmal)

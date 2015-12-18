@@ -1,6 +1,6 @@
 // https://github.com/Microsoft/TypeScript/wiki/What's-new-in-TypeScript#type-guards
 
-
+{
 // will return number
 function doStuff(x: string | number) {
   if (typeof x === 'string') {
@@ -20,3 +20,4 @@ console.log(res2);
 // doStuff(true);
 // Error: return type does not match
 // const res3: string = doStuff('Olli');
+}

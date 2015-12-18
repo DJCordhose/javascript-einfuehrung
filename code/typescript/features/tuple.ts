@@ -1,5 +1,5 @@
 https://github.com/Microsoft/TypeScript/wiki/What's-new-in-TypeScript#tuple-types
-
+{
 interface HasAge {
   age: number;
 }
@@ -18,3 +18,4 @@ const num: number = res[2];
 
 // Error: string not assingable to number
 // const num2: number = res[1];
+}
