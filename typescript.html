@@ -258,21 +258,80 @@ const array8: any[] = &lt;any[]>num;
         <h2>Erweiterungen von ES 2015 Klassen</h2>
       </section>
       <section>
-        <h3>Zugriffsmodifier</h3>
-      </section>
-      <section>
-        <h3>Shortcut Konstruktoren</h3>
-      </section>
-      <section>
-        <h3>Überladen von Methoden</h3>
-      </section>
-      <section>
         <h3>Abstrakte Klassen</h3>
-        <!-- Abstract classes
-        http://blogs.msdn.com/b/typescript/archive/2015/09/16/announcing-typescript-1-6.aspx
-        
-        https://github.com/Microsoft/TypeScript/wiki/What's-new-in-TypeScript#abstract-classes-and-methods
-        -->
+                   <p><a target="_blank" href="https://github.com/Microsoft/TypeScript/wiki/What's-new-in-TypeScript#abstract-classes-and-methods">
+    Abstrakte Klassen und Methoden möglich, ähnlich wie in Java
+    </a>
+    </p>
+
+<pre class="fragment"><code class="typescript" contenteditable>abstract class AbstractSayer {
+  what: string;
+  constructor(what) {
+    this.what = what;
+  }
+  abstract sayIt(): string;
+}
+</code></pre>
+<pre class="fragment"><code class="typescript" contenteditable>class Sayer extends AbstractSayer {
+  constructor(what) {
+    super(what);
+  }
+  sayIt(): string {
+    return `Saying: ${this.what}`;
+  }
+}
+</code></pre>
+<pre class="fragment"><code class="typescript" contenteditable>let sayer: Sayer = new Sayer('Yo');
+console.log(sayer.sayIt());
+</code></pre>
+
+      </section>
+      <section>
+        <h3>Zugriffsmodifier</h3>
+</code></pre>
+<pre class="fragment"><code class="typescript" contenteditable>abstract class AbstractSayer {
+  protected what: string;
+  private notInherited: any;
+  constructor(what) {
+    this.what = what;
+    this.notInherited = 'secret';
+  }
+  abstract sayIt(): string;
+}
+</code></pre>
+<pre class="fragment"><code class="typescript" contenteditable>class Sayer extends AbstractSayer {
+  constructor(what) {
+    super(what);
+  }
+  // public is default
+  sayIt(): string {
+    // Error: Property 'notInherited' is private and only accessible within class 'AbstractSayer'.
+    this.notInherited;
+    // can access protected from inheriting class
+    return `Saying: ${this.what}`;
+  }
+}
+</code></pre>
+<pre class="fragment"><code class="typescript" contenteditable>let sayer: Sayer = new Sayer('Yo');
+console.log(sayer.sayIt());
+
+// Error: Property 'what' is protected and only accessible within class 'AbstractSayer' and its subclasses.
+sayer.what;
+</code></pre>
+      </section>
+      <section>
+        <h3>Shorthand Konstruktoren</h3>
+<pre><code class="typescript" contenteditable>class Sayer {
+  constructor(private what: string) {
+  }
+
+  sayIt(): string {
+    return `Saying: ${this.what}`;
+  }
+
+}
+</code></pre>
+
       </section>
     </section>
     
@@ -441,6 +500,8 @@ const num: number = res[2];
               Class and Extend expressions</a>: Klassen und Extends-Klauseln können durch eine Expression bestimmt werden (kann schon ES6) 
               <li class="fragment"><a target="_blank" href="http://blogs.msdn.com/b/typescript/archive/2015/09/16/announcing-typescript-1-6.aspx">
               User defined type guards</a>: Typeninferenz kann durch beliebigen Code bestimmt werden
+              <li class="fragment"><a target="_blank" href="http://www.typescriptlang.org/Handbook#functions-overloads">
+              Overload</a>: Überladen von Methoden und Funktionen
               <li class="fragment"><a target="_blank" href="http://blogs.msdn.com/b/typescript/archive/2015/11/03/what-about-async-await.aspx">
               Async Await</a>: C#-Pattern als Alternative zu Promises 
                     <section>

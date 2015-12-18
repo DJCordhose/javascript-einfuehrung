@@ -8,5 +8,4 @@ import './union.ts';
 import './user-defined-type-guard.ts';
 import './tuple.ts';
 import './basic.ts';
-import './interface.ts';
-import './compatibility.ts';
+import './class-extensions.ts';
