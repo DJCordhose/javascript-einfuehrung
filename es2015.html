@@ -300,7 +300,12 @@ export function displayInPage(text) {
                         <h2>Neuerungen und Verbesserungen</h2>
                     </section>
                     <section>
-                        <h3>Template Strings</h3>
+                        <h3>Template Literals</h3>
+          <p><a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/template_strings">
+         String-Literale mit Lücken
+    </a>
+    </p>
+
    <pre><code class="javascript" contenteditable>const person = 'Oma';
 const language = 'Haskell';
 
@@ -314,13 +319,24 @@ in ${language}.`);
 </code></pre>
                     </section>
                     <section>
-                      <h3>Mini-DSLs: Template-String mit tag</h3>
-                        <h1 style="color: red">TODO</h1>
-   <pre><code class="javascript" contenteditable>Relay.QL`
-      fragment on Choice {
-        title,
-        count
-      }`
+                      <h3>Tagged Template Literals</h3>
+          <p><a target="_blank" href="http://exploringjs.com/es6/ch_template-literals.html#_tagged-templates">
+         Mini-DSLs: Template-Literals mit tag
+    </a>
+    </p>
+
+   <pre class="fragment"><code class="javascript" contenteditable>function tag(strings, ...values) {
+  console.log(strings);
+  //[ '', ' codes in ', '.' ]
+  console.log(values);
+  //[ 'Oma', 'Haskell' ]
+  return 'whatever you want';
+}
+</code></pre>
+                      
+   <pre><code class="javascript" contenteditable>const expanded = tag`${person} codes in ${language}.`;
+console.log(expanded);
+//whatever you want
 </code></pre>
 
                     </section>
@@ -387,15 +403,12 @@ console.log(person.toString()); // Oma
    </code></pre>
                     </section>
                     <section>
-                        <h3>Spread-Operator</h3>
-   <pre><code class="javascript" contenteditable>const array1 = ['Olli', 'how are you'];
-const array2 = ['Hi', ...array1, '?'];
-console.log(array2);
-// => ["Hi", "Olli", "how are you", "?"]
-</code></pre>
-                    </section>
-                    <section>
                         <h3>for..of</h3>
+          <p><a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of">
+         Iterieren über alles was 'iterable' ist
+    </a>
+    </p>
+
    <pre><code class="javascript" contenteditable>for (const e of array2) {
     console.log(e);
 }
@@ -403,6 +416,20 @@ console.log(array2);
 // Olli
 // how are you
 // ?
+</code></pre>
+                    </section>
+                    <section>
+                        <h3>Spread-Operator</h3>
+          <p><a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_operator">
+          Alles was 'iterable' ist kann in einzelne Parameter transformiert werden 
+    </a>
+    </p>
+   <pre><code class="javascript" contenteditable>const array1 = ['Olli', 'how are you'];
+const array2 = ['Hi', ...array1, '?'];
+console.log(array2);
+// => ["Hi", "Olli", "how are you", "?"]
+</code></pre>
+   <pre class="fragment"><code class="javascript" contenteditable>console.log(...array1);
 </code></pre>
                     </section>
                     <section>
@@ -654,17 +681,150 @@ return fetch(url)
                     <section>
                         <h2>Symbole, Iteratoren, Generatoren</h2>
                     </section>
-                <!--<li class="fragment">Symbol
-                <li class="fragment">Iterator
-                <li class="fragment">Generator
-                <li class="fragment">Computed Properties-->
-                  
+                    <section>
+                        <h3>Symbole</h3>
+          <p><a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol">
+          Ein neuer Unikat-Datentyp als Key für Objekt-Properties 
+    </a>
+    </p>
+   <pre><code class="javascript" contenteditable>//  Even two symbols with the same description are unique:
+const good = Symbol('mood');
+console.log(good); // Symbol(mood)
+console.log(typeof good); // "symbol"
+const bad = Symbol('mood');
+console.log(good === bad); // false
+</code></pre>
+   <pre class="fragment"><code class="javascript" contenteditable>// global shared pool  
+const sym1 = Symbol.for('myKey');
+const sym2 = Symbol.for('myKey');
+console.log(sym1 === sym2); // true
+const key = Symbol.keyFor(sym1);
+console.log(key); // 'myKey'
+</code></pre>
+   <pre class="fragment"><code class="javascript" contenteditable>// well known symbol: iterator aka @@iterator  
+const iterator = Symbol.iterator;
+console.log(iterator); // Symbol(Symbol.iterator)
+const key = Symbol.keyFor(iterator);
+console.log(key); // undefined
+</code></pre>
+                    </section>
+                    <section>
+                        <h3>Symbol-Anwendungsfall: Privates Feld</h3>
+   <pre><code class="javascript" contenteditable>const Person = (() => { // IIFE using arrow function
+  // private
+  const nameSymbol = Symbol('name'); // name is optional
+
+  class Person {
+    constructor(name) {
+      this[nameSymbol] = name;
+    }
+
+    get name() {
+      return this[nameSymbol];
+    }
+  }
+
+  return Person;
+})();
+</code></pre>
+   <pre class="fragment"><code class="javascript" contenteditable>const olli = new Person("Olli");
+console.log(olli.name); // Olli
+
+// error as nameSymbol is out of scope
+console.log(olli[nameSymbol])
+</code></pre>
+                    </section>
+                    <section>
+                        <h3>Iterator</h3>
+          <p><a target="_blank" href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Iteration_protocols">
+            Eigene Iteratoren          
+    </a>: Möglich über einen Iterable, das einen Iterator als Property hat
+    </p>
+                        
+   <pre><code class="javascript" contenteditable>let count = 0;
+const prefix = 'name';
+const iterator = {
+    next() {
+        const value = count < 2 ? prefix + count++ : null;
+        return {done: value === null, value};
+    }
+
+};
+console.log(iterator.next());
+console.log(iterator.next());
+console.log(iterator.next());
+//{ done: false, value: 'name0' }
+//{ done: false, value: 'name1' }
+//{ done: true, value: null }
+</code></pre>
+                    </section>
+                    <section>
+                        <h3>Iterable und Computed Property</h3>
+   <pre><code class="javascript" contenteditable>const uniqueNamesIterable = {
+  // computed property [...]
+  [Symbol.iterator]() {
+    let count = 0;
+    const prefix = 'name';
+    const iterator = {
+      next() {
+        const value = count < 2 ? prefix + count++ : null;
+        return { done: value === null, value };
+      }
+    };
+    return iterator;
+  }
+};
+</code></pre>
+   <pre class="fragment"><code class="javascript" contenteditable>const array = [...uniqueNamesIterable];
+console.log(array);
+// [ 'name0', 'name1' ]
+
+
+for (let name of uniqueNamesIterable) {
+  console.log(name);
+}
+// name0
+// name1
+</code></pre>
+                    </section>
+                    <section>
+                        <h3>Generator und Generatoren-Funktion</h3>
+          <p class="fragment">Die 
+            <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function*">
+            Generatoren-Funktion          
+    </a> liefert ein
+            <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Generator">
+            Generator-Objekt          
+    </a></p>
+<p class="fragment">
+     Das Generator-Objekt erfüllt gleichzeitig das Iterator und Iterable Protokoll.
+</p>
+<p class="fragment">
+                <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/yield">
+            yield          
+    </a> liefert einen Wert wie <code>return</code>, erhält aber den aktuellen Zustand für eine spätere Fortsetzung
+    
+   <pre><code class="javascript" contenteditable>const uniqueNamesIterable = {
+  // * denotes generator function
+  *[Symbol.iterator]() {
+    let count = 0;
+    const prefix = 'name';
+    while (count < 2) {
+      const value = prefix + count++;
+        // return inside a generator function, preserves state
+      yield value;
+    }
+  }
+};
+</code></pre>
+                    </section>
+
                   <section>
                     <h2>Übung: Mache deine Liste von Personen iterierbar</h2>
-                                            <h1 style="color: red">TODO</h1>
-
                     <ul>
-                        <li>TODO
+                        <li>Erzeuge ein Iterable, das deine Personen enthält
+                        <li>Ergeuge eine Variante mit und eine ohne Generator
+                        <li>Iteriere über das Iterable mit allen dir bekannten Spracheigenschaften
                     </ul>
                 </section>
 

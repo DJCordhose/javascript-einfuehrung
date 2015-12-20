@@ -2,6 +2,7 @@
 
 {
   const uniqueNamesIterable = {
+    // computed property [...]
     [Symbol.iterator]() {
       let count = 0;
       const prefix = 'name';

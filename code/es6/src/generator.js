@@ -1,40 +1,44 @@
 // https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Iteration_protocols
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Generator
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/yield
 
 'use strict';
 {
-const uniqueNamesIterable = {
-    * [Symbol.iterator]() {
-        let count = 0;
-        const prefix = 'name';
-        while (count < 2) {
-            const value = prefix + count++;
-            yield value;
-        }
+  const uniqueNamesIterable = {
+    // * denotes generator function
+    *[Symbol.iterator]() {
+      let count = 0;
+      const prefix = 'name';
+      while (count < 2) {
+        const value = prefix + count++;
+        // return inside a generator function, preserves state
+        yield value;
+      }
     }
-};
+  };
 
-const iterator = uniqueNamesIterable[Symbol.iterator]();
-console.log(iterator.next());
-console.log(iterator.next());
-console.log(iterator.next());
-//{ value: 'name0', done: false }
-//{ value: 'name1', done: false }
-//{ value: undefined, done: true }
+  const iterator = uniqueNamesIterable[Symbol.iterator]();
+  console.log(iterator.next());
+  console.log(iterator.next());
+  console.log(iterator.next());
+  //{ value: 'name0', done: false }
+  //{ value: 'name1', done: false }
+  //{ value: undefined, done: true }
 
-//const array = [...uniqueNamesIterable];
-//console.log(array);
-// [ 'name0', 'name1' ]
+  //const array = [...uniqueNamesIterable];
+  //console.log(array);
+  // [ 'name0', 'name1' ]
 
-//for (let name of array) {
-//    console.log(name);
-//}
-// name0
-// name1
+  //for (let name of array) {
+  //    console.log(name);
+  //}
+  // name0
+  // name1
 
 
-for (let name of uniqueNamesIterable) {
+  for (let name of uniqueNamesIterable) {
     console.log(name);
-}
-// name0
-// name1
+  }
+  // name0
+  // name1
 }

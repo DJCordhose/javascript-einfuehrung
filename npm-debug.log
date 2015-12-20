@@ -5,7 +5,7 @@
 4 verbose stack Error: ENOENT: no such file or directory, open '/Users/olli/Development/javascript-einfuehrung/package.json'
 4 verbose stack     at Error (native)
 5 verbose cwd /Users/olli/Development/javascript-einfuehrung
-6 error Darwin 15.0.0
+6 error Darwin 15.2.0
 7 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "run" "webpack"
 8 error node v4.2.3
 9 error npm  v2.14.7
