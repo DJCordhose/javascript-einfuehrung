@@ -416,6 +416,8 @@ programmers.add(new Programmer('Oma', 88));
     p.log();
 }</code></pre>
 
+<pre class="fragment"><code class="javascript" contenteditable>set.forEach((value) => console.log(value));
+</code></pre>
 <pre class="fragment"><code class="javascript" contenteditable>const serialized = JSON.stringify([...programmers]);
 const deserialized = new Set(JSON.parse(serialized));</code></pre>
                     </section>
@@ -439,13 +441,40 @@ for (let e of map) {
 //[ { name: 'KEY1' }, 1 ]
 </code></pre>
 
+<pre class="fragment"><code class="javascript" contenteditable>map.forEach((value, key) => console.log(`${key}=${value}`));
+</code></pre>
+
 <pre class="fragment"><code class="javascript" contenteditable>map.delete(KEY1);
 console.log(map.has(KEY1)); // false</code></pre>
                     </section>
 
                     <section>
                         <h3>WeakSet und WeakMap</h3>
-                        <h1 style="color: red">TODO</h1>
+        <p><a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakSet">
+    WeakSet
+    </a> und
+    <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap">
+    WeakMap
+    </a>: Einträge werden nur so lange gehalten, wie es noch andere Referenzen darauf gibt 
+    </p>
+    
+    <pre><code class="javascript" contenteditable>const weakSet = new WeakSet();
+let domNode = {}; // this is not a real dom node, of course
+weakSet.add(domNode);
+console.log(weakSet.has(domNode)); // true
+domNode = null;
+// it is impossible to use `has` to find out if the domNode is still in the `WeakSet`,
+// because we no longer have a reference to the domNode
+</code></pre>
+
+<pre class="fragment"><code class="javascript" contenteditable>const weakMap = new WeakMap();
+let domNode = {}; // this is not a real dom node, of course
+weakMap.set(domNode, 'additional information');
+console.log(weakMap.get(domNode) === 'additional information'); // true
+domNode = null;
+// it is impossible to use `has` or `get `to find out if the entry 
+// is still in the `WeakMap`, because we no longer have a reference to the key
+</code></pre>
                   </section>
 
 
