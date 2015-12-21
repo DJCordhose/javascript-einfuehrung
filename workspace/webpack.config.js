@@ -8,7 +8,8 @@ module.exports = {
     module: {
         loaders: [
             {test: /\.jsx?$/, exclude: /node_modules/,  loader: 'babel'},
-            {test: /\.tsx?$/, loader: 'ts-loader'}
+            {test: /\.tsx?$/, loader: 'ts-loader'},
+            { test: /\.html$/, loader: 'html' }
         ]
     },
     devtool: 'source-map'
