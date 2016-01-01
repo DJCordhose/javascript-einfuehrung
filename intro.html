@@ -74,12 +74,6 @@
                         <p><a target="_blank" href="http://redmonk.com/dberkholz/2014/05/02/github-language-trends-and-the-fragmenting-landscape">http://redmonk.com/dberkholz/2014/05/02/github-language-trends-and-the-fragmenting-landscape</a></p>
                     </section>
                     <section>
-                        <h2>The five stages of coming to terms with JavaScript</h2>
-                        <a target="_blank" href="http://www.2ality.com/2014/07/stages-of-js.html">http://www.2ality.com/2014/07/stages-of-js.html</a>
-                    </section>
-
-
-                    <section>
                         <h1>Hello World</h1>
                     </section>
                     <section>
@@ -159,7 +153,7 @@
 &lt;/body&gt;
 &lt;/html&gt;
                         </code></pre>
-                        <a href="helloworld2.html" target="_blank">Run</a>
+                        <a href="helloworld3.html" target="_blank">Run</a>
                     </section>
                     <section>
                         <h2>Hello World: node</h2>
@@ -1164,20 +1158,12 @@ it('that fired event is received', function() {
                     <section>
                         <h3>Regeln für das Binden von this</h3>
                         <ol>
-                            <li class="fragment"><em>Im globalen Scope</em>: <code>this</code> ist das globale Objekt (im Browser ist dies <code>Window</code>)
                             <li class="fragment"><em>Konstruktoraufruf mit <code>new</code></em>: <code>this</code> ist das neu erzeugte Objekt
                             <li class="fragment"><em>Direkter Methodenaufruf</em>: <code>this</code> ist das Objekt über das sie aufgerufen wurde
                             oder <code>undefined</code> (bzw. das globale Objekt wenn nicht im <code>strict mode</code>), wenn keins angegeben ist
                             <li class="fragment"><em>Methodenaufruf über <code>call/apply</code></em>: <code>this</code> ist der erste Parameter von <code>call</code> oder <code>apply</code>
                             <li class="fragment"><em>Binden von this über <code>bind</code></em>: <code>this</code> wird als erster Parameter von <code>bind</code> vor dem Aufruf gebunden
                         </ol>
-                    </section>
-                    <section>
-                        <h3>Beispiel globaler Scope</h3>
-                        <pre><code class="javascript" contenteditable>
-var person = 'Olli';
-this.person === 'Olli';
-                        </code></pre>
                     </section>
                     <section>
                         <h3>Beispiel Konstruktoraufruf mit <code>new</code></h3>
