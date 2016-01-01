@@ -1,6 +1,6 @@
 {
   let obj: string;
-  // Error: ype 'number' is not assignable to type 'string'.
+  // Error: 'number' is not assignable to type 'string'.
   // obj = 10;
   obj = 'yo';
 
