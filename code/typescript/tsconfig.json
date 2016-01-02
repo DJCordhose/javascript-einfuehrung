@@ -1,5 +1,5 @@
 {
-    "version": "1.7.3",
+    "version": "1.7.5",
     "compilerOptions": {
         "target": "es5",
         "module": "commonjs",
@@ -13,13 +13,9 @@
         "preserveConstEnums": true,
         "suppressImplicitAnyIndexErrors": true,
         "sourceMap": true,
-        "outDir": "./public/dist"
-
+        "out": "./public/dist/main.js"
     },
-        "files": [
-          "./main.ts"
-        ],
-  "exclude": [
-    "node_modules"
-  ]
+    "files": [
+      "./main.ts"
+    ]
 }

@@ -10,6 +10,17 @@
 // declare type MethodDecorator = <T>(target: Object, propertyKey: string | symbol, descriptor: TypedPropertyDescriptor<T>) => TypedPropertyDescriptor<T> | void;
 // declare type ParameterDecorator = (target: Function, propertyKey: string | symbol, parameterIndex: number) => void;
 
+// Angular 2 use case
+// @Component({
+//     selector: 'hello-app',
+// })
+// @View({
+//     templateUrl: 'hello.html'
+// })
+// class HelloCmp {
+//   ...
+// }
+
 console.log('Decorators');
 
 @Component
