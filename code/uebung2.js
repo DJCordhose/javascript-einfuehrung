@@ -61,10 +61,10 @@
     console.log(alterArray);
 
     var summe = function (gesamtAlter, alter) {
-        return gesamtAlter + alter;
+        return gesamtAlter + alter / personen.length;
     };
 
-    var durchschnitt = alterArray.reduce(summe, 0) / personen.length;
+    var durchschnitt = alterArray.reduce(summe, 0) // / personen.length;
 
 //    var durchschnitt = personen.map(personToAlter).reduce(summe, 0) / personen.length;
 

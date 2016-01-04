@@ -2,16 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="400c8356-55f4-47e4-9197-a440448d06f4" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/code/muster/array.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/code/muster/basistyp-vs-object-typ.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/code/muster/for.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/code/muster/object.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/code/muster/strict.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/code/muster/string.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/code/muster/function.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/muster/strict.js" afterPath="$PROJECT_DIR$/code/muster/strict.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/sandbox.js" afterPath="$PROJECT_DIR$/code/sandbox.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/intro.html" afterPath="$PROJECT_DIR$/intro.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/komplett.html" afterPath="$PROJECT_DIR$/komplett.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/uebung2.js" afterPath="$PROJECT_DIR$/code/uebung2.js" />
     </list>
     <ignored path="javascript-einfuehrung.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -32,21 +27,83 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="sandbox.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="sandbox.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/code/sandbox.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="13" column="2" selection-start-line="13" selection-start-column="2" selection-end-line="13" selection-end-column="2" />
+            <state vertical-scroll-proportion="0.80981594">
+              <caret line="12" column="4" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="4" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="strict.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="uebung2.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/code/uebung2.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="70" column="15" selection-start-line="70" selection-start-column="15" selection-end-line="70" selection-end-column="15" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="jQuery-sandbox.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/jQuery-sandbox.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="helloworld-jQuery.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/helloworld-jQuery.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-9.935484">
+              <caret line="14" column="7" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="show-hide-jquery-basis.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/code/show-hide-jquery-basis.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-6.387097">
+              <caret line="9" column="36" selection-start-line="9" selection-start-column="36" selection-end-line="9" selection-end-column="36" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="show-hide-jquery.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/code/show-hide-jquery.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-2.0">
+              <caret line="6" column="7" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
+              <folding>
+                <marker date="1451935053000" expanded="true" signature="665:703" placeholder="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="for.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/code/muster/for.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="9" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="strict.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/code/muster/strict.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.07073955">
-              <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -67,16 +124,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="basistyp-vs-object-typ.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/code/muster/basistyp-vs-object-typ.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -104,7 +151,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/coding-sessions/wjax2015/src/index.js" />
         <option value="$PROJECT_DIR$/coding-sessions/wjax2015/package.json" />
         <option value="$PROJECT_DIR$/coding-sessions/wjax2015/src/v5-module.js" />
         <option value="$PROJECT_DIR$/coding-sessions/wjax2015/src/v1-basics.js" />
@@ -124,12 +170,10 @@
         <option value="$PROJECT_DIR$/coding-sessions/wjax2015/src/v6-more.js" />
         <option value="$PROJECT_DIR$/coding-sessions/wjax2015/src/v7-promise.js" />
         <option value="$PROJECT_DIR$/basis.html" />
-        <option value="$PROJECT_DIR$/code/show-hide-jquery.html" />
         <option value="$PROJECT_DIR$/code/show-hide-jquery-basis.html" />
         <option value="$PROJECT_DIR$/lib/jquery-2.1.1.js" />
         <option value="$PROJECT_DIR$/code/callback-query.html" />
         <option value="$PROJECT_DIR$/ajax-jquery.html" />
-        <option value="$PROJECT_DIR$/helloworld-jQuery.html" />
         <option value="$PROJECT_DIR$/code/callback-query-basis.html" />
         <option value="$PROJECT_DIR$/code/index.html" />
         <option value="$PROJECT_DIR$/code/jasmine-Person/spec/spec.js" />
@@ -153,8 +197,11 @@
         <option value="$PROJECT_DIR$/code/typescript/main.ts" />
         <option value="$PROJECT_DIR$/code/muster/basistyp-vs-object-typ.js" />
         <option value="$PROJECT_DIR$/code/muster/string.js" />
-        <option value="$PROJECT_DIR$/code/sandbox.js" />
         <option value="$PROJECT_DIR$/code/muster/strict.js" />
+        <option value="$PROJECT_DIR$/code/uebung2.js" />
+        <option value="$PROJECT_DIR$/helloworld-jQuery.html" />
+        <option value="$PROJECT_DIR$/code/show-hide-jquery.html" />
+        <option value="$PROJECT_DIR$/code/sandbox.js" />
       </list>
     </option>
   </component>
@@ -164,9 +211,8 @@
     <detection-done>true</detection-done>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="y" value="191" />
-    <option name="width" value="800" />
-    <option name="height" value="573" />
+    <option name="width" value="1280" />
+    <option name="height" value="800" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -350,6 +396,7 @@
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="full.screen.before.presentation.mode" value="false" />
+    <property name="FullScreen" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -360,10 +407,7 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="Node.js.strict.js">
-    <configuration default="false" name="v5-module-extends.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="$PATH$/babel-node" path-to-js-file="v5-module-extends.js" working-dir="$PROJECT_DIR$/coding-sessions/wjax2015/src">
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Node.js.sandbox.js">
     <configuration default="false" name="sandbox.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="$PATH$/node" path-to-js-file="sandbox.js" working-dir="$PROJECT_DIR$/code">
       <method />
     </configuration>
@@ -374,6 +418,9 @@
       <method />
     </configuration>
     <configuration default="false" name="strict.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="$PATH$/node" path-to-js-file="strict.js" working-dir="$PROJECT_DIR$/code/muster">
+      <method />
+    </configuration>
+    <configuration default="false" name="uebung2.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="$PATH$/node" path-to-js-file="uebung2.js" working-dir="$PROJECT_DIR$/code">
       <method />
     </configuration>
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
@@ -425,19 +472,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Node.js.v5-module-extends.js" />
-      <item index="1" class="java.lang.String" itemvalue="Node.js.sandbox.js" />
-      <item index="2" class="java.lang.String" itemvalue="Node.js.sandbox.js (1)" />
-      <item index="3" class="java.lang.String" itemvalue="Node.js.string.js" />
-      <item index="4" class="java.lang.String" itemvalue="Node.js.strict.js" />
+      <item index="0" class="java.lang.String" itemvalue="Node.js.sandbox.js" />
+      <item index="1" class="java.lang.String" itemvalue="Node.js.sandbox.js (1)" />
+      <item index="2" class="java.lang.String" itemvalue="Node.js.string.js" />
+      <item index="3" class="java.lang.String" itemvalue="Node.js.strict.js" />
+      <item index="4" class="java.lang.String" itemvalue="Node.js.uebung2.js" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Node.js.strict.js" />
-        <item index="1" class="java.lang.String" itemvalue="Node.js.sandbox.js" />
-        <item index="2" class="java.lang.String" itemvalue="Node.js.string.js" />
-        <item index="3" class="java.lang.String" itemvalue="Node.js.sandbox.js (1)" />
-        <item index="4" class="java.lang.String" itemvalue="Node.js.v5-module-extends.js" />
+        <item index="0" class="java.lang.String" itemvalue="Node.js.sandbox.js" />
+        <item index="1" class="java.lang.String" itemvalue="Node.js.uebung2.js" />
+        <item index="2" class="java.lang.String" itemvalue="Node.js.strict.js" />
+        <item index="3" class="java.lang.String" itemvalue="Node.js.string.js" />
+        <item index="4" class="java.lang.String" itemvalue="Node.js.sandbox.js (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -620,26 +667,32 @@
       <option name="project" value="LOCAL" />
       <updated>1449759546833</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="more destructuring examples">
+      <created>1451935129019</created>
+      <option name="number" value="00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1451935129019</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="191" width="800" height="573" extended-state="0" />
-    <editor active="true" />
+    <frame x="0" y="0" width="1280" height="800" extended-state="0" />
+    <editor active="false" />
     <layout>
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27968338" sideWeight="0.48598132" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.44022617" sideWeight="0.48598132" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="TypeScript Compiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32848233" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.51537335" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2952183" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.5150685" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3890411" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32452276" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28" sideWeight="0.5140187" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -657,10 +710,10 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.51537335" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2955729" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4375963" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32452276" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27968338" sideWeight="0.48598132" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.44093686" sideWeight="0.48598132" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -718,7 +771,8 @@
     <MESSAGE value="moved stuff around" />
     <MESSAGE value="added workspace" />
     <MESSAGE value="removed buggy kendo declarations" />
-    <option name="LAST_COMMIT_MESSAGE" value="removed buggy kendo declarations" />
+    <MESSAGE value="more destructuring examples" />
+    <option name="LAST_COMMIT_MESSAGE" value="more destructuring examples" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -727,48 +781,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/code/iife.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="24" column="52" selection-start-line="24" selection-start-column="52" selection-end-line="24" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/playground/javascript-4-java/kap6.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="10" column="7" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/playground/javascript-4-java/kap6.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="18" column="30" selection-start-line="18" selection-start-column="30" selection-end-line="18" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/code/callback-query-basis.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="46" column="10" selection-start-line="46" selection-start-column="10" selection-end-line="46" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/playground/sandbox.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/code/jasmine-Person/SpecRunner.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.418018">
-          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/code/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -3535,18 +3547,68 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/code/sandbox.js">
+    <entry file="file://$PROJECT_DIR$/code/muster/strict.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="13" column="2" selection-start-line="13" selection-start-column="2" selection-end-line="13" selection-end-column="2" />
+          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/code/muster/strict.js">
+    <entry file="file://$PROJECT_DIR$/code/muster/for.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.07073955">
-          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="9" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/uebung2.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="70" column="15" selection-start-line="70" selection-start-column="15" selection-end-line="70" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jQuery-sandbox.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/helloworld-jQuery.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.935484">
+          <caret line="14" column="7" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/show-hide-jquery-basis.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.387097">
+          <caret line="9" column="36" selection-start-line="9" selection-start-column="36" selection-end-line="9" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/show-hide-jquery.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.0">
+          <caret line="6" column="7" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
+          <folding>
+            <marker date="1451935053000" expanded="true" signature="665:703" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/sandbox.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.80981594">
+          <caret line="12" column="4" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="4" />
           <folding />
         </state>
       </provider>
