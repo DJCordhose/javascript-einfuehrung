@@ -49,7 +49,7 @@
   function g({name: x, y, z=10}) {
     console.log(`x=${x}`); // x=name
     console.log(`y=${y}`); // y=undefined
-    console.log(`z=${z}`); z=10
+    console.log(`z=${z}`); // z=10
   }
   g({ name: 'name' });
 

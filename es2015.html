@@ -12,19 +12,19 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 
 		<link rel="stylesheet" href="reveal.js/css/reveal.css">
-		<!--<link rel="stylesheet" href="reveal.js/css/theme/simple.css" id="theme">-->
-		<link rel="stylesheet" href="reveal.js/css/theme/night.css" id="theme">
+		<link rel="stylesheet" href="reveal.js/css/theme/simple.css" id="theme">
+		<!--<link rel="stylesheet" href="reveal.js/css/theme/night.css" id="theme">-->
 
 
 		<!-- Code syntax highlighting -->
-		<link rel="stylesheet" href="reveal.js/lib/css/zenburn.css">
+		<!--<link rel="stylesheet" href="reveal.js/lib/css/zenburn.css">-->
 		<style>
-			/*pre code {*/
-				/*display: block;*/
-				/*padding: 0.5em;*/
-				/*background: #FFFFFF !important;*/
-				/*color: #000000 !important;*/
-			/*}*/
+			pre code {
+				display: block;
+				padding: 0.5em;
+				background: #FFFFFF !important;
+				color: #000000 !important;
+			}
 			.right-img {
 				margin-left: 10px !important;
 				float: right;
@@ -395,11 +395,20 @@ console.log(`city=${city}`);
   },
   email: 'oliver.zeigermann@gmail.com'
 };</code></pre>
-   <pre class="fragment"><code class="javascript" contenteditable>function print({email: contact}) {
+   <pre class="fragment"><code class="javascript" contenteditable data-trim>
+function print({email: contact}) {
     console.log(`contact=${contact}`);
 }
 print(person);
 // contact=oliver.zeigermann@gmail.com
+</code></pre>
+   <pre class="fragment"><code class="javascript" contenteditable data-trim>
+function g({name: x, y, z=10}) {
+  console.log(`x=${x}`); // x=name
+  console.log(`y=${y}`); // y=undefined
+  console.log(`z=${z}`); // z=10
+}
+g({ name: 'name' });
 </code></pre>
                     </section>
                     <section>
@@ -409,6 +418,11 @@ console.log(`a=${a}`);
 // a=1
 console.log(`b=${b}`);
 // b=2
+</code></pre>
+   <pre class="fragment"><code class="javascript" contenteditable data-trim>
+const [, b] = [1, 2];
+console.log(`b=${b}`);
+//b=2
 </code></pre>
                     </section>
                     <section>
