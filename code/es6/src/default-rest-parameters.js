@@ -23,7 +23,6 @@ f2();
 //10
 //20
 
-// illegal, but works with Babel
 function f3(a = 10, b) {
     console.log(a);
     console.log(b);
