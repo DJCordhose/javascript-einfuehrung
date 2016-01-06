@@ -299,15 +299,23 @@ export default class Programmer extends Person {
                     </section>
                     <section>
                         <h3>Benannte Exporte</h3>
-   <pre><code class="javascript" contenteditable>// util.js
+   <pre><code class="javascript" contenteditable data-trim>// util.js
 export function displayInPage(text) {
     document.body.innerHTML +=
         `${text}<br>` ;
 }
+// or
+export { displayInPage };
    </code></pre>
-   <pre class="fragment"><code class="javascript" contenteditable>import {displayInPage} from "./util";</code></pre>
-   <pre class="fragment"><code class="javascript" contenteditable>import {displayInPage as display} from "./util";</code></pre>
-   <pre class="fragment"><code class="javascript" contenteditable>import * as util from "./util";</code></pre>
+   <pre class="fragment"><code class="javascript" contenteditable data-trim>import {displayInPage} from "./util";
+displayInPage('Hello, World');
+   </code></pre>
+   <pre class="fragment"><code class="javascript" contenteditable data-trim>import {displayInPage as display} from "./util";
+display('Hello, World');     
+   </code></pre>
+   <pre class="fragment"><code class="javascript" contenteditable data-trim>import * as util from "./util";
+util.displayInPage('Hello, World');     
+   </code></pre>
                     </section>
 
                 </section>
@@ -404,11 +412,11 @@ print(person);
 </code></pre>
    <pre class="fragment"><code class="javascript" contenteditable data-trim>
 function g({name: x, y, z=10}) {
-  console.log(`x=${x}`); // x=name
+  console.log(`x=${x}`); // x=olli
   console.log(`y=${y}`); // y=undefined
   console.log(`z=${z}`); // z=10
 }
-g({ name: 'name' });
+g({ name: 'olli' });
 </code></pre>
                     </section>
                     <section>

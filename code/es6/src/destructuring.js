@@ -47,11 +47,11 @@
   */
 
   function g({name: x, y, z=10}) {
-    console.log(`x=${x}`); // x=name
+    console.log(`x=${x}`); // x=olli
     console.log(`y=${y}`); // y=undefined
     console.log(`z=${z}`); // z=10
   }
-  g({ name: 'name' });
+  g({ name: 'olli' });
 
   {
     const [a, b] = [1, 2];

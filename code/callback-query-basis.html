@@ -14,8 +14,10 @@
   </form>
   <script>
     $(document).ready(function () {
--      $('#callback').click(function () {
--        $('p').html("Geklicked");
+      $('#callback').click(function () {
+        $('p').html("Geklicked");
+        console.log(this);
+          $(this).hide();
        });
      });
   </script>

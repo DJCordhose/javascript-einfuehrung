@@ -1,11 +1,11 @@
 "use strict";
 
-function _extends(_sub, _super) {
-    var IntermediateProto = function () {};
-    IntermediateProto.prototype = _super.prototype;
-    _sub.prototype = new IntermediateProto();
-    _sub.prototype.constructor = _sub;
-}
+//function _extends(_sub, _super) {
+//    var IntermediateProto = function () {};
+//    IntermediateProto.prototype = _super.prototype;
+//    _sub.prototype = new IntermediateProto();
+//    _sub.prototype.constructor = _sub;
+//}
 
 function Person(name) {
     this.name = name;
@@ -19,7 +19,8 @@ function Programmer(name, language) {
     Person.call(this, name);
     this.language = language;
 }
-_extends(Programmer, Person);
+Programmer.prototype = Object.create(Person.prototype);
+//_extends(Programmer, Person);
 
 Programmer.prototype.getName = function () {
     return this.language + " programmer " + Person.prototype.getName.call(this);
