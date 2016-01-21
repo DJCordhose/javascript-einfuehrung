@@ -506,12 +506,6 @@ const num: number = res[2];
                 <li class="fragment"><code>type Callback&lt;T> = (T) => void;</code>
               </ul>
               </li>
-              <!--<li class="fragment"><a target="_blank" href="https://github.com/Microsoft/TypeScript/wiki/What's-new-in-TypeScript#this-typing">
-              This Typing</a>-->
-              <li class="fragment"><a target="_blank" href="https://github.com/Microsoft/TypeScript/wiki/What's-new-in-TypeScript#local-type-declarations">
-              Local type declarations</a>: Klassen, Interfaces, Enums und Type Aliases können lokal definiert und nur dort sichtbar sein 
-              <li class="fragment"><a target="_blank" href="https://github.com/Microsoft/TypeScript/wiki/What's-new-in-TypeScript#class-expressions">
-              Class and Extend expressions</a>: Klassen und Extends-Klauseln können durch eine Expression bestimmt werden (kann schon ES6) 
               <li class="fragment"><a target="_blank" href="http://blogs.msdn.com/b/typescript/archive/2015/09/16/announcing-typescript-1-6.aspx">
               User defined type guards</a>: Typeninferenz kann durch beliebigen Code bestimmt werden
               <li class="fragment"><a target="_blank" href="http://www.typescriptlang.org/Handbook#functions-overloads">
@@ -522,6 +516,20 @@ const num: number = res[2];
               Externe Deklarationen</a>: (Zusätzliche) Typinformationen zu JavaScript-Modulen
               <li class="fragment"><a target="_blank" href="http://blogs.msdn.com/b/typescript/archive/2015/11/03/what-about-async-await.aspx">
               Async Await</a>: C#-Pattern als Alternative zu Promises 
+          </ul>
+
+      </section>
+      <section>
+        <h3>Und noch mehr</h3>
+          <ul>
+              <li class="fragment"><a target="_blank" href="https://github.com/Microsoft/TypeScript/wiki/What's-new-in-TypeScript#local-type-declarations">
+              Local type declarations</a>: Klassen, Interfaces, Enums und Type Aliases können lokal definiert und nur dort sichtbar sein 
+              <li class="fragment"><a target="_blank" href="https://github.com/Microsoft/TypeScript/wiki/What's-new-in-TypeScript#class-expressions">
+              Class and Extend expressions</a>: Klassen und Extends-Klauseln können durch eine Expression bestimmt werden (kann schon ES6) 
+              <li class="fragment"><a target="_blank" href="http://www.typescriptlang.org/Playground#src=interface%20Person%20%7B%0A%09name%3A%20string%2C%0A%09age%3A%20number%0A%7D%0A%0Afunction%20sayHello(%7Bname%2C%20age%7D%3A%20Person)%20%7B%0A%09%0A%7D%0A%0A%2F%2F%20geht%20nicht%20%3D%3E%20richtigerweise%0AsayHello(%22Nils%22%2C%2032)%3B%0A%0A%2F%2F%20geht%20nicht%2C%20denn%20name%20ist%20zwar%20definiert%2C%20aber%20kein%20string%0AsayHello(%7Bname%3A%20123%2C%20age%3A%2032%7D)%3B%0A%0A%2F%2F%20geht%0AsayHello(%7Bname%3A%20%22Nils%22%2C%20age%3A%2032%7D)%3B%0A%0A">
+              Destructuring mit Typinformation</a> 
+             <li class="fragment"><a target="_blank" href="https://github.com/Microsoft/TypeScript/wiki/What's-new-in-TypeScript#this-typing">
+              This Typing</a>
           </ul>
 
       </section>
