@@ -12,19 +12,19 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 
 		<link rel="stylesheet" href="reveal.js/css/reveal.css">
-		<!--<link rel="stylesheet" href="reveal.js/css/theme/simple.css" id="theme">-->
-		<link rel="stylesheet" href="reveal.js/css/theme/night.css" id="theme">
+		<link rel="stylesheet" href="reveal.js/css/theme/simple.css" id="theme">
+		<!--<link rel="stylesheet" href="reveal.js/css/theme/night.css" id="theme">-->
 
 
 		<!-- Code syntax highlighting -->
-		<link rel="stylesheet" href="reveal.js/lib/css/zenburn.css">
+		<!--<link rel="stylesheet" href="reveal.js/lib/css/zenburn.css">-->
 		<style>
-			/*pre code {*/
-				/*display: block;*/
-				/*padding: 0.5em;*/
-				/*background: #FFFFFF !important;*/
-				/*color: #000000 !important;*/
-			/*}*/
+			pre code {
+				display: block;
+				padding: 0.5em;
+				background: #FFFFFF !important;
+				color: #000000 !important;
+			}
 			.right-img {
 				margin-left: 10px !important;
 				float: right;
@@ -79,7 +79,7 @@ Es gibt eine ganze Reihe von Stellen, an denen zwar der TypeScript-Compiler kein
         <h3>Lokale Variablen, Parameter und Felder in Klassen</h3>
            <pre class="fragment"><code class="typescript" contenteditable>let obj: string;
 obj = 'yo';
-// Error: ype 'number' is not assignable to type 'string'.
+// Error: Type 'number' is not assignable to type 'string'.
 obj = 10;
 </code></pre>
            <pre class="fragment"><code class="typescript" contenteditable>function sayIt(what: string): string {
@@ -90,7 +90,7 @@ const said: string = sayIt(obj);
 </code></pre>
            <pre class="fragment"><code class="typescript" contenteditable>class Sayer {
   what: string;
-  constructor(what) {
+  constructor(what: string) {
     this.what = what;
   }
   sayIt(): string {
@@ -139,6 +139,29 @@ sayer = anotherSayer;
       </section>
 
       <section>
+        <h3>Strenger Check von Objekt-Literalen</h3>
+  <p><a target="_blank" href="https://github.com/Microsoft/TypeScript/wiki/What's-new-in-TypeScript#stricter-object-literal-assignment-checks">
+    Objekt-Literale müssen genau zum Interface passen (verhindert Tippfehler)
+    </a>
+    </p>
+<pre class="fragment"><code>interface SayerInterface {
+  sayIt: () => string;
+}
+sayer = {
+  otherStuff: 'stuff',
+  // Error: Object literal may only specify known properties,
+  // and 'otherStuff' does not exist in type 'SayerInterface'.
+
+  sayIt(): string {
+    return 'yo';
+  }
+}
+
+</code></pre>
+
+      </section>
+
+      <section>
         <h3>Typen-Inferenz</h3>
   <p><a target="_blank" href="http://www.typescriptlang.org/Handbook#type-inference">
     Type-Informationen sind optional, fehlende Typen werden erschlossen
@@ -152,6 +175,12 @@ sayer = anotherSayer;
 // Error: array is (number | string)[]
 array[4] = true;
 </code></pre>
+          </ul>
+
+      </section>
+      <section>
+        <h3>Typen-Inferenz #2</h3>
+          <ul>
               <li class="fragment"><a target="_blank" href="http://www.typescriptlang.org/Handbook#basic-types-any">
     any
     </a>: Typeninferenz abschalten
@@ -229,13 +258,13 @@ const array8: any[] = &lt;any[]>num;
           <p></p>
           <p></p>
           <ul>
-              <li>Nutze noch wie vor dass workspace-Verzeichnis in diesem Repository
+              <li>Nutze noch wie vor das workspace-Verzeichnis in diesem Repository
               <li>Die Tool-Chain ist schon für TypeScript vorbereitet
               <li>in <code>webpack.config.js</code> ist bereits <code>/src/typescript/main.ts</code> 
           als Eintiegspunkt vorbereitet
               <li>ersetze damit den bisherigen ES6-Einstiegspunkt
               <li>starte <code>npm run webpack</code> neu
-              <li>wieder <code>dist/index.html</code> im Browser öffnen
+              <li>wieder <code>public/index.html</code> im Browser öffnen
               <li>Wenn auf der Seite 'Hello, World' steht, ist alles gut
               <li>Alle weitere Entwicklung findet im Unterordner <code>typescript</code> statt 
           </ul>
@@ -299,6 +328,10 @@ console.log(sayer.sayIt());
   abstract sayIt(): string;
 }
 </code></pre>
+      </section>
+      <section>
+        <h3>Zugriffsmodifier #2</h3>
+</code></pre>
 <pre class="fragment"><code class="typescript" contenteditable>class Sayer extends AbstractSayer {
   constructor(what) {
     super(what);
@@ -336,6 +369,9 @@ sayer.what;
     </section>
     
     <section id="extensions">
+      <section>
+        <h2>Erweiterungen</h2>
+      </section>
       <section>
         <h3>Enums</h3>
             <p><a target="_blank" href="http://www.typescriptlang.org/Handbook#basic-types-enum">
@@ -439,10 +475,10 @@ const res2: number = doStuff('Olli');
 console.log(res2);
 </code></pre>
 <pre class="fragment"><code class="typescript" contenteditable>// Error: parameter does not match
-// doStuff(true);
+ doStuff(true);
 
 // Error: return type does not match
-// const res3: string = doStuff('Olli');</code></pre>
+const res3: string = doStuff('Olli');</code></pre>
       </section>
       <section>
         <h3>Intersection Types</h3>
@@ -451,15 +487,15 @@ console.log(res2);
     </a>
     </p>
 
-<pre><code class="typescript" contenteditable>interface HasAge {
+<pre class="fragment"><code class="typescript" contenteditable>interface HasAge {
   age: number;
 }
 
 interface HasName {
   name: string;
 }
-
-function doMoreStuff(x: HasAge & HasName) {
+</code></pre>
+<pre class="fragment"><code class="typescript" contenteditable>function doMoreStuff(x: HasAge & HasName) {
   return `${x.name} is ${x.age}`;
 }
 
@@ -468,10 +504,10 @@ console.log(res);
 // Olli is 45
 
 // Error: does not fullfill HasName
-// doMoreStuff({age: 45});
+doMoreStuff({age: 45});
 
 // Error: does not fullfill HasAge
-// doMoreStuff({name: 'Olli'});
+doMoreStuff({name: 'Olli'});
 </code></pre>
       </section>
             <section>
@@ -490,7 +526,7 @@ const str: string = res[1];
 const num: number = res[2];
 
 // Error: string not assingable to number
-// const num2: number = res[1];
+const num2: number = res[1];
 </code></pre>
       </section>
 
