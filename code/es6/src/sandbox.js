@@ -1,47 +1,26 @@
 'use strict';
 {
-class Person {
-    constructor(name) {
-        this._name = name;
-    }
-    get name() {
-        return this._name;
-    }
-    // set name(name) {
-    //     this._name = name;
-    // }
-}
-class Programmer extends Person {
-    constructor(name, languages) {
-        super(name);
-        this.languages = languages;
-    }
-    codes() {
-      // const that = this;
-      // const strings = this.languages.map(function (language) {
-      //   return `${this.name} codes in ${language}`;
-      // }.bind(this));
-      const strings = this.languages.map(language => `${this.name} codes in ${language}`);
-      strings.forEach(string => console.log(string));
-    }
-    
-    
-}
+const uniqueNamesIterable = {
+  // computed property [...]
+  [Symbol.iterator]() {
+    console.log('Los geht\'s');
+    let count = 0;
+    const prefix = 'name';
+    const iterator = {
+      next() {
+        const value = count < 2 ? prefix + count++ : null;
+        return { done: value === null, value };
+      }
+    };
+    return iterator;
+  }
+};
 
-const programmer = new Programmer('Erna', ['JavaScript', 'Java', 'Cobol']);
-programmer.codes();
+// const iteratorMachFunc = uniqueNamesIterable[Symbol.iterator];
+// const iterator = iteratorMachFunc();
+// console.log(iterator.next());
 
+for (const name of uniqueNamesIterable) {
+  console.log(name);
 }
-// {
-// // lexcial binding to this
-// const obj = {
-//     methodOfObj: function () {
-//       console.log(`In Method: ${obj === this}`);
-//         ['1', '2', '3'].forEach( e => {
-//            console.log(`In Loop: ${obj === this}`);
-//         });
-//     }
-// };
-
-// obj.methodOfObj();
-// }
+}
