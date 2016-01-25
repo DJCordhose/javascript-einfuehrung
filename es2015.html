@@ -594,12 +594,30 @@ domNode = null;
 // Folks
 </code></pre>
                 </section>
+                
+                <section>
+                    <h3>Lexcial Binding to this</h3>
+<pre><code class="javascript" contenteditable>
+const obj = {
+    methodOfObj: function () {
+      console.log(`In Method: ${obj === this}`); // true
+        ['1', '2', '3'].forEach( e => {
+           console.log(`In Loop: ${obj === this}`); // true
+        });
+    }
+};
+
+obj.methodOfObj();
+</code></pre>
+            </section>
+
             </section>
                 <section>
                     <h2>Übung: Arrow Functions und this</h2>
                     <ul>
                       <li>Ersetze alle mit <code>function</code> definierten Funktionen mit Arrow Functions 
-                      <li>Schreibe deinen jQuery-Code für das Verschwinden eines Knops ebenfalls auf Arrow Functions um
+                      <li>Setze ein Array von Languages in deinem Programmer und gib diese mit forEach aus
+                      <li>Greife dabei über this auf das Programmer-Objekt zu und gib den Namen zusammen mit der Sprache zu
                     </ul>
                 </section>
             

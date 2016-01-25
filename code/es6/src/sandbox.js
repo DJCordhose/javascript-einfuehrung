@@ -1,31 +1,47 @@
 'use strict';
-
+{
 class Person {
     constructor(name) {
         this._name = name;
     }
-    // get name() {
-    //     return this._name;
-    // }
-    set name(name) {
-        this._name = name;
+    get name() {
+        return this._name;
     }
+    // set name(name) {
+    //     this._name = name;
+    // }
 }
 class Programmer extends Person {
-    constructor(name, language) {
+    constructor(name, languages) {
         super(name);
-        this.language = language;
+        this.languages = languages;
     }
-    code() {
-        return this.name + " codes in " + this.language;
+    codes() {
+      // const that = this;
+      // const strings = this.languages.map(function (language) {
+      //   return `${this.name} codes in ${language}`;
+      // }.bind(this));
+      const strings = this.languages.map(language => `${this.name} codes in ${language}`);
+      strings.forEach(string => console.log(string));
     }
+    
+    
 }
 
-const programmer = new Programmer('Erna', 'JavaScript');
-console.log(programmer.name);
+const programmer = new Programmer('Erna', ['JavaScript', 'Java', 'Cobol']);
+programmer.codes();
 
-console.log(programmer.code());
-console.log(programmer instanceof Programmer); // true
-console.log(programmer instanceof Person); // true
+}
+// {
+// // lexcial binding to this
+// const obj = {
+//     methodOfObj: function () {
+//       console.log(`In Method: ${obj === this}`);
+//         ['1', '2', '3'].forEach( e => {
+//            console.log(`In Loop: ${obj === this}`);
+//         });
+//     }
+// };
 
-programmer.name = 20;
+// obj.methodOfObj();
+// }
