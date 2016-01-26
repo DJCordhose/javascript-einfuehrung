@@ -1,67 +1,57 @@
-let obj: string;
-obj = 'yo';
-// Error: Type 'number' is not assignable to type 'string'.
-// obj = 10;
-console.log(obj);
+import 'babel-polyfill';
 
-function sayIt(what: string): string {
-  return `Saying: ${what}`;
-}
+  class Person  {
+    _name: string;
+    constructor(name: string) {
+      this._name = name;
+    }
 
-const said: string = sayIt(obj);
-console.log(said);
-
-class Sayer {
-  what: string;
-  constructor(what: string) {
-    this.what = what;
+    get name() {
+      return this._name;
+    }
   }
-  sayIt(): string {
-    return `Saying: ${this.what}`;
+
+ const map = new Map<String, String>();
+  for (const person of map) {
+    console.log(person);
   }
-}
+ 
 
-interface SayerInterface {
-  sayIt: () => string;
-}
-
-let sayer: SayerInterface = new Sayer('Hiho');
-console.log(sayer.sayIt());
-
-sayer = {
-  otherStuff: 'stuff',
-  sayIt(): string {
-    return 'yo';
+  const personIterable = {
+    [Symbol.iterator]() {
+      const persons = [new Person('Olli'), new Person('Oma'), new Person('Opa')];
+      let index = 0;
+      const iterator = {
+        next() {
+          const value = index >= persons.length ? null : persons[index];
+          index++;
+          return { done: value === null, value };
+        }
+      };
+      return iterator;
+    }
+  };
+  
+  for (const person of personIterable) {
+    console.log(person.name);
   }
-};
-// Error: Object literal may only specify known properties, and 'otherStuff' does not exist in type 'SayerInterface'.
+  
+  const persons = [...personIterable];
+  console.log(persons);
 
 
-let sayer2: any = {
-  what: 'something',
-  sayIt() {
-    return 'whatever'
-  },
-  that: 'no'
-}
-
-sayer = sayer2;
-
-// sayer = {
-//   what: 'something',
-//   sayIt() {
-//     return 'whatever'
-//   },
-//   that: 'no'
-// };
-
-// only structure matters
-interface AnotherSayer {
-  what: string;
-  that: string;
-  sayIt: () => string;
-  sayThat: () => string;
-}
-
-let anotherSayer: AnotherSayer;
-sayer = anotherSayer;
+function* gen() {
+    let index = 0;
+      while (index < 1000) {
+        yield index;
+        index++;
+      }
+  } 
+  
+  const iterator = gen();
+  // const iterator = personIterable[Symbol.iterator]();
+  console.log(iterator.next());
+  console.log(iterator.next());
+  console.log(iterator.next());
+  console.log(iterator.next());
+  

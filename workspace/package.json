@@ -25,6 +25,7 @@
     "webpack": "^1.12.6"
   },
   "dependencies": {
-    "babel": "^6.1.18"
+    "babel": "^6.1.18",
+    "babel-polyfill": "^6.3.14"
   }
 }
