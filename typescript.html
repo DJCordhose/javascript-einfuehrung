@@ -118,7 +118,7 @@ const func: SayerFunctionInterface = sayIt;
             <section>
         <h3>Strukturelle Kompatibilität</h3>
            <pre><code class="typescript" contenteditable>// class implicitly defines interface
-sayer = {
+let sayer: Sayer = {
   what: 'something',
   sayIt() {
     return 'whatever'
@@ -147,7 +147,7 @@ sayer = anotherSayer;
 <pre class="fragment"><code>interface SayerInterface {
   sayIt: () => string;
 }
-sayer = {
+let sayer: SayerInterface = {
   otherStuff: 'stuff',
   // Error: Object literal may only specify known properties,
   // and 'otherStuff' does not exist in type 'SayerInterface'.

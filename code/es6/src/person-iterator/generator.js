@@ -10,6 +10,21 @@
     }
   }
 
+  // const personIterable = {
+  //   [Symbol.iterator]() {
+  //     const persons = [new Person('Olli'), new Person('Oma'), new Person('Opa')];
+  //     let index = 0;
+  //     const iterator = {
+  //       next() {
+  //         const value = index >= persons.length ? null : persons[index];
+  //         index++;
+  //         return { done: value === null, value };
+  //       }
+  //     };
+  //     return iterator;
+  //   }
+  // };
+  
   const personIterable = {
     *[Symbol.iterator]() {
       // babel can not handle person to be const
@@ -22,10 +37,25 @@
     }
   };
   
-  for (const person of personIterable) {
-    console.log(person.name);
-  }
+  function* gen() {
+    let index = 0;
+      while (index < 1000) {
+        yield index;
+        index++;
+      }
+  } 
   
-  const persons = [...personIterable];
-  console.log(persons);
+  const iterator = gen();
+  // const iterator = personIterable[Symbol.iterator]();
+  console.log(iterator.next());
+  console.log(iterator.next());
+  console.log(iterator.next());
+  console.log(iterator.next());
+  
+  // for (const person of personIterable) {
+  //   console.log(person.name);
+  // }
+  
+  // const persons = [...personIterable];
+  // console.log(persons);
 }
