@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Functional Playground</title>
+</head>
+<p>https://vimeo.com/153097877</p>
+<p>https://speakerdeck.com/raganwald/javascript-combinators-the-six-edition</p>
+<p>https://twitter.com/victorsavkin/status/706909217681047552</p>
+
+<p>Decomposition makes responsibilities explcit</p>
+<p>Recompose to make relationsships explcit</p>
+
+<p>Naming things is hard, because you first need to identify the right parts to name</p>
+<p>Combinators give us a language for naming things</p>
+
+<p>Deconstructing functions in smaller parts and putting them together</p>
+
+<p>Aim #1: Decompose responsibilities</p>
+<p>Aim #2: Name the parts that are important to us</p>
+<p>Aim #3: Extract the parts we want to use more than once</p>
+<p>E.g.: `const pluckWith = compose(mapWith, getWith);`</p>
+<p>Parts are named (mapWith, and getWith)</p>
+<p>Relationship between them is named (pluckWith)</p>
+<p>Quote: <em>We compose entities to make the relationships between them explicit</em></p>
+<p>In current software there is an over-emphasis on nouns, and under-emphasis und things that are verbs</p>
+<body>
+    <script>
+      'use strict';
+      const pluck = (collection, property) => collection.map(e => e[property]);
+      const olli = {name: 'Olli', age: 45};
+
+      const persons = [
+        olli,
+        {name: 'Oma', age: 88},
+        {name: 'Opa', age: 90}
+      ];
+      const names = pluck(persons, 'name');
+      console.log(names);
+      
+      const leftApply = (fn, a) => (b) => fn(a, b);
+      console.log(leftApply(pluck, persons)('name'));
+      
+      const pluckFrom1 = (collection) => (property) => pluck(collection, property);
+      console.log(pluckFrom1(persons)('name'));
+      const pluckFrom2 = (collection) => leftApply(pluck, collection);
+      console.log(pluckFrom2(persons)('name'));
+      const pluckFrom3 = leftApply(leftApply, pluck);
+      console.log(pluckFrom3(persons)('name'));
+      const pluckFrom4 = leftApply(leftApply, leftApply)(pluck);
+      console.log(pluckFrom4(persons)('name'));
+
+      const rightApply = (fn, b) => (a) => fn(a, b);
+      console.log(rightApply(pluck, 'name')(persons));
+
+      const pluckWith1 = (property) => (collection) => pluck(collection, property);
+      console.log(pluckWith1('name')(persons));
+      const pluckWith2 = (property) => rightApply(pluck, property);
+      console.log(pluckWith2('name')(persons));
+      const pluckWith3 = leftApply(rightApply, pluck);
+      console.log(pluckWith3('name')(persons));
+      const pluckWith4 = leftApply(leftApply, rightApply)(pluck);
+      console.log(pluckWith4('name')(persons));
+      
+      // Decorators
+      const IStarStar = (a) => (b) => (c) => a(b, c);
+      const pluckFrom5 = IStarStar(pluck)
+      console.log(pluckFrom5(persons)('name'));
+
+      const C = (a) => (b) => (c) => a(c, b);
+      const pluckWith5 = C(pluck)
+      console.log(pluckWith5('name')(persons));
+
+      const namesOf = pluckWith5('name');
+      console.log(namesOf(persons));
+      
+      const get = (object, property) => object[property];
+      const getWith = C(get);
+      const nameOf = getWith('name');
+      console.log(nameOf(olli));
+      
+      const compose = (a, b) => (c) => a(b(c));
+      
+      const map = (collection, fn) => collection.map(fn);
+      const mapWith = C(map);
+      
+      const pluckWith6 = compose(mapWith, getWith);
+      const namesOf2 = pluckWith6('name');
+      console.log(namesOf2(persons));
+      
+    </script>
+</body>
+</html>
+                        

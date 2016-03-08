@@ -1,8 +1,8 @@
 {
-    "version": "1.7.3",
+    "version": "1.8.0",
     "compilerOptions": {
         "target": "es6",
-        "module": "commonjs",
+        "module": "es6",
         "isolatedModules": false,
         "experimentalDecorators": true,
         "emitDecoratorMetadata": true,
