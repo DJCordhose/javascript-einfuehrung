@@ -2,23 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="400c8356-55f4-47e4-9197-a440448d06f4" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/package.json" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/code/es6/npm-debug.log" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/npm-debug.log" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/3-tage.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/es6/.gitignore" afterPath="$PROJECT_DIR$/code/es6/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/es6/package.json" afterPath="$PROJECT_DIR$/code/es6/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/typescript/features/index.ts" afterPath="$PROJECT_DIR$/code/typescript/features/index.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/typescript/package.json" afterPath="$PROJECT_DIR$/code/typescript/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/typescript/tsconfig.json" afterPath="$PROJECT_DIR$/code/typescript/tsconfig.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/es2015.html" afterPath="$PROJECT_DIR$/es2015.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/intro.html" afterPath="$PROJECT_DIR$/intro.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/komplett.html" afterPath="$PROJECT_DIR$/komplett.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/workspace/package.json" afterPath="$PROJECT_DIR$/workspace/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/workspace/src/es6/main.js" afterPath="$PROJECT_DIR$/workspace/src/es6/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/workspace/tsconfig.json" afterPath="$PROJECT_DIR$/workspace/tsconfig.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/workspace/webpack.config.js" afterPath="$PROJECT_DIR$/workspace/webpack.config.js" />
     </list>
     <list id="cd780ba5-37e2-4a59-873c-d04dcf1c5352" name="ignore" comment="" />
     <ignored path="javascript-einfuehrung.iws" />
@@ -70,21 +56,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="webpack.config.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/code/typescript/webpack.config.js">
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="14" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/code/typescript/main.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="30">
+              <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -122,11 +98,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="3-tage.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="3-tage.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/3-tage.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="101" column="0" selection-start-line="101" selection-start-column="0" selection-end-line="101" selection-end-column="0" />
+            <state relative-caret-position="190">
+              <caret line="66" column="65" selection-start-line="66" selection-start-column="65" selection-end-line="66" selection-end-column="65" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="komplett.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/komplett.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="67" column="0" selection-start-line="65" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -199,7 +185,6 @@
         <option value="$PROJECT_DIR$/code/es6/src/sandbox.js" />
         <option value="$PROJECT_DIR$/code/jasmine-example/spec/spec.js" />
         <option value="$PROJECT_DIR$/code/show-hide-jquery.html" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/code/es6/.gitignore" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/code/typescript/package.json" />
@@ -217,6 +202,7 @@
         <option value="$PROJECT_DIR$/code/typescript/tsconfig.json" />
         <option value="$PROJECT_DIR$/code/typescript/public/dist/bundle.js" />
         <option value="$PROJECT_DIR$/3-tage.html" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -601,7 +587,7 @@
       <workItem from="1462792968091" duration="2739000" />
       <workItem from="1462955818407" duration="688000" />
       <workItem from="1463321405625" duration="2171000" />
-      <workItem from="1463325880451" duration="3673000" />
+      <workItem from="1463325880451" duration="3786000" />
     </task>
     <task id="LOCAL-00001" summary="vorbereitung für WJAX-2015">
       <created>1441980918565</created>
@@ -820,11 +806,18 @@
       <option name="project" value="LOCAL" />
       <updated>1452087596620</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="- 3-Tage-Version&#10;- zentrale Installation mit npm&#10;">
+      <created>1463330192251</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1463330192251</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12587000" />
+    <option name="totallyTimeSpent" value="12700000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="773" extended-state="6" />
@@ -835,7 +828,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="TypeScript Compiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32796487" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.5549048" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.5565345" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27705976" sideWeight="0.5150376" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22108346" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -899,7 +892,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="PERFORM_ROLLBACK_IN_BACKGROUND" value="true" />
-    <MESSAGE value="überflüssige Bilder gelöscht" />
     <MESSAGE value="Eclipse" />
     <MESSAGE value="making index the specifc jquery-ajax variant" />
     <MESSAGE value="alle Varianten zusammengeführt" />
@@ -924,7 +916,8 @@
     <MESSAGE value="more destructuring examples" />
     <MESSAGE value="muster" />
     <MESSAGE value="updates nach Tag 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="updates nach Tag 2" />
+    <MESSAGE value="- 3-Tage-Version&#10;- zentrale Installation mit npm&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="- 3-Tage-Version&#10;- zentrale Installation mit npm&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1074,14 +1067,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/code/es6/webpack.config.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1152,14 +1137,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="110" column="0" selection-start-line="109" selection-start-column="0" selection-end-line="110" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/komplett.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="77" column="70" selection-start-line="77" selection-start-column="70" selection-end-line="77" selection-end-column="70" />
           <folding />
         </state>
       </provider>
@@ -1330,10 +1307,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/komplett.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="67" column="0" selection-start-line="65" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/3-tage.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="101" column="0" selection-start-line="101" selection-start-column="0" selection-end-line="101" selection-end-column="0" />
+        <state relative-caret-position="190">
+          <caret line="66" column="65" selection-start-line="66" selection-start-column="65" selection-end-line="66" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
           <folding />
         </state>
       </provider>
