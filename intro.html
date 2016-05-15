@@ -587,7 +587,7 @@ console.log(/ab+c/.exec('ac'));
                         </ol>
                     </section>
                 </section>
-                
+
                 <section id="jquery">
 				<section>
 					<h2>jQuery</h2>
@@ -691,7 +691,154 @@ log.on('click', function(event) {
                     </ul>
                 </section>
 
-                        <section>
+                <section id="json">
+                <section>
+					<h2>JSON/REST/AJAX</h2>
+				</section>
+
+                    <section>
+                        <h3>RESTFul Web Services</h3>
+                        <p>REST = Representational State Transfer</p>
+
+                    </section>
+                    <section>
+                        <h3>Eigenschaften</h3>
+                        <p class="fragment">Es gibt keine klare Definition, aber dies sind Eigenschaften, die die meisten darunter subsumieren</p>
+                        <ul>
+                            <li class="fragment">basiert auf HTTP / HTTPS
+                            <li class="fragment">Stateless
+                            <li class="fragment">HTTP-Methoden PUT / GET / POST / DELETE werden für CRUD genommen
+                            <li class="fragment">Oft URL Pfad auf eine bestimmte Ressource
+                            <li class="fragment">JSON bevorzugtes Format für komplexe Daten, XML geht auch
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Beispiel</h2>
+                        <p class="fragment">RESTFul Aufruf mit <code>GET</code>, z.B.</p>
+                        <pre class="fragment"><code class="html" contenteditable>https://mortgage-demo.appspot.com/mortgage_calculator/rs/200000/10/7.5/30</code></pre>
+                        <p class="fragment">Aufrufparameter sind in die URL codiert, daher gut cachebar, Service zustandslos.</p>
+                        <p class="fragment">Aufruf mit Pfad auf Ressource, z.B. <code>DELETE</code></p>
+                        <pre class="fragment"><code class="html" contenteditable>https://accounting.com/user/4711</code></pre>
+                    </section>
+                    <section>
+                        <h2>AJAX-Call in JavaScript</h2>
+                        <pre><code class="html" contenteditable>var xhr = new XMLHttpRequest();
+// asynchrones GET auf die URL
+// synchron ist möglich (false), blockiert aber komplettes UI
+xhr.open("GET", url, true);
+
+// Callback
+xhr.onreadystatechange = function() {
+    // readyState 4: DONE, status 200: OK
+    if (xhr.readyState === 4 && xhr.status === 200) {
+        var response = xhr.responseText;
+    }
+}
+xhr.send();</code></pre>
+                        <p><a href="https://developer.mozilla.org/en-US/docs/DOM/XMLHttpRequest" target="_blank">MDN Referenz</a></p>
+                    </section>
+                    <section>
+                        <h2>Alternative mit jQuery</h2>
+                        <p class="fragment">Rückgabe beliebig, JSON, Text, HTML, als String</p>
+                        <pre class="fragment"><code class="html" contenteditable>$.get(url, function(responseAsString) {
+    // ...
+});</code></pre>
+                        <p class="fragment">Rückgabe JSON-String, wird bereits in JavaScript-Objekt gewandelt</p>
+                        <pre class="fragment"><code class="html" contenteditable>$.getJSON(url, function(responseAsObject) {
+    // ...
+});</code></pre>
+                        <p class="fragment"><a href="http://api.jquery.com/jQuery.get/" target="_blank">Referenz</a></p>
+                    </section>
+
+                    <section>
+                        <h1>JSON</h1>
+                        <ul>
+                            <li class="fragment">JSON = JavaScript Object Notation
+                            <li class="fragment">Das JSON-Format ist eine String-Repräsenation von Objekt-Literalen
+                            <li  class="fragment">Fast wie die Syntax zum erzeugen von Objekt-Literalen
+                            <li class="fragment">Bevorzugtes Format für Daten vom und zum Server
+                            <li class="fragment">Es kann zur Persistierung oder Übertragung von (JavaScript-)Objekten verwendet werden
+                            <li  class="fragment">In Request-/Response-Body
+                            <li  class="fragment"><a href="https://developer.mozilla.org/en-US/docs/JSON">Referenz auf MDN</a></li>
+                        </ul>
+
+                    </section>
+                    <section>
+                        <h3>JSON und Objekt-Literale</h3>
+                        <p class="fragment">Die Hauptunterschiede zu Objekt-Literalen</p>
+                            <ol>
+                                <li class="fragment">Kommentare sind nicht erlaubt
+                                <li class="fragment">Namen der Properties müssen Strings in doppelten Anführungszeichen sein, z.B. "feldName"
+                                <li class="fragment">Die Werte sind entweder
+                                <ol>
+                                    <li>Primitive
+                                    <li>Arrays
+                                    <li>eingebettete JSON-Objekte oder
+                                    <li>null
+                                </ol>
+                            </li>
+                            </ol>
+                        </li>
+                    </section>
+
+                    <section>
+                        <h2>Beispiel</h2>
+                        <p>RESTFul Aufruf, z.B.</p>
+                        <pre><code class="html" contenteditable>
+https://mortgage-demo.appspot.com/mortgage_calculator/rs/200000/10/7.5/30
+                        </code></pre>
+                        <p>Antwort im Response-Body</p>
+                        <pre><code class="javascript" contenteditable>{
+    "principle": 199990.00,
+    "total": 503409.60,
+    "payments": 360,
+    "monthly": 1398.36
+}</code></pre>
+                    </section>
+
+                    <section>
+                        <h2>Verarbeitung mit JavaScript</h2>
+                        <pre><code class="html" contenteditable>var json = '{ \
+    "principle": 199990.00,\
+    "total": 503409.60,\
+    "payments": 360,\
+    "monthly": 1398.36\
+}';
+console.log(json);
+
+var obj = JSON.parse(json);
+console.log(obj);
+
+var jsonString = JSON.stringify(obj);
+console.log(jsonString);
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>Verarbeitung #2</h2>
+                        <pre><code class="html" contenteditable>var o = {
+    a: "10",
+    b: function() { return "olli"; },
+    c: undefined,
+    d: null
+};
+
+var s = JSON.stringify(o);
+
+console.log(s);
+// "{"a":"10","d":null}"
+</code></pre>
+                    </section>
+</section>
+            <section>
+                <h2>Übung: AJAX-Call mit JSON-Antwort</h2>
+                <p>Verarbeite eine JSON-Antwort aus einen AJAX-Call</p>
+                <p>Mach dazu einen GET-Request auf</p>
+                <pre><code class="html" contenteditable>https://mortgage-demo.appspot.com/mortgage_calculator/rs/200000/10/7.5/30</code></pre>
+                <p>Parse das zurückgegebene JSON und zeige das Ergebnis an.</p>
+                <p>Alternative/Option: Setze dasselbe mit jQuery um</p>
+            </section>
+
+            <section>
                 <section id="klassen">
                     <h2>Objekte, die Zweite</h2>
                     <ul>
@@ -914,18 +1061,18 @@ console.log(programmer instanceof Programmer); // true
 // true for Object.create, false for _.extend
 console.log(programmer instanceof Person);</code></pre>
         </section>
-        <section>
-            <h2>Underscore</h2>
-            <ul>
-                <li class="fragment"><em>_.extend</em> eine von vielen Hilfsfunktionen der Bibliothek <em>Underscore</em>
-                <li class="fragment"><a target="_blank" href="http://underscorejs.org/">http://underscorejs.org/</a>
-                <li class="fragment">Versucht Unzulänglichkeiten der Sprache als Bibliothek auszugleichen
-                <li class="fragment">Ein Klassiker unter den JavaScript-Bibliotheken
-                <li class="fragment">wird typischerweise als <em>_</em> importiert (daher der Name)
-                <li class="fragment"><a target="_blank" href="https://lodash.com/">https://lodash.com/</a> ist die moderne Variante
-                <li class="fragment">Neues JavaScript-Versionen enthalten bereits eine ganze Reihe der Funktionen dieser Bibliotheken
-            </ul>
-        </section>
+        <!--<section>-->
+            <!--<h2>Underscore</h2>-->
+            <!--<ul>-->
+                <!--<li class="fragment"><em>_.extend</em> eine von vielen Hilfsfunktionen der Bibliothek <em>Underscore</em>-->
+                <!--<li class="fragment"><a target="_blank" href="http://underscorejs.org/">http://underscorejs.org/</a>-->
+                <!--<li class="fragment">Versucht Unzulänglichkeiten der Sprache als Bibliothek auszugleichen-->
+                <!--<li class="fragment">Ein Klassiker unter den JavaScript-Bibliotheken-->
+                <!--<li class="fragment">wird typischerweise als <em>_</em> importiert (daher der Name)-->
+                <!--<li class="fragment"><a target="_blank" href="https://lodash.com/">https://lodash.com/</a> ist die moderne Variante-->
+                <!--<li class="fragment">Neues JavaScript-Versionen enthalten bereits eine ganze Reihe der Funktionen dieser Bibliotheken-->
+            <!--</ul>-->
+        <!--</section>-->
 
                 </section>
                     <section>

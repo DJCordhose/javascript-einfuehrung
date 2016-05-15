@@ -236,10 +236,10 @@ console.log(programmer instanceof Person); // true</code></pre>
                 <li class="fragment">Jede 'Stage' muss bestimmte <a target="_blank" href="https://tc39.github.io/process-document/">Anforderungen erfüllen </a>
                     <ul>
                         <li class="fragment"><a target="_blank" href="https://github.com/tc39/ecma262/blob/master/stage0.md">Stage 0 - Strawman: formloser Vorschlag</a>
-                        <li class="fragment">Stage 1 - Proposal: Komitee untersucht das Feature</a>
-                        <li class="fragment">Stage 2 - Draft: Das Feature wird es wohl machen</a>
-                        <li class="fragment">Stage 3 - Candidate: Implementierungs von Browser-Herstellern für Feedback</a>
-                        <li class="fragment">Stage 4 - Finished: kommt in den Standard (evtl. nicht nächste Version)</a>
+                        <li class="fragment">Stage 1 - Proposal: Komitee untersucht das Feature
+                        <li class="fragment">Stage 2 - Draft: Das Feature wird es wohl machen
+                        <li class="fragment">Stage 3 - Candidate: Implementierungs von Browser-Herstellern für Feedback
+                        <li class="fragment">Stage 4 - Finished: kommt in den Standard (evtl. nicht nächste Version)
                     </ul>
                 </li>
                 <li class="fragment">Wie viel läuft wo bereits jetzt (in Stages gruppiert): <a target="_blank" href="http://kangax.github.io/compat-table/es7">http://kangax.github.io/compat-table/es7</a></li>
@@ -629,6 +629,16 @@ obj.methodOfObj();
                         <h3>Ein Promise ist ein Versprechen auf einen Wert</h3>
                         <h4 class="fragment">Wird evtl. erst in der Zukunft eingelöst</h4>
                     </section>
+                <section>
+                        <h3>Anwendungsbeispiel: fetch</h3>
+<pre><code class="javascript" contenteditable>const url = `${BACKEND_URL}${path}`;
+
+return fetch(url)
+    .then(response => response.json())
+    .then(json => /* ... */)
+    .catch(ex => console.error('request failed', ex));
+</code></pre>
+                </section>
 
                 <section>
                         <h3>Erzeugen und asynchron reagieren</h3>
@@ -719,16 +729,6 @@ const promise2 = promise.then(value => `${value} plus stuff`);</code></pre>
 // error:  Promise rejected</code></pre>
                 </section>
 
-                <section>
-                        <h3>Anwendungsbeispiel: fetch</h3>
-<pre><code class="javascript" contenteditable>const url = `${BACKEND_URL}${path}`;
-
-return fetch(url)
-    .then(response => response.json())
-    .then(json => /* ... */)
-    .catch(ex => console.error('request failed', ex));
-</code></pre>
-                </section>
                 </section>
                 <section>
                     <h2>Übung: Daten vom Server laden mit fetch und Promises</h2>
