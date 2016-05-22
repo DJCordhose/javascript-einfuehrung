@@ -2,7 +2,6 @@
   "name": "workspace",
   "version": "0.0.1",
   "scripts": {
-    "webpack": "../../node_modules/.bin/webpack --watch",
-    "clean": "rm -rf dist/ public/dist/"
+    "webpack": "webpack --watch"
   }
 }
