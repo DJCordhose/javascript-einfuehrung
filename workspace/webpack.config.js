@@ -12,6 +12,6 @@ module.exports = {
             { test: /\.html$/, loader: 'html' }
         ]
     },
-    devtool: 'source-map'
+    devtool: 'inline-source-map'
 
 };
