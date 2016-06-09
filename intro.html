@@ -289,7 +289,7 @@ for (var i in map) {
                             </li>
                             <li>Gib alle Personen nacheinander aus
                                 <ul>
-                                    <li>Erzeuge aus den Daten einen string, der dann mit <code>console.log</code> ausgegeben wird
+                                    <li>Schreib eine Funktion, die eine Person als Eingabe und eine String-Repräsentation als Ausgabe hat
                                     <li>Benutze dafür beide Varianten der <code>for</code>-Schleife
                                 </ul>
                             </li>
@@ -1031,36 +1031,36 @@ for (var key in map) {
                 </section>
 
 
-                <section>
-                                <section>
-                <h2>Vererbungshierarchien - revisited</h2>
-                <ul>
-                    <li class="fragment">Das verwirrendste Thema in JavaScript
-                    <li class="fragment">Alternative zu Klassen-Hierarchien sind Mixins
-                    <li class="fragment">Viele Bibliotheken nehmen sich dieses Themas an
-                    <li class="fragment">Bei Mixins werden alle Properties eines Prototypen in einen anderen hineinkopiert
-                </ul>
-            </section>
-        <section>
-            <h3>Beispiel</h3>
-                <pre><code class="javascript" contenteditable>function Programmer(name, language) {
-    Person.call(this, name);
-    this.language = language;
-}
-_.extend(Programmer.prototype, Person.prototype);
-// instead of
-//Programmer.prototype = Object.create(Person.prototype);
+                <!--<section>-->
+            <!--<section>-->
+                <!--<h2>Vererbungshierarchien - revisited</h2>-->
+                <!--<ul>-->
+                    <!--<li class="fragment">Das verwirrendste Thema in JavaScript-->
+                    <!--<li class="fragment">Alternative zu Klassen-Hierarchien sind Mixins-->
+                    <!--<li class="fragment">Viele Bibliotheken nehmen sich dieses Themas an-->
+                    <!--<li class="fragment">Bei Mixins werden alle Properties eines Prototypen in einen anderen hineinkopiert-->
+                <!--</ul>-->
+            <!--</section>-->
+        <!--<section>-->
+            <!--<h3>Beispiel</h3>-->
+                <!--<pre><code class="javascript" contenteditable>function Programmer(name, language) {-->
+    <!--Person.call(this, name);-->
+    <!--this.language = language;-->
+<!--}-->
+<!--_.extend(Programmer.prototype, Person.prototype);-->
+<!--// instead of-->
+<!--//Programmer.prototype = Object.create(Person.prototype);-->
 
-Programmer.prototype.code = function() {
-    return this.getName() + " codes in " + this.language;
-};
-var programmer = new Programmer('Erna', 'JavaScript');
-console.log(programmer.getName()); // Erna
-console.log(programmer.code()); // Erna codes in JavaScript
-console.log(programmer instanceof Programmer); // true
-// true for Object.create, false for _.extend
-console.log(programmer instanceof Person);</code></pre>
-        </section>
+<!--Programmer.prototype.code = function() {-->
+    <!--return this.getName() + " codes in " + this.language;-->
+<!--};-->
+<!--var programmer = new Programmer('Erna', 'JavaScript');-->
+<!--console.log(programmer.getName()); // Erna-->
+<!--console.log(programmer.code()); // Erna codes in JavaScript-->
+<!--console.log(programmer instanceof Programmer); // true-->
+<!--// true for Object.create, false for _.extend-->
+<!--console.log(programmer instanceof Person);</code></pre>-->
+        <!--</section>-->
         <!--<section>-->
             <!--<h2>Underscore</h2>-->
             <!--<ul>-->

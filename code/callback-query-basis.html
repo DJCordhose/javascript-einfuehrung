@@ -18,6 +18,11 @@
         $('p').html("Geklicked");
         console.log(this);
           $(this).hide();
+//          var mySetTimeout = setTimeout.bind(this);
+          setTimeout(() => {
+              $(this).show();
+             console.log('Timeout aufgerufen');
+          }, 1000);
        });
      });
   </script>

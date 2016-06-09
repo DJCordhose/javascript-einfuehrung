@@ -2,10 +2,10 @@
   "name": "workspace",
   "version": "0.0.1",
   "scripts": {
-    "webpack": "webpack --watch",
-    "test": "mocha ./test/es6 --compilers js:babel-core/register --recursive",
+    "webpack": "../node_modules/.bin/webpack --watch",
+    "test": "../node_modules/.bin/mocha ./test/es6 --compilers js:babel-core/register --recursive",
     "test:watch": "npm test -- --watch",
-    "test:typescript": "mocha ./test/typescript --compilers ts:ts-node/register --recursive",
+    "test:typescript": "../node_modules/.bin/mocha ./test/typescript --compilers ts:ts-node/register --recursive",
     "test:typescript:watch": "npm run test:typescript -- --watch"
   }
 }

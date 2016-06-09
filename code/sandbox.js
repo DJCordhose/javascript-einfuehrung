@@ -1,6 +1,13 @@
-'use strict';
+var oma = {
+    name: "Oma"
+};
+function fullName(title, lastName) {
+    return title + " " + this.name + " " + lastName;
+}
 
-const displayInPage = (text = '\n') => `${text}<br>`;
+var bound1 = fullName.bind(oma); // this an oma binden
+// var fullName1 = bound1("Frau", "Torbogen");
+var fullName1 = bound1.call({name: 'Opa'}, "Frau", "Torbogen");
 
-let result = displayInPage();
-console.log(result);
+console.log(fullName1);
+// => Frau Oma Torbogen
