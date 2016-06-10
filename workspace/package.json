@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "scripts": {
     "webpack": "../node_modules/.bin/webpack --watch",
+    "tslint": "../node_modules/.bin/tslint -r ../node_modules/tslint-microsoft-contrib -c tslint.json src/typescript/sandbox.ts",
     "test": "../node_modules/.bin/mocha ./test/es6 --compilers js:babel-core/register --recursive",
     "test:watch": "npm test -- --watch",
     "test:typescript": "../node_modules/.bin/mocha ./test/typescript --compilers ts:ts-node/register --recursive",

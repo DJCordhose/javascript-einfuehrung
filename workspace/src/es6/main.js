@@ -1,4 +1,7 @@
-import Person from './Person.js';
+const promise1 = new Promise(resolve =>
+    setTimeout(
+        () => resolve('Result from promise'),
+        1000)
+);
 
-const olli = new Person('Olli');
-console.log(olli.name);
+promise1.then(value => console.log(value));

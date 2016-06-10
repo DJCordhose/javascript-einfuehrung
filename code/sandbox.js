@@ -1,13 +1,18 @@
-var oma = {
-    name: "Oma"
-};
-function fullName(title, lastName) {
-    return title + " " + this.name + " " + lastName;
-}
+const p = Promise
+// creates and directly resolves promise
+//     .reject('Promise rejected')
+    .resolve('Result from promise')
+    .then(x => {
+        // this will be printed
+        console.log(x);
+        // jdfkjdfkd
+        throw new Error('Something went wrong');
+    })
+    .then(() => {
+        console.log('This will be printed');
+    })
+    .catch(e => console.warn('Oh, Error'));
 
-var bound1 = fullName.bind(oma); // this an oma binden
-// var fullName1 = bound1("Frau", "Torbogen");
-var fullName1 = bound1.call({name: 'Opa'}, "Frau", "Torbogen");
-
-console.log(fullName1);
-// => Frau Oma Torbogen
+// Output:
+// Result from promise
+// This will be printed
