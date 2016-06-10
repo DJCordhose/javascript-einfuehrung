@@ -1,7 +1,9 @@
 {
     "rules": {
+        // https://github.com/Microsoft/tslint-microsoft-contrib
         "prefer-const": true,
         "no-for-in": true,
+        // https://www.npmjs.com/package/tslint
         "class-name": true,
         "comment-format": [
             true,
