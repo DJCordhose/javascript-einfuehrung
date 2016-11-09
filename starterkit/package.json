@@ -2,6 +2,8 @@
   "name": "workspace",
   "version": "0.0.1",
   "scripts": {
+    "start": "npm run devserver",
+    "devserver": "webpack-dev-server --progress --colors --hot --content-base public",
     "webpack": "webpack --watch",
     "test": "mocha ./test/unit -r jsdom-global/register --compilers js:babel-core/register --recursive",
     "test:watch": "npm test -- --watch",
@@ -28,6 +30,7 @@
     "mocha": "^3.1.2",
     "phantomjs": "^2.1.7",
     "sinon": "^1.17.6",
-    "webpack": "^1.13.3"
+    "webpack": "^1.13.3",
+    "webpack-dev-server": "^1.16.2"
   }
 }
