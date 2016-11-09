@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function percentile(values, percentile) {
+        if (percentile < 1 || percentile > 99) {
+            throw new Error("Percentile must be between 1 and 99");
+        }
+        var sortedValues = values.sort(function (a, b) {
+            return a - b;
+        });
+        var onePercentile = sortedValues.length / 100.0;
+        var percentileIndex = Math.floor(percentile * onePercentile);
+        var value = sortedValues[percentileIndex];
+        return value;
+    }
+    var values = [11, 3, 4, 1, 23, 45, 2, 5];
+    var p10 = percentile(values, 10);
+    var p75 = percentile(values, 75);
+    console.log(p75);
+</script>
+
+</body>
+</html>
